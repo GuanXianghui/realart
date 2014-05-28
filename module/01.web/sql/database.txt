@@ -1,0 +1,2 @@
+create database realart character set utf8 collate utf8_general_ci;		#Êı¾İ¿â
+use realart;

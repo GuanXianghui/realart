@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.action.extension" value="do"/>
+    <!-- 搞了半天原来上传图片过大struts2(默认2M封顶)自动跳到input的结果集去，一般是不需要input的结果集的 -->
+    <!-- 修改struts2配置上传文件最大Size 100M -->
+    <constant name="struts.multipart.maxSize" value="100000000"/>
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="registReview" class="com.realart.RegistReviewAction">
+            <result>
+                /registReview.jsp
+            </result>
+            <result name="error">
+                /registReview.jsp
+            </result>
+        </action>
+        <action name="loginReview" class="com.realart.LoginReviewAction">
+            <result>
+                /createReview.jsp
+            </result>
+            <result name="error">
+                /loginReview.jsp
+            </result>
+        </action>
+        <action name="createReview" class="com.realart.CreateReviewAction">
+            <result name="error">
+                /createReview.jsp
+            </result>
+        </action>
+        <action name="loginAdmin" class="com.realart.LoginAdminAction">
+            <result>
+                /indexImg.jsp
+            </result>
+            <result name="error">
+                /loginAdmin.jsp
+            </result>
+        </action>
+        <action name="updateLocationBit" class="com.realart.UpdateLocationBitAction">
+        </action>
+        <action name="adminRegistArtist" class="com.realart.AdminRegistArtistAction">
+            <result>
+                /loginArtist.jsp
+            </result>
+            <result name="error">
+                /adminRegistArtist.jsp
+            </result>
+        </action>
+        <action name="registArtist" class="com.realart.RegistArtistAction">
+            <result>
+                /loginArtist.jsp
+            </result>
+            <result name="error">
+                /registArtist.jsp
+            </result>
+        </action>
+        <action name="loginArtist" class="com.realart.LoginArtistAction">
+            <result>
+                /artistConsole.jsp
+            </result>
+            <result name="error">
+                /loginArtist.jsp
+            </result>
+        </action>
+        <action name="updateArtistInfo" class="com.realart.UpdateArtistInfoAction">
+            <result>
+                /artistConsole.jsp
+            </result>
+            <result name="error">
+                /updateArtistInfo.jsp
+            </result>
+        </action>
+        <action name="updateArtistPassword" class="com.realart.UpdateArtistPasswordAction">
+            <result>
+                /artistConsole.jsp
+            </result>
+            <result name="error">
+                /updateArtistPassword.jsp
+            </result>
+        </action>
+        <action name="uploadArt" class="com.realart.UploadArtAction">
+            <result>
+                /uploadArt.jsp
+            </result>
+            <result name="error">
+                /uploadArt.jsp
+            </result>
+        </action>
+        <action name="updateArtLocationBit" class="com.realart.UpdateArtLocationBitAction">
+        </action>
+        <action name="updateArt" class="com.realart.UpdateArtAction">
+            <result>
+                /needCheckArts.jsp
+            </result>
+            <result name="error">
+                /needCheckArts.jsp
+            </result>
+        </action>
+        <action name="uploadBgImg" class="com.realart.UploadBgImgAction">
+            <result>
+                /indexImg.jsp
+            </result>
+            <result name="error">
+                /indexImg.jsp
+            </result>
+        </action>
+        <action name="uploadLogoImg" class="com.realart.UploadLogoImgAction">
+            <result>
+                /indexImg.jsp
+            </result>
+            <result name="error">
+                /indexImg.jsp
+            </result>
+        </action>
+        <action name="uploadRealartImg" class="com.realart.UploadRealartImgAction">
+            <result>
+                /indexImg.jsp
+            </result>
+            <result name="error">
+                /indexImg.jsp
+            </result>
+        </action>
+        <action name="deleteGuide" class="com.realart.DeleteGuideAction">
+            <result>
+                /indexGuide.jsp
+            </result>
+            <result name="error">
+                /indexGuide.jsp
+            </result>
+        </action>
+        <action name="saveGuide" class="com.realart.SaveGuideAction">
+            <result>
+                /indexGuide.jsp
+            </result>
+            <result name="error">
+                /indexGuide.jsp
+            </result>
+        </action>
+        <action name="deleteRURI" class="com.realart.DeleteRURIAction">
+            <result>
+                /reviewUserRegistConfig.jsp
+            </result>
+            <result name="error">
+                /reviewUserRegistConfig.jsp
+            </result>
+        </action>
+        <action name="saveRURI" class="com.realart.SaveRURIAction">
+            <result>
+                /reviewUserRegistConfig.jsp
+            </result>
+            <result name="error">
+                /reviewUserRegistConfig.jsp
+            </result>
+        </action>
+        <action name="deleteAURI" class="com.realart.DeleteAURIAction">
+            <result>
+                /artistUserRegistConfig.jsp
+            </result>
+            <result name="error">
+                /artistUserRegistConfig.jsp
+            </result>
+        </action>
+        <action name="saveAURI" class="com.realart.SaveAURIAction">
+            <result>
+                /artistUserRegistConfig.jsp
+            </result>
+            <result name="error">
+                /artistUserRegistConfig.jsp
+            </result>
+        </action>
+        <action name="deleteCWR" class="com.realart.DeleteCWRAction">
+            <result>
+                /checkWrongReason.jsp
+            </result>
+            <result name="error">
+                /checkWrongReason.jsp
+            </result>
+        </action>
+        <action name="saveCWR" class="com.realart.SaveCWRAction">
+            <result>
+                /checkWrongReason.jsp
+            </result>
+            <result name="error">
+                /checkWrongReason.jsp
+            </result>
+        </action>
+    </package>
+
+    <!--
+     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+     <constant name="struts.devMode" value="false" />
+
+     <include file="example.xml"/>
+
+     <package name="default" namespace="/" extends="struts-default">
+         <default-action-ref name="index" />
+         <action name="index">
+             <result type="redirectAction">
+                 <param name="actionName">HelloWorld</param>
+                 <param name="namespace">/example</param>
+             </result>
+         </action>
+     </package>
+      -->
+</struts>
+
+
+

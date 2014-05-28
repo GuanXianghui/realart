@@ -1,0 +1,12 @@
+create table review( #评论表
+  	id int auto_increment primary key comment '主键 自增',
+  	user_id int not null comment '用户id 不为空',
+  	title varchar(200) not null comment '标题 不为空',
+  	type varchar(50) comment '归类 可为空',
+  	photo varchar(500) comment '图片 可为空',
+  	content varchar(20000) not null comment '正文 不为空',
+  	location_bit char(10) not null comment '位置位图 10位 非空 每一位1和0表示 默认0000000000',
+    create_date varchar(8) not null comment '创建日期 不为空',
+    create_time varchar(6) not null comment '创建时间 不为空',
+    create_ip varchar(100) not null comment '创建IP 不为空'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;

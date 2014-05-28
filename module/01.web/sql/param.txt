@@ -1,0 +1,17 @@
+create table param(		#启动参数表
+	name varchar(30) primary key comment '键 主键',
+	value varchar(500) not null comment '值 不为空',
+	info varchar(50) not null comment '描述 不为空'
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO param(name, value, info) VALUES ('index_bg_img','','首页底图');
+INSERT INTO param(name, value, info) VALUES ('index_logo_img','','首页 logo');
+INSERT INTO param(name, value, info) VALUES ('index_logo_width','','首页 logo 宽度');
+INSERT INTO param(name, value, info) VALUES ('index_logo_height','','首页 logo 高度');
+INSERT INTO param(name, value, info) VALUES ('index_realart_img','','首页 真艺网');
+INSERT INTO param(name, value, info) VALUES ('index_realart_width','','首页 真艺网 宽度');
+INSERT INTO param(name, value, info) VALUES ('index_realart_height','','首页 真艺网 高度');
+INSERT INTO param(name, value, info) VALUES ('index_guide','[]','首页导航');
+INSERT INTO param(name, value, info) VALUES ('review_user_regist_items','[]','评论会员注册项');
+INSERT INTO param(name, value, info) VALUES ('artist_user_regist_items','[]','艺术家注册项');
+INSERT INTO param(name, value, info) VALUES ('check_wrong_reason','','审核失败原因');
