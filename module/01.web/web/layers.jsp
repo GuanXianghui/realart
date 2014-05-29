@@ -20,4 +20,9 @@
             <li><a href="<%=baseUrl%>checkUpArt.jsp"<%=inLayer.equals("审核艺术品")?" class=\"current\"":""%>>审核艺术品</a></li>
         </ul>
     </li>
+    <li><a href="#" class="nav-top-item<%=outLayer.equals("序列号模块")?" current":""%>"> 序列号模块 </a>
+        <ul>
+            <li><a href="<%=baseUrl%>qrCode.jsp"<%=inLayer.equals("序列号维护")?" class=\"current\"":""%>>序列号维护</a></li>
+        </ul>
+    </li>
 </ul>

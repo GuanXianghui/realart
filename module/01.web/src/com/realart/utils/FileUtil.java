@@ -30,6 +30,7 @@ public class FileUtil {
                 while ( (byteRead = inStream.read(buffer)) != -1) {
                     fs.write(buffer, 0, byteRead);
                 }
+                fs.flush();
                 inStream.close();
             }
         }

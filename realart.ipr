@@ -20,6 +20,7 @@
             <element id="library" level="project" name="servlet" />
             <element id="library" level="project" name="struts2_lib" />
             <element id="library" level="project" name="ueditor" />
+            <element id="library" level="project" name="qr" />
           </element>
         </element>
       </root>
@@ -48,7 +49,7 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="GBK">
     <file url="file://$PROJECT_DIR$/module/01.web/src/com/realart/BaseAction.java" charset="GBK" />
   </component>
   <component name="EntryPointsManager">
@@ -241,6 +242,15 @@
       <JAVADOC />
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/mysql" recursive="false" />
+    </library>
+    <library name="qr">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/qr" />
+        <root url="file://$PROJECT_DIR$/lib/qr" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/qr" recursive="false" />
     </library>
     <library name="servlet">
       <CLASSES>

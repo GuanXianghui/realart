@@ -52,19 +52,25 @@
                 <div class="tab-content default-tab">
                     <form name="adminRegistArtistForm" method="post" action="adminRegistArtist.do">
                         <input type="hidden" name="token" value="<%=token%>">
-                        <fieldset>
-                            <p>
-                                <span>艺术家用户名</span>&nbsp;&nbsp;
-                                <input class="text-input small-input" type="text" name="name" id="name"
-                                       value="<%=StringUtils.trimToEmpty((String)request.getAttribute("name"))%>" />&nbsp;&nbsp;
-                                <span>密码</span>&nbsp;&nbsp;
-                                <input class="text-input small-input" type="password" name="password" id="password" />&nbsp;&nbsp;
-                                <span>确认密码</span>&nbsp;&nbsp;
-                                <input class="text-input small-input" type="password" name="confirmPassword" id="confirm_password" />
-                                <input class="button" type="button" onclick="registArtist();" value="OK 提交" />
-                            </p>
-                        </fieldset>
-                        <div class="clear"></div>
+                        <table>
+                            <tr>
+                                <td>艺术家用户名</td>
+                                <td><input class="text-input small-input" type="text" name="name" id="name"
+                                           value="<%=StringUtils.trimToEmpty((String)request.getAttribute("name"))%>" /></td>
+                            </tr>
+                            <tr>
+                                <td>密码</td>
+                                <td><input class="text-input small-input" type="password" name="password" id="password" /></td>
+                            </tr>
+                            <tr>
+                                <td>确认密码</td>
+                                <td><input class="text-input small-input" type="password" name="confirmPassword" id="confirm_password" /></td>
+                            </tr>
+                            <tr>
+                                <td>提交</td>
+                                <td><input class="button" type="button" onclick="registArtist();" value="OK 提交" /></td>
+                            </tr>
+                        </table>
                     </form>
                 </div>
             </div>

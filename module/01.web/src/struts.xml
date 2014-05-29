@@ -188,6 +188,32 @@
                 /checkWrongReason.jsp
             </result>
         </action>
+        <action name="generateQrCode" class="com.realart.GenerateQrCodeAction">
+            <result>
+                /qrCode.jsp
+            </result>
+            <result name="error">
+                /qrCode.jsp
+            </result>
+        </action>
+        <action name="uploadQrCodeLogo" class="com.realart.UploadQrCodeLogoAction">
+            <result>
+                /qrCode.jsp
+            </result>
+            <result name="error">
+                /qrCode.jsp
+            </result>
+        </action>
+        <action name="deleteQrCodeLogo" class="com.realart.DeleteQrCodeLogoAction">
+            <result>
+                /qrCode.jsp
+            </result>
+            <result name="error">
+                /qrCode.jsp
+            </result>
+        </action>
+        <action name="preViewQrCode" class="com.realart.PreViewQrCodeAction">
+        </action>
     </package>
 
     <!--

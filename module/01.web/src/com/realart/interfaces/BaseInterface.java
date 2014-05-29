@@ -44,4 +44,8 @@ public interface BaseInterface {
      * 管理员密码 逗号隔开
      */
     public static final String ADMIN_PASSWORD = "admin_password";
+    /**
+     * 二维码页面大小
+     */
+    public static final String QR_CODE_PAGE_SIZE = "qr_code_page_size";
 }
