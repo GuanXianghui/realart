@@ -15,3 +15,5 @@ INSERT INTO param(name, value, info) VALUES ('index_guide','[]','首页导航');
 INSERT INTO param(name, value, info) VALUES ('review_user_regist_items','[]','评论会员注册项');
 INSERT INTO param(name, value, info) VALUES ('artist_user_regist_items','[]','艺术家注册项');
 INSERT INTO param(name, value, info) VALUES ('check_wrong_reason','','审核失败原因');
+INSERT INTO param(name, value, info) VALUES ('default_qr_code','','默认二维码配置');
+INSERT INTO param(name, value, info) VALUES ('default_qr_code_info','','默认二维码相关信息');

@@ -52,4 +52,12 @@ public interface ParamInterface extends BaseInterface {
      * 审核失败原因
      */
     public static final String CHECK_WRONG_REASON = "check_wrong_reason";
+    /**
+     * 默认二维码配置
+     */
+    public static final String DEFAULT_QR_CODE = "default_qr_code";
+    /**
+     * 默认二维码相关信息
+     */
+    public static final String DEFAULT_QR_CODE_INFO = "default_qr_code_info";
 }

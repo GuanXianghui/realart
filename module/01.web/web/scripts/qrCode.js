@@ -16,7 +16,30 @@ $(document).ready(function() {
     $("#logoBorderColor").spectrum({
         color: "#0f0"
     });
+    //初始化默认数据
+    initDefaultValue();
 });
+
+/**
+ * 初始化默认数据
+ */
+function initDefaultValue(){
+    $("#antiError").val(defaultAntiError);
+    $("#size").val(defaultSize);
+    $("#bgColor").spectrum("set", defaultBgColor);
+    $("#frontColor").spectrum("set", defaultFrontColor);
+    $("#type").val(defaultType);
+    $("#qrLogo").val(defaultQrLogo);
+    chooseLogo = defaultQrLogo;
+    var qrLogos = $("#qr_logos img");
+    for(var i=0;i<qrLogos.length;i++){
+        if((i+1) == chooseLogo){
+            $(qrLogos[i]).css("border", "1px solid red");
+        }
+    }
+    $("#logoBorderType").val(defaultLogoBorderType);
+    $("#logoBorderColor").spectrum("set", defaultLogoBorderColor);
+}
 
 /**
  * 跳到某一页
@@ -24,7 +47,7 @@ $(document).ready(function() {
  * @param pageNum
  */
 function jump2page(pageNum) {
-    location.href = "qrCode.jsp?pageNum=" + pageNum;
+    location.href = "qrCode.jsp?pageNum=" + pageNum + "&uuid="+ $("#uuid").val() + "&state=" + $("#state").val();
 }
 
 /**
@@ -51,7 +74,6 @@ function preViewQrCode(){
                 //判请求是否成功
                 if (false == data["isSuccess"]) {
                     showError(data["message"]);
-                    return;
                 } else {
                     //请求成功
                     showSuccess(data["message"]);
@@ -105,6 +127,14 @@ function chooseQrCodeLogo(t, logoIndex){
 }
 
 /**
+ * 取消logo
+ */
+function clearQrCodeLogo(){
+    $(".choose_logo").css("border", "0px solid red");
+    chooseLogo = 0;
+}
+
+/**
  * 上传二维码logo
  */
 function uploadQrCodeLogo(){
@@ -123,4 +153,74 @@ function deleteQrCodeLogo(){
     $("#delete_qr_code_logo").val(chooseLogo);
     document.forms["deleteQrCodeLogoForm"].action = "deleteQrCodeLogo.do?token=" + token;
     document.forms["deleteQrCodeLogoForm"].submit();
+}
+
+/**
+ * 保存二维码默认配置
+ */
+function saveDefaultQrCode(){
+    $("#bgColor").val($("#bgColor").spectrum("get"));
+    $("#frontColor").val($("#frontColor").spectrum("get"));
+    $("#logoBorderColor").val($("#logoBorderColor").spectrum("get"));
+    $("#qrLogo").val(chooseLogo);
+    var defaultQrCode = "antiError=" + $("#antiError").val() + "&size=" + $("#size").val() + "&bgColor=" + $("#bgColor").val() +
+        "&frontColor=" + $("#frontColor").val() + "&type=" + $("#type").val() + "&qrLogo=" + $("#qrLogo").val() +
+        "&logoBorderType=" + $("#logoBorderType").val() + "&logoBorderColor=" + $("#logoBorderColor").val();
+    $("#save_default_qr_code").val(defaultQrCode);
+    $("#save_default_qr_code_info").val($("#info").val());
+    document.forms["saveDefaultQrCodeForm"].action = "saveDefaultQrCode.do?token=" + token;
+    document.forms["saveDefaultQrCodeForm"].submit();
+}
+
+/**
+ * 下载
+ */
+function downloadQrCode(){
+    //ajax请求
+    var SUCCESS_STR = "success";//成功编码
+    $.ajax({
+        type:"post",
+        async:false,
+        url:baseUrl + "downloadQrCode.do",
+        data:"uuid=" + $("#uuid").val() + "&state=" + $("#state").val() + "&token=" + token,
+        success:function (data, textStatus) {
+            if ((SUCCESS_STR == textStatus) && (null != data)) {
+                data = eval("(" + data + ")");
+                //判请求是否成功
+                if (false == data["isSuccess"]) {
+                    showError(data["message"]);
+                } else {
+                    //请求成功
+                    showSuccess(data["message"]);
+                    //打开新页面下载zip
+                    window.open(data["downloadZip"]);
+                }
+                //判是否有新token
+                if (data["hasNewToken"]) {
+                    token = data["token"];
+                }
+            } else {
+                showAttention("服务器连接异常，请稍后再试！");
+            }
+        },
+        error:function (data, textStatus) {
+            showAttention("服务器连接异常，请稍后再试！");
+        }
+    });
+}
+
+/**
+ * 删除二维码
+ * @param qrCode
+ * @param used
+ */
+function deleteQrCode(qrCode, used){
+    //已被用 不能删除
+    if(used){
+        showError("该序列号已绑定艺术品，不能删除！")
+        return;
+    }
+    $("#delete_qr_code").val(qrCode);
+    document.forms["deleteQrCodeForm"].action = "deleteQrCode.do?token=" + token;
+    document.forms["deleteQrCodeForm"].submit();
 }

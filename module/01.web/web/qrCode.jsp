@@ -29,13 +29,15 @@
         } catch (Exception e) {
             state = 0;
         }
+        //选择序列号
+        String uuid = StringUtils.trimToEmpty(request.getParameter("uuid"));
         //二维码页面大小
         int pageSize = Integer.parseInt(PropertyUtil.getInstance().getProperty(BaseInterface.QR_CODE_PAGE_SIZE));
         /**
          * 根据状态查二维码量
          * 如果state>0带上作为条件
          */
-        int count = QrCodeDao.countQrCodesByState(state);
+        int count = QrCodeDao.countQrCodesByUuidAndState(uuid, state);
         //是否为空
         boolean isEmpty = count == 0;
         //总页数
@@ -44,8 +46,11 @@
         if(pageNum > pageCount){
             pageNum = pageCount;
         }
-        //二维码列表
-        List<QrCode> qrCodes = QrCodeDao.queryQrCodesByStateAndPayNum(state, pageNum);
+        //根据序列号，状态，页码查二维码
+        List<QrCode> qrCodes = QrCodeDao.queryQrCodesByUuidAndStateAndPayNum(uuid, state, pageNum);
+        //获取 默认二维码配置 和 默认二维码相关信息
+        String defaultQrCode = StringUtils.trimToEmpty(ParamUtil.getInstance().getValueByName(ParamInterface.DEFAULT_QR_CODE));
+        String defaultQrCodeInfo = StringUtils.trimToEmpty(ParamUtil.getInstance().getValueByName(ParamInterface.DEFAULT_QR_CODE_INFO));
     %>
 <html>
 <head>
@@ -67,6 +72,54 @@
         var pageNum = <%=pageNum%>;
         //选择logo
         var chooseLogo = 0;
+        //默认配置
+        var defaultAntiError = EMPTY;
+        var defaultSize = EMPTY;
+        var defaultBgColor = EMPTY;
+        var defaultFrontColor = EMPTY;
+        var defaultType = EMPTY;
+        var defaultQrLogo = EMPTY;
+        var defaultLogoBorderType = EMPTY;
+        var defaultLogoBorderColor = EMPTY;
+        <%
+            //antiError=M&size=3&bgColor=#ffffff&frontColor=#000000&type=1&qrLogo=0&logoBorderType=1&logoBorderColor=#00ff00
+            if(StringUtils.isNotBlank(defaultQrCode)){
+            defaultQrCode += "&";//最后加个&
+            String temp = defaultQrCode.substring(defaultQrCode.indexOf("antiError") + "antiError".length() + 1);
+        %>
+        defaultAntiError = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("size") + "size".length() + 1);
+        %>
+        defaultSize = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("bgColor") + "bgColor".length() + 1);
+        %>
+        defaultBgColor = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("frontColor") + "frontColor".length() + 1);
+        %>
+        defaultFrontColor = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("type") + ("type" +
+            "").length() + 1);
+        %>
+        defaultType = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("qrLogo") + "qrLogo".length() + 1);
+        %>
+        defaultQrLogo = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("logoBorderType") + "logoBorderType".length() + 1);
+        %>
+        defaultLogoBorderType = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+           temp = defaultQrCode.substring(defaultQrCode.indexOf("logoBorderColor") + "logoBorderColor".length() + 1);
+        %>
+        defaultLogoBorderColor = "<%=temp.substring(0, temp.indexOf("&"))%>";
+        <%
+            }
+        %>
     </script>
 </head>
 <body>
@@ -108,6 +161,13 @@
                     </form>
                     <form name="deleteQrCodeLogoForm" method="post" action="deleteQrCodeLogo.do?token=<%=token%>">
                         <input type="hidden" name="qrLogo" id="delete_qr_code_logo">
+                    </form>
+                    <form name="saveDefaultQrCodeForm" method="post" action="saveDefaultQrCode.do?token=<%=token%>">
+                        <textarea name="defaultQrCode" id="save_default_qr_code"></textarea>
+                        <textarea name="defaultInfo" id="save_default_qr_code_info"></textarea>
+                    </form>
+                    <form name="deleteQrCodeForm" method="post" action="deleteQrCode.do?token=<%=token%>">
+                        <input type="hidden" name="qrCode" id="delete_qr_code">
                     </form>
                 </span>
                 <form name="generateQrCodeForm" method="post" action="generateQrCode.do?token=<%=token%>">
@@ -191,7 +251,7 @@
                         <tr>
                             <input type="hidden" name="qrLogo" id="qrLogo">
                             <td>插入logo(可选)</td>
-                            <td>
+                            <td id="qr_logos">
                                 <%
                                     File file = new File(ServletActionContext.getServletContext().getRealPath("images/qr_logo/") + "/");
                                     String[] files = file.list();
@@ -203,6 +263,7 @@
                                 <%
                                     }
                                 %>
+                                <input class="button" type="button" onclick="clearQrCodeLogo();" value="取消logo" />
                                 <input class="button" type="button" onclick="uploadQrCodeLogo();" value="上传" />
                                 <input class="button" type="button" onclick="deleteQrCodeLogo();" value="删除" />
                             </td>
@@ -223,11 +284,12 @@
                         </tr>
                         <tr>
                             <td>相关信息</td>
-                            <td><textarea class="text-input large-input" name="info"></textarea></td>
+                            <td><textarea class="text-input large-input" name="info" id="info"><%=defaultQrCodeInfo%></textarea></td>
                         </tr>
                         <tr>
                             <td>生成序列号</td>
                             <td>
+                                <input class="button" type="button" onclick="saveDefaultQrCode();" value="保存默认配置" />
                                 <input class="button" type="button" onclick="preViewQrCode();" value="预览" />
                                 <input class="button" type="button" onclick="generateQrCode();" value="生成" />
                             </td>
@@ -250,6 +312,20 @@
         <div class="content-box-content">
             <div class="tab-content default-tab">
                 <form>
+                    <div align="center">
+                        序列号<input type="text" class="text-input small-input" id="uuid" value="<%=uuid%>">
+                        状态
+                        <select class="text-input small-input" id="state">
+                            <option value="0">全部</option>
+                            <option value="<%=QrCodeInterface.STATE_NOT_USE%>"<%=QrCodeInterface.STATE_NOT_USE==state?" selected":""%>>未被使用</option>
+                            <option value="<%=QrCodeInterface.STATE_USED%>"<%=QrCodeInterface.STATE_USED==state?" selected":""%>>已被使用</option>
+                        </select>
+
+                        <input class="button" type="button" onclick="jump2page(1);" value="查询" />
+                        <input class="button" type="button" onclick="downloadQrCode();" value="下载" />
+                    </div>
+
+
                     <table id="cwr_table">
                         <thead>
                         <tr>
@@ -326,7 +402,8 @@
                                 <%
                                 } else {
                                 %>
-                                <input class="button" type="button" onclick="showArt(<%=qrCodes.get(i).getArtId()%>)" value="已绑定艺术品[id=<%=qrCodes.get(i).getArtId()%>]">
+                                已绑定艺术品[id=<%=qrCodes.get(i).getArtId()%>]
+                                <%--<input class="button" type="button" onclick="showArt(<%=qrCodes.get(i).getArtId()%>)" value="已绑定艺术品[id=<%=qrCodes.get(i).getArtId()%>]">--%>
                                 <%
                                     }
                                 %>
@@ -335,7 +412,7 @@
                                 <textarea class="text-input large-input"><%=qrCodes.get(i).getInfo()%></textarea>
                             </td>
                             <td>
-                                <input class="button" type="button" onclick="refreshStyle(<%=qrCodes.get(i).getId()%>);" value="刷新样式">
+                                <input class="button" type="button" onclick="deleteQrCode(<%=qrCodes.get(i).getId()%>, <%=qrCodes.get(i).getState() == QrCodeInterface.STATE_USED%>);" value="删除">
                             </td>
                         </tr>
                         <%

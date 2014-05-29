@@ -214,6 +214,24 @@
         </action>
         <action name="preViewQrCode" class="com.realart.PreViewQrCodeAction">
         </action>
+        <action name="saveDefaultQrCode" class="com.realart.SaveDefaultQrCodeAction">
+            <result>
+                /qrCode.jsp
+            </result>
+            <result name="error">
+                /qrCode.jsp
+            </result>
+        </action>
+        <action name="downloadQrCode" class="com.realart.DownloadQrCodeAction">
+        </action>
+        <action name="deleteQrCode" class="com.realart.DeleteQrCodeAction">
+            <result>
+                /qrCode.jsp
+            </result>
+            <result name="error">
+                /qrCode.jsp
+            </result>
+        </action>
     </package>
 
     <!--
