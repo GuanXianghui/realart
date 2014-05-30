@@ -481,10 +481,14 @@ form .wysiwyg {
                 border: 1px solid #d5d5d5;
 				color: #333;
                 }
-            
+
+form .little-small-input {
+    width: 10% !important;
+}
+
 form .small-input {
-                width: 25% !important;
-                }
+    width: 25% !important;
+}
 
 form .medium-input {
     width: 50% !important;

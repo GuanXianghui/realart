@@ -58,28 +58,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="qrCode.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="61" selection-start="1353" selection-end="1357" vertical-scroll-proportion="-0.6785714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="qrCode.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="37" selection-start="5297" selection-end="5311" vertical-scroll-proportion="0.0">
+            <state line="31" column="8" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="struts.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/01.web/src/struts.xml">
+      <file leaf-file-name="qrCode.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="64" selection-start="7604" selection-end="7604" vertical-scroll-proportion="0.7225225">
+            <state line="136" column="68" selection-start="6000" selection-end="6000" vertical-scroll-proportion="-8.821428">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenerateQrCodeAction.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="85" column="80" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.418018">
               <folding />
             </state>
           </provider>
@@ -95,10 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/TwoDimensionCode.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/PreViewQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/interfaces/ParamInterface.java" />
         <option value="$PROJECT_DIR$/module/01.web/sql/param.txt" />
         <option value="$PROJECT_DIR$/module/01.web/src/com/realart/SaveDefaultQrCodeFormAction.java" />
         <option value="$PROJECT_DIR$/module/01.web/src/com/realart/SaveDefaultQrCodeAction.java" />
@@ -107,10 +103,14 @@
         <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/FileUtil.java" />
         <option value="$PROJECT_DIR$/module/01.web/src/struts.xml" />
         <option value="$PROJECT_DIR$/module/01.web/src/com/realart/DeleteQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js" />
-        <option value="$PROJECT_DIR$/module/01.web/web/qrCode.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/dao/QrCodeDao.java" />
         <option value="$PROJECT_DIR$/module/01.web/src/com/realart/DownloadQrCodeAction.java" />
+        <option value="$PROJECT_DIR$/module/01.web/web/headerWithOutCheckLogin.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/facebox.js" />
+        <option value="$PROJECT_DIR$/module/01.web/web/css/style.css" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/dao/QrCodeDao.java" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java" />
+        <option value="$PROJECT_DIR$/module/01.web/web/qrCode.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js" />
       </list>
     </option>
   </component>
@@ -201,56 +201,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01.web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01.web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01.web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -270,7 +220,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -293,13 +243,14 @@
       <recent name="com.realart.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\04.my_projects\realart\module\01.web\web\images\qr" />
       <recent name="D:\04.my_projects\realart\module\01.web\web\scripts" />
+      <recent name="D:\04.my_projects\realart\module\01.web\web\images\qr" />
       <recent name="D:\04.my_projects\realart\module\01.web\web\css" />
       <recent name="D:\04.my_projects\realart\module\01.web\web" />
       <recent name="D:\04.my_projects\realart\module\01.web\sql" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\04.my_projects\realart\module\01.web\web\css" />
       <recent name="D:\04.my_projects\realart\module\01.web\web\images\user" />
     </key>
   </component>
@@ -652,7 +603,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6919105" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5972461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51979345" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -666,7 +617,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18968134" sideWeight="0.6712565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18816389" sideWeight="0.19965577" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8003442" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -767,127 +718,120 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/01.web/sql/param.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="93" selection-start="1093" selection-end="1256" vertical-scroll-proportion="0.54774773">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/interfaces/ParamInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="16" selection-start="1428" selection-end="1437" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/interfaces/QrCodeInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="190" selection-end="194" vertical-scroll-proportion="0.28108108">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/PreViewQrCodeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/01.study_tools/jdk/jdk1.6.0_64_30/jre/lib/rt.jar!/java/awt/List.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="146" selection-end="146" vertical-scroll-proportion="0.1402214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/UpdateArtAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="73" selection-start="3662" selection-end="3682" vertical-scroll-proportion="0.6756757">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="135" selection-start="1918" selection-end="2052" vertical-scroll-proportion="0.23963964">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="25" selection-start="2193" selection-end="2193" vertical-scroll-proportion="0.3837838">
-          <folding />
-        </state>
+        <state line="90" column="25" selection-start="2193" selection-end="2193" vertical-scroll-proportion="0.3837838" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/ZipUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="18" column="14" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/DeleteQrCodeLogoAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="15" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/DeleteQrCodeAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="-0.23963964">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="5" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="-0.23963964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/DownloadQrCodeAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="28" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.2054054">
+        <state line="39" column="28" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.2054054" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/struts.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="33" selection-start="7736" selection-end="7736" vertical-scroll-proportion="0.13693693" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/interfaces/QrCodeInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="19" selection-start="408" selection-end="420" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/headerWithOutCheckLogin.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="18" selection-start="2777" selection-end="2789" vertical-scroll-proportion="0.29601517">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/facebox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="50" selection-start="2747" selection-end="2794" vertical-scroll-proportion="0.43243244">
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="484" column="12" selection-start="12539" selection-end="12545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/css/jquery-ui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="52" selection-start="18743" selection-end="18743" vertical-scroll-proportion="0.3321033">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/dao/QrCodeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="31" selection-start="3631" selection-end="3631" vertical-scroll-proportion="0.33333334">
-          <folding>
-            <element signature="e#1853#1861#0" expanded="true" />
-            <element signature="e#3742#3750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="61" selection-start="1353" selection-end="1357" vertical-scroll-proportion="-0.6785714">
+        <state line="106" column="39" selection-start="3373" selection-end="3373" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="37" selection-start="5297" selection-end="5311" vertical-scroll-proportion="0.0">
+        <state line="31" column="8" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/struts.xml">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="64" selection-start="7604" selection-end="7604" vertical-scroll-proportion="0.7225225">
+        <state line="136" column="68" selection-start="6000" selection-end="6000" vertical-scroll-proportion="-8.821428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/TwoDimensionCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="434" column="24" selection-start="17393" selection-end="17393" vertical-scroll-proportion="0.8810811">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="80" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.418018">
           <folding />
         </state>
       </provider>

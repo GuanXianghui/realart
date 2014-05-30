@@ -22,15 +22,32 @@ public class QrCodeDao {
     /**
      * 根据状态查二维码量
      * 如果state>0带上作为条件
-     * 如果uuid非空带上作为条件
+     * 如果startId,endId,startDate,endDate,uuid非空带上作为条件
      *
+     * @param startId
+     * @param endId
+     * @param startDate
+     * @param endDate
      * @param uuid
      * @param state
      * @return
      * @throws Exception
      */
-    public static int countQrCodesByUuidAndState(String uuid, int state) throws Exception {
+    public static int countQrCodesByUuidAndState(String startId, String endId, String startDate, String endDate,
+                                                 String uuid, int state) throws Exception {
         String sql = "SELECT count(1) count_num FROM qr_code WHERE 1=1";
+        if(StringUtils.isNotBlank(startId)){
+            sql += " AND id>=" + startId;
+        }
+        if(StringUtils.isNotBlank(endId)){
+            sql += " AND id<=" + endId;
+        }
+        if(StringUtils.isNotBlank(startDate)){
+            sql += " AND create_date>='" + startDate + "'";
+        }
+        if(StringUtils.isNotBlank(endDate)){
+            sql += " AND create_date<='" + endDate + "'";
+        }
         if(StringUtils.isNotBlank(uuid)){
             sql += " AND uuid='" + uuid + "'";
         }
@@ -60,19 +77,36 @@ public class QrCodeDao {
     /**
      * 根据序列号，状态，页码查二维码
      * 如果state>0带上作为条件
-     * 如果uuid非空带上作为条件
+     * 如果startId,endId,startDate,endDate,uuid非空带上作为条件
      *
+     * @param startId
+     * @param endId
+     * @param startDate
+     * @param endDate
      * @param uuid
      * @param state
      * @param pageNum
      * @return
      * @throws Exception
      */
-    public static List<QrCode> queryQrCodesByUuidAndStateAndPayNum(String uuid, int state, int pageNum) throws Exception {
+    public static List<QrCode> queryQrCodesByUuidAndStateAndPayNum(String startId, String endId, String startDate,
+                                                                   String endDate, String uuid, int state, int pageNum) throws Exception {
         List<QrCode> list = new ArrayList<QrCode>();
         int pageSize = Integer.parseInt(PropertyUtil.getInstance().getProperty(BaseInterface.QR_CODE_PAGE_SIZE));
         String sql = "SELECT id,uuid,img_path,state,art_id,info,create_date,create_time,create_ip" +
                 " FROM qr_code WHERE 1=1";
+        if(StringUtils.isNotBlank(startId)){
+            sql += " AND id>=" + startId;
+        }
+        if(StringUtils.isNotBlank(endId)){
+            sql += " AND id<=" + endId;
+        }
+        if(StringUtils.isNotBlank(startDate)){
+            sql += " AND create_date>='" + startDate + "'";
+        }
+        if(StringUtils.isNotBlank(endDate)){
+            sql += " AND create_date<='" + endDate + "'";
+        }
         if(StringUtils.isNotBlank(uuid)){
             sql += " AND uuid='" + uuid + "'";
         }

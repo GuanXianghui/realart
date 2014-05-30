@@ -6,6 +6,7 @@
 <%@ page import="com.realart.utils.PropertyUtil" %>
 <%@ page import="com.realart.utils.TokenUtil" %>
 <%@ page import="com.realart.utils.ParamUtil" %>
+<%@ page import="com.realart.interfaces.QrCodeInterface" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     //域名链接
@@ -55,6 +56,8 @@
     String artistUserRegistItems = ParamUtil.getInstance().getValueByName(ParamInterface.ARTIST_USER_REGIST_ITEMS);
     //审核失败原因
     String checkWrongReason = ParamUtil.getInstance().getValueByName(ParamInterface.CHECK_WRONG_REASON);
+    //艺术品绑定二维码地址前缀
+    String qrCodeUrlPrefix = QrCodeInterface.QR_CODE_URL_PREFIX;
 %>
 <script type="text/javascript">
     //域名链接

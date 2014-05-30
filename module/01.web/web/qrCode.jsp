@@ -11,15 +11,16 @@
         outLayer = "序列号模块";
         //内层
         inLayer = "序列号维护";
-        //当前页数
-        String pageStr = StringUtils.trimToEmpty(request.getParameter("pageNum"));
-        //当前页数
-        int pageNum;
-        try {
-            pageNum = Integer.parseInt(pageStr);
-        } catch (Exception e) {
-            pageNum = 1;
-        }
+        //开始Id
+        String startId = StringUtils.trimToEmpty(request.getParameter("startId"));
+        //结束Id
+        String endId = StringUtils.trimToEmpty(request.getParameter("endId"));
+        //开始日期
+        String startDate = StringUtils.trimToEmpty(request.getParameter("startDate"));
+        //结束日期
+        String endDate = StringUtils.trimToEmpty(request.getParameter("endDate"));
+        //选择序列号
+        String uuid = StringUtils.trimToEmpty(request.getParameter("uuid"));
         //当前状态
         String stateStr = StringUtils.trimToEmpty(request.getParameter("state"));
         //状态
@@ -29,15 +30,22 @@
         } catch (Exception e) {
             state = 0;
         }
-        //选择序列号
-        String uuid = StringUtils.trimToEmpty(request.getParameter("uuid"));
+        //当前页数
+        String pageStr = StringUtils.trimToEmpty(request.getParameter("pageNum"));
+        //当前页数
+        int pageNum;
+        try {
+            pageNum = Integer.parseInt(pageStr);
+        } catch (Exception e) {
+            pageNum = 1;
+        }
         //二维码页面大小
         int pageSize = Integer.parseInt(PropertyUtil.getInstance().getProperty(BaseInterface.QR_CODE_PAGE_SIZE));
         /**
          * 根据状态查二维码量
          * 如果state>0带上作为条件
          */
-        int count = QrCodeDao.countQrCodesByUuidAndState(uuid, state);
+        int count = QrCodeDao.countQrCodesByUuidAndState(startId, endId, startDate, endDate, uuid, state);
         //是否为空
         boolean isEmpty = count == 0;
         //总页数
@@ -47,7 +55,7 @@
             pageNum = pageCount;
         }
         //根据序列号，状态，页码查二维码
-        List<QrCode> qrCodes = QrCodeDao.queryQrCodesByUuidAndStateAndPayNum(uuid, state, pageNum);
+        List<QrCode> qrCodes = QrCodeDao.queryQrCodesByUuidAndStateAndPayNum(startId, endId, startDate, endDate, uuid, state, pageNum);
         //获取 默认二维码配置 和 默认二维码相关信息
         String defaultQrCode = StringUtils.trimToEmpty(ParamUtil.getInstance().getValueByName(ParamInterface.DEFAULT_QR_CODE));
         String defaultQrCodeInfo = StringUtils.trimToEmpty(ParamUtil.getInstance().getValueByName(ParamInterface.DEFAULT_QR_CODE_INFO));
@@ -61,6 +69,9 @@
     <!-- jQuery 颜色选择器 Spectrum -->
     <script type="text/javascript" src="<%=baseUrl%>scripts/spectrum.js"></script>
     <link rel="stylesheet" href="css/spectrum.css" type="text/css" media="screen"/>
+    <!--日期控件-->
+    <link type="text/css" rel="stylesheet" href="css/jquery-ui.css"/>
+    <script type="text/javascript" src="<%=baseUrl%>scripts/jquery-ui.min.js"></script>
     <!-- 页面样式 -->
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
@@ -81,6 +92,7 @@
         var defaultQrLogo = EMPTY;
         var defaultLogoBorderType = EMPTY;
         var defaultLogoBorderColor = EMPTY;
+        //为默认配置赋值
         <%
             //antiError=M&size=3&bgColor=#ffffff&frontColor=#000000&type=1&qrLogo=0&logoBorderType=1&logoBorderColor=#00ff00
             if(StringUtils.isNotBlank(defaultQrCode)){
@@ -120,7 +132,27 @@
         <%
             }
         %>
+        //艺术品绑定二维码地址前缀
+        var qrCodeUrlPrefix = "<%=qrCodeUrlPrefix%>";
+        //初始化起始日期
+        var initStartDate = "<%=startDate%>";
+        //初始化终止日期
+        var initEndDate = "<%=endDate%>";
     </script>
+    <style type="text/css">
+        #selectTable td {
+            text-align: center;
+        }
+        #selectTable th {
+            text-align: center;
+        }
+        #cwr_table td {
+            text-align: center;
+        }
+        #cwr_table th {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div id="body-wrapper">
@@ -291,7 +323,9 @@
                             <td>
                                 <input class="button" type="button" onclick="saveDefaultQrCode();" value="保存默认配置" />
                                 <input class="button" type="button" onclick="preViewQrCode();" value="预览" />
-                                <input class="button" type="button" onclick="generateQrCode();" value="生成" />
+                                <input class="button" type="button" onclick="generateQrCode();" value="批量生成" />
+                                <input type="text" name="num" id="num" value="1"
+                                       style="text-align: center;" class="text-input little-small-input">个
                             </td>
                         </tr>
                     </table>
@@ -303,6 +337,7 @@
     <a id="showBigImgA" class="shortcut-button" href="#bigImgDiv" rel="modal" style="display: none;"></a>
     <div id="bigImgDiv" style="display: none;" align="center">
         <img id="bigImg" width="450">
+        <div id="qrCodeUrl" style="display: none;"></div>
     </div>
 
     <div class="content-box">
@@ -313,14 +348,31 @@
             <div class="tab-content default-tab">
                 <form>
                     <div align="center">
-                        序列号<input type="text" class="text-input small-input" id="uuid" value="<%=uuid%>">
-                        状态
-                        <select class="text-input small-input" id="state">
-                            <option value="0">全部</option>
-                            <option value="<%=QrCodeInterface.STATE_NOT_USE%>"<%=QrCodeInterface.STATE_NOT_USE==state?" selected":""%>>未被使用</option>
-                            <option value="<%=QrCodeInterface.STATE_USED%>"<%=QrCodeInterface.STATE_USED==state?" selected":""%>>已被使用</option>
-                        </select>
-
+                        <table id="selectTable">
+                            <tr>
+                                <td>
+                                    ID从<input type="text" class="text-input small-input" id="startId" value="<%=startId%>">
+                                    到<input type="text" class="text-input small-input" id="endId" value="<%=endId%>">
+                                </td>
+                                <td>
+                                    日期从<input type="text" class="text-input small-input" id="startDate" value="<%=startDate%>">
+                                    到<input type="text" class="text-input small-input" id="endDate" value="<%=endDate%>">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    序列号<input type="text" class="text-input medium-input" id="uuid" value="<%=uuid%>">
+                                </td>
+                                <td>
+                                    状态
+                                    <select class="text-input medium-input" id="state">
+                                        <option value="0">全部</option>
+                                        <option value="<%=QrCodeInterface.STATE_NOT_USE%>"<%=QrCodeInterface.STATE_NOT_USE==state?" selected":""%>>未被使用</option>
+                                        <option value="<%=QrCodeInterface.STATE_USED%>"<%=QrCodeInterface.STATE_USED==state?" selected":""%>>已被使用</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
                         <input class="button" type="button" onclick="jump2page(1);" value="查询" />
                         <input class="button" type="button" onclick="downloadQrCode();" value="下载" />
                     </div>
@@ -329,16 +381,18 @@
                     <table id="cwr_table">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>序列号</th>
                             <th>二维码</th>
                             <th>绑定艺术品</th>
+                            <th>日期</th>
                             <th>相关信息</th>
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <td colspan="5">
+                            <td colspan="7">
                                 <div class="pagination">
                                     <a href="javascript: jump2page(1)" title="首页">&laquo; 首页</a>
                                     <%
@@ -377,7 +431,7 @@
                             if (isEmpty) {
                         %>
                         <tr>
-                            <td colspan="5">
+                            <td colspan="7">
                                 没找到序列号
                             </td>
                         </tr>
@@ -388,11 +442,14 @@
                         %>
                         <tr>
                             <td>
+                                <%=qrCodes.get(i).getId()%>
+                            </td>
+                            <td>
                                 <%=qrCodes.get(i).getUuid()%>
                             </td>
                             <td>
                                 <img style="cursor: pointer;" src="/<%=qrCodes.get(i).getImgPath()%>" width="50"
-                                     onclick="showBigImg('/<%=qrCodes.get(i).getImgPath()%>')">
+                                     onclick="showBigImg('/<%=qrCodes.get(i).getImgPath()%>', '<%=qrCodes.get(i).getUuid()%>')">
                             </td>
                             <td>
                                 <%
@@ -407,6 +464,9 @@
                                 <%
                                     }
                                 %>
+                            </td>
+                            <td>
+                                <%=qrCodes.get(i).getCreateDate()%>
                             </td>
                             <td>
                                 <textarea class="text-input large-input"><%=qrCodes.get(i).getInfo()%></textarea>

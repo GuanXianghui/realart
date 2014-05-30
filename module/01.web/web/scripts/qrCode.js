@@ -18,6 +18,21 @@ $(document).ready(function() {
     });
     //初始化默认数据
     initDefaultValue();
+    //日期控件初始化
+    $("#startDate").datepicker();
+    $( "#startDate" ).datepicker( "option", "dateFormat", "yymmdd" );
+    $( "#startDate" ).datepicker( "option", "showAnim", "clip" );
+    $( "#startDate" ).datepicker( "option", "onSelect", function(dateText, inst){
+    });
+    $("#endDate").datepicker();
+    $( "#endDate" ).datepicker( "option", "dateFormat", "yymmdd" );
+    $( "#endDate" ).datepicker( "option", "showAnim", "clip" );
+    $( "#endDate" ).datepicker( "option", "onSelect", function(dateText, inst){
+    });
+    //赋值起始日期
+    $("#startDate").val(initStartDate);
+    //赋值终止日期
+    $("#endDate").val(initEndDate);
 });
 
 /**
@@ -34,7 +49,7 @@ function initDefaultValue(){
     var qrLogos = $("#qr_logos img");
     for(var i=0;i<qrLogos.length;i++){
         if((i+1) == chooseLogo){
-            $(qrLogos[i]).css("border", "1px solid red");
+            $(qrLogos[i]).css("border", "2px solid red");
         }
     }
     $("#logoBorderType").val(defaultLogoBorderType);
@@ -47,7 +62,10 @@ function initDefaultValue(){
  * @param pageNum
  */
 function jump2page(pageNum) {
-    location.href = "qrCode.jsp?pageNum=" + pageNum + "&uuid="+ $("#uuid").val() + "&state=" + $("#state").val();
+    var html = "qrCode.jsp?pageNum=" + pageNum + "&uuid="+ $("#uuid").val()
+        + "&state=" + $("#state").val() + "&startId=" + $("#startId").val() + "&endId=" + $("#endId").val()
+        + "&startDate=" + $("#startDate").val() + "&endDate=" + $("#endDate").val();
+    location.href = html;
 }
 
 /**
@@ -77,8 +95,8 @@ function preViewQrCode(){
                 } else {
                     //请求成功
                     showSuccess(data["message"]);
-                    $("#bigImg").attr("src", data["previewImg"]);
-                    $("#showBigImgA").click();
+                    //查看大图
+                    showBigImg(data["previewImg"], EMPTY);
                 }
                 //判是否有新token
                 if (data["hasNewToken"]) {
@@ -98,6 +116,11 @@ function preViewQrCode(){
  * 生成序列号
  */
 function generateQrCode(){
+    if($("#num").val() > 20){
+        if(!confirm("请确认要一次性批量生成" + $("#num").val() + "个序列号吗")){
+            return;
+        }
+    }
     $("#bgColor").val($("#bgColor").spectrum("get"));
     $("#frontColor").val($("#frontColor").spectrum("get"));
     $("#logoBorderColor").val($("#logoBorderColor").spectrum("get"));
@@ -110,8 +133,15 @@ function generateQrCode(){
  * 点击查看大图
  * @param url
  */
-function showBigImg(url){
+function showBigImg(url, uuid){
     $("#bigImg").attr("src", url);
+    if(EMPTY == uuid){
+        $("#qrCodeUrl").css("display", "none");
+    } else {
+        $("#qrCodeUrl").html(qrCodeUrlPrefix + uuid);
+        $("#qrCodeUrl").css("font-weight", "bold");
+        $("#qrCodeUrl").css("display", "");
+    }
     $("#showBigImgA").click();
 }
 
@@ -122,7 +152,7 @@ function showBigImg(url){
  */
 function chooseQrCodeLogo(t, logoIndex){
     $(".choose_logo").css("border", "0px solid red");
-    $(t).css("border", "1px solid red");
+    $(t).css("border", "2px solid red");
     chooseLogo = logoIndex;
 }
 
