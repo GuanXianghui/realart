@@ -33,5 +33,5 @@ function login(){
     var md5Pwd = MD5(password + md5Key);
     document.getElementById("password").value = md5Pwd;
 
-    document.forms["loginAdminForm"].submit();
+    document.forms["loginForm"].submit();
 }

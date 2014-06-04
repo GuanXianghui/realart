@@ -1,11 +1,12 @@
 create table user( #用户表
   	id int auto_increment primary key comment '主键 自增',
-  	name varchar(30) not null comment '姓名 不为空 相同的user_type唯一',
+  	name varchar(30) unique not null comment '姓名 不为空 相同的user_type唯一',
   	user_type int not null comment '用户类型 不为空 1 评论专员 2 艺术家',
   	password varchar(32) not null comment '密码 md5签名 不为空',
   	cert_name varchar(30) comment '身份证姓名 可为空',
   	title_photo varchar(500) comment '压题图 相对路径 可为空',
   	head_photo varchar(500) comment '个人照片 相对路径 可为空',
+  	email varchar(100) not null comment 'email 不为空',
   	info varchar(5000) comment '用户信息 可为空',
   	state int not null comment '状态 不为空 0 待审核 1 审核通过 2 审核失败 3 锁定，评论会员直接审核通过，艺术家需要管理员审核',
   	reason varchar(500) comment '审核失败原因 可为空',

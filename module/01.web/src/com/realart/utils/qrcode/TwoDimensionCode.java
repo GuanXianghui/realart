@@ -1,4 +1,4 @@
-package com.realart.utils;
+package com.realart.utils.qrcode;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -127,8 +127,38 @@ public class TwoDimensionCode {
 			int pixoff = 20;
 			// 输出内容> 二维码
 			if (contentBytes.length > 0 && contentBytes.length < 800) {
-                //画圆形
 				boolean[][] codeOut = qrcodeHandler.calQrcode(contentBytes);
+                //随机颜色画圆形
+//                for (int i = 0; i < codeOut.length; i++) {
+//                    for (int j = 0; j < codeOut.length; j++) {
+//                        if (codeOut[j][i]) {
+//                            String[] colors = new String[]{"0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"};
+//                            String colorStr = "";
+//                            for(int k=0;k<6;k++){
+//                                colorStr += colors[(int)(Math.random() * 10)];
+//                            }
+//                            Color color = new Color(Integer.parseInt(colorStr,16));
+//                            gs.setColor(color);
+//                            gs.setColor(Color.BLACK);
+//                            gs.drawRect(j * 30 + pixoff, i * 30 + pixoff, 30, 30);
+//                            gs.setColor(color);
+//                            gs.fillOval(j * 30 + pixoff, i * 30 + pixoff, 30, 30);
+//                            gs.setColor(Color.BLACK);
+//                            gs.drawLine(j * 30 + pixoff, i * 30 + pixoff, j * 30 + pixoff + 30, i * 30 + pixoff + 30);
+//                            gs.drawLine(j * 30 + pixoff + 30, i * 30 + pixoff, j * 30 + pixoff, i * 30 + pixoff + 30);
+
+//                            int x0 = j * 30 + pixoff;
+//                            int y0 = i * 30 + pixoff;
+//                            int w = 30;
+//                            int[] xs = {x0+w/2,x0,x0+w,x0,x0+w};
+//                            int[] ys = {y0,y0+w,y0+w/2,y0+w/2,y0+w};
+//                            gs.fillPolygon(xs, ys, 5);
+//                            gs.fillOval(x0+w/4,y0+w/4+2,w/2,w/2);
+//                            gs.drawRect(x0,y0,w,w);
+//                        }
+//                    }
+//                }
+                //画圆形
 				for (int i = 0; i < codeOut.length; i++) {
 					for (int j = 0; j < codeOut.length; j++) {
 						if (codeOut[j][i]) {

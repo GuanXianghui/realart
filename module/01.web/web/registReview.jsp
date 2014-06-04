@@ -30,6 +30,7 @@
         <div>身份证姓名<input type="text" id="cert_name" name="certName" value="<%=StringUtils.trimToEmpty((String)request.getAttribute("certName"))%>"></div>
         <div>专栏压题图<input type="file" id="title_photo" name="titlePhoto"></div>
         <div>个人照片&nbsp;&nbsp;<input type="file" id="head_photo" name="headPhoto"></div>
+        <div>邮箱<input type="text" id="email" name="email" value="<%=StringUtils.trimToEmpty((String)request.getAttribute("email"))%>"></div>
         <div>密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" id="password" name="password"></div>
         <div>确认密码&nbsp;&nbsp;<input type="password" id="confirm_password" name="confirmPassword"></div>
         <%

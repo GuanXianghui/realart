@@ -18,6 +18,7 @@ public class User implements UserInterface {
     String certName;
     String titlePhoto;
     String headPhoto;
+    String email;
     String info;
     int state;
     String reason;
@@ -33,6 +34,7 @@ public class User implements UserInterface {
      * @param certName
      * @param titlePhoto
      * @param headPhoto
+     * @param email
      * @param info
      * @param state
      * @param reason
@@ -40,7 +42,7 @@ public class User implements UserInterface {
      * @param registerTime
      * @param registerIp
      */
-    public User(String name, int userType, String password, String certName, String titlePhoto, String headPhoto,
+    public User(String name, int userType, String password, String certName, String titlePhoto, String headPhoto, String email,
                 String info, int state, String reason, String registerDate, String registerTime, String registerIp) {
         this.name = name;
         this.userType = userType;
@@ -48,6 +50,7 @@ public class User implements UserInterface {
         this.certName = certName;
         this.titlePhoto = titlePhoto;
         this.headPhoto = headPhoto;
+        this.email = email;
         this.info = info;
         this.state = state;
         this.reason = reason;
@@ -65,6 +68,7 @@ public class User implements UserInterface {
      * @param certName
      * @param titlePhoto
      * @param headPhoto
+     * @param email
      * @param info
      * @param state
      * @param reason
@@ -73,7 +77,7 @@ public class User implements UserInterface {
      * @param registerIp
      */
     public User(int id, String name, int userType, String password, String certName, String titlePhoto,
-                String headPhoto, String info, int state, String reason, String registerDate, String registerTime,
+                String headPhoto,  String email, String info, int state, String reason, String registerDate, String registerTime,
                 String registerIp) {
         this.id = id;
         this.name = name;
@@ -82,6 +86,7 @@ public class User implements UserInterface {
         this.certName = certName;
         this.titlePhoto = titlePhoto;
         this.headPhoto = headPhoto;
+        this.email = email;
         this.info = info;
         this.state = state;
         this.reason = reason;
@@ -144,6 +149,14 @@ public class User implements UserInterface {
 
     public void setHeadPhoto(String headPhoto) {
         this.headPhoto = headPhoto;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getInfo() {

@@ -5,6 +5,7 @@ import com.realart.entities.User;
 import com.realart.interfaces.ParamInterface;
 import com.realart.interfaces.SymbolInterface;
 import com.realart.interfaces.UserInterface;
+import com.realart.utils.BaseUtil;
 import com.realart.utils.FileUtil;
 import com.realart.utils.ParamUtil;
 import net.sf.json.JSONArray;
@@ -29,6 +30,7 @@ public class RegistArtistAction extends BaseAction implements UserInterface{
     private String certName;
     private File titlePhoto;
     private File headPhoto;
+    private String email;
     private String password;
     private String confirmPassword;
 
@@ -38,11 +40,11 @@ public class RegistArtistAction extends BaseAction implements UserInterface{
      */
     public String execute() throws Exception {
         logger.info("name:[" + name + "],certName:[" + certName + "],titlePhoto:[" + titlePhoto + "]," +
-                "headPhoto:[" + headPhoto + "],password:[" + password + "],confirmPassword:[" +
-                confirmPassword + "]");
+                "headPhoto:[" + headPhoto + "],email:[" + email + "],password:[" + password + "]," +
+                "confirmPassword:[" + confirmPassword + "]");
         //判字段为空
-        if(StringUtils.isBlank(name) || StringUtils.isBlank(certName) || StringUtils.isBlank(password) ||
-                StringUtils.isBlank(confirmPassword)){
+        if(StringUtils.isBlank(name) || StringUtils.isBlank(certName) || StringUtils.isBlank(email) ||
+                StringUtils.isBlank(password) || StringUtils.isBlank(confirmPassword)){
             message = "请输入必输项";
             return ERROR;
         }
@@ -90,19 +92,19 @@ public class RegistArtistAction extends BaseAction implements UserInterface{
         }
 
         //判该名字和用户类型是否已存在
-        boolean isExist = UserDao.isNameExist(name, USER_TYPE_ARTIST);
-        if(isExist){
+        boolean isExist = UserDao.isNameExist(name);
+        if(isExist || BaseUtil.isAdminName(name)){
             message = "该用户名已被用，请更换用户名！";
             return ERROR;
         }
 
         //创建用户
         User user = new User(name, USER_TYPE_ARTIST, password, certName, StringUtils.EMPTY, StringUtils.EMPTY,
-                StringUtils.EMPTY, USER_STATE_NEED_CHECK, StringUtils.EMPTY, date, time, getIp());
+                email, StringUtils.EMPTY, USER_STATE_NEED_CHECK, StringUtils.EMPTY, date, time, getIp());
         UserDao.insertUser(user);
 
         //根据姓名和用户类型查用户
-        user = UserDao.getUserByNameAndUserType(name, USER_TYPE_ARTIST);
+        user = UserDao.getUserByName(name);
 
         //创建压题图
         String titlePhotoRoute = createTitlePhoto(user);
@@ -252,6 +254,14 @@ public class RegistArtistAction extends BaseAction implements UserInterface{
 
     public void setHeadPhoto(File headPhoto) {
         this.headPhoto = headPhoto;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

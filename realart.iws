@@ -57,35 +57,7 @@
     <favorites_list name="realart" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="qrCode.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="8" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="qrCode.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="68" selection-start="6000" selection-end="6000" vertical-scroll-proportion="-8.821428">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GenerateQrCodeAction.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="80" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.418018">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -95,22 +67,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/module/01.web/sql/param.txt" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/SaveDefaultQrCodeFormAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/SaveDefaultQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/ZipCompressorByAnt.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/ZipUtil.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/FileUtil.java" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/BaseUtil.java" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/loginAdmin.js" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/ResetPasswordAction.java" />
+        <option value="$PROJECT_DIR$/module/01.web/web/resetPassword.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/forgetPassword.js" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/LoginAction.java" />
+        <option value="$PROJECT_DIR$/module/01.web/web/logOut.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/login.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/forgetPassword.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/main.jsp" />
         <option value="$PROJECT_DIR$/module/01.web/src/struts.xml" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/DeleteQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/DownloadQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/headerWithOutCheckLogin.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/web/scripts/facebox.js" />
-        <option value="$PROJECT_DIR$/module/01.web/web/css/style.css" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/dao/QrCodeDao.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/qrCode.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js" />
+        <option value="$PROJECT_DIR$/module/01.web/src/config.properties" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/login.js" />
+        <option value="$PROJECT_DIR$/module/01.web/sql/param.txt" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/EmailUtils.java" />
+        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/filter/StrutsFilter.java" />
       </list>
     </option>
   </component>
@@ -155,6 +127,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -187,37 +169,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01.web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="preferences.keymap" />
@@ -230,24 +189,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.realart" />
-      <recent name="com.realart.dao" />
       <recent name="com.realart.interfaces" />
-      <recent name="com.realart.entities" />
       <recent name="com.realart.utils" />
+      <recent name="com.realart.dao" />
+      <recent name="com.realart.entities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\04.my_projects\realart\module\01.web\web\scripts" />
-      <recent name="D:\04.my_projects\realart\module\01.web\web\images\qr" />
-      <recent name="D:\04.my_projects\realart\module\01.web\web\css" />
       <recent name="D:\04.my_projects\realart\module\01.web\web" />
       <recent name="D:\04.my_projects\realart\module\01.web\sql" />
+      <recent name="D:\04.my_projects\realart\module\01.web\src\com\realart\utils\javamail" />
+      <recent name="D:\04.my_projects\realart\module\01.web\web\images\qr" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\04.my_projects\realart\module\01.web\web\css" />
@@ -350,6 +309,123 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="TwoDimensionCode" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.realart.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.realart.utils.qrcode.TwoDimensionCode" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="01.web" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="loginAdmin.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 6">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:80/loginAdmin.jsp" />
+      <option name="UPDATING_POLICY" value="update-resources" />
+      <deployment>
+        <artifact name="01.web:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_realart" />
+      </server-settings>
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59045" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="  " />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="  " />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="  " />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="  " />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="  " />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="  " />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="01.web:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="false" name="EmailUtils" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.realart.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.realart.utils.EmailUtils" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="01.web" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -370,6 +446,24 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -399,24 +493,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -455,6 +531,17 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -478,17 +565,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -559,9 +635,12 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.qrCode.jsp" />
       <item index="1" class="java.lang.String" itemvalue="Application.ZipUtil" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TwoDimensionCode" />
+      <item index="3" class="java.lang.String" itemvalue="Tomcat Server.loginAdmin.jsp" />
+      <item index="4" class="java.lang.String" itemvalue="Application.EmailUtils" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -596,18 +675,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5972461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64888126" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51979345" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8003442" sideWeight="0.5007587" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8003442" sideWeight="0.5037936" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -617,8 +696,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18816389" sideWeight="0.19965577" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8003442" sideWeight="0.4939302" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23899849" sideWeight="0.5628227" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43717727" sideWeight="0.4908953" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -718,120 +797,114 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/FileUtil.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/ResetPasswordAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="25" selection-start="2193" selection-end="2193" vertical-scroll-proportion="0.3837838" />
+        <state line="67" column="18" selection-start="1821" selection-end="1821" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/ZipUtil.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/LoginAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="14" selection-start="371" selection-end="371" vertical-scroll-proportion="0.0" />
+        <state line="78" column="9" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/DeleteQrCodeLogoAction.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/logOut.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" />
+        <state line="7" column="100" selection-start="583" selection-end="583" vertical-scroll-proportion="0.23963964">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/DeleteQrCodeAction.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/forgetPassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="139" selection-end="139" vertical-scroll-proportion="-0.23963964" />
+        <state line="39" column="63" selection-start="1878" selection-end="1878" vertical-scroll-proportion="-8.964286">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/DownloadQrCodeAction.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="28" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.2054054" />
+        <state line="23" column="15" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0626186">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="226" column="33" selection-start="7736" selection-end="7736" vertical-scroll-proportion="0.13693693" />
+        <state line="75" column="42" selection-start="2785" selection-end="2785" vertical-scroll-proportion="0.30810812">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/sql/param.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="57" selection-start="1366" selection-end="1366" vertical-scroll-proportion="0.6846847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="68" selection-start="2428" selection-end="2435" vertical-scroll-proportion="0.4686907">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="627" selection-end="627" vertical-scroll-proportion="0.76036036">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="41" selection-start="354" selection-end="354" vertical-scroll-proportion="0.61621624">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/EmailUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="26" selection-start="920" selection-end="920" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/ForgetPasswordAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="20" selection-start="2586" selection-end="2586" vertical-scroll-proportion="0.54774773">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/interfaces/QrCodeInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="408" selection-end="420" vertical-scroll-proportion="0.0">
+        <state line="24" column="39" selection-start="468" selection-end="468" vertical-scroll-proportion="0.8216216">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/headerWithOutCheckLogin.jsp">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/uploadArt.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="18" selection-start="2777" selection-end="2789" vertical-scroll-proportion="0.29601517">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/facebox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="50" selection-start="2747" selection-end="2794" vertical-scroll-proportion="0.43243244">
-          <folding>
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1401426505085" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="484" column="12" selection-start="12539" selection-end="12545" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/css/jquery-ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="271" column="52" selection-start="18743" selection-end="18743" vertical-scroll-proportion="0.3321033">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/dao/QrCodeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="39" selection-start="3373" selection-end="3373" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/qrCode.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="8" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="68" selection-start="6000" selection-end="6000" vertical-scroll-proportion="-8.821428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/TwoDimensionCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="434" column="24" selection-start="17393" selection-end="17393" vertical-scroll-proportion="0.8810811">
+        <state line="16" column="38" selection-start="503" selection-end="503" vertical-scroll-proportion="0.59143966">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/GenerateQrCodeAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="80" selection-start="3249" selection-end="3249" vertical-scroll-proportion="0.418018">
+        <state line="74" column="53" selection-start="2657" selection-end="2657" vertical-scroll-proportion="0.3117117">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/filter/StrutsFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="10" selection-start="1923" selection-end="1923" vertical-scroll-proportion="0.61621624">
           <folding />
         </state>
       </provider>
@@ -914,7 +987,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>qr</last-edited>
+          <last-edited>javamail</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

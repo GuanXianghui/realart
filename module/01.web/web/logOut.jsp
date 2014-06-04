@@ -5,6 +5,6 @@
     request.getSession().setAttribute(BaseInterface.USER_KEY, null);
     request.getSession().setAttribute(BaseInterface.IS_ADMIN_USER, Boolean.FALSE);
     request.getSession().setAttribute(BaseInterface.ADMIN_USER_NAME, null);
-    String resp = "{isSuccess:true,message:'退出成功！',isRedirect:true,redirectUrl:'" + baseUrl + "loginAdmin.jsp'}";
+    String resp = "{isSuccess:true,message:'退出成功！',isRedirect:true,redirectUrl:'" + baseUrl + "login.jsp'}";
     response.getWriter().write(resp);
 %>

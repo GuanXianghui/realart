@@ -13,7 +13,7 @@
         response.sendRedirect("/index.jsp");
         return;
     }
-    User artistUser = UserDao.getUserByNameAndUserType(name, UserInterface.USER_TYPE_ARTIST);
+    User artistUser = UserDao.getUserByName(name);
     if(artistUser == null){
         response.sendRedirect("/index.jsp");
         return;

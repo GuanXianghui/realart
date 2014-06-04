@@ -2,7 +2,7 @@ package com.realart;
 
 import com.realart.interfaces.QrCodeInterface;
 import com.realart.utils.TokenUtil;
-import com.realart.utils.TwoDimensionCode;
+import com.realart.utils.qrcode.TwoDimensionCode;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 

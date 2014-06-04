@@ -1,13 +1,18 @@
 package com.realart.utils;
 
+import com.realart.dao.UserTokenDao;
 import com.realart.entities.Art;
 import com.realart.entities.User;
+import com.realart.entities.UserToken;
 import com.realart.interfaces.BaseInterface;
+import com.realart.interfaces.ParamInterface;
 import com.realart.interfaces.SymbolInterface;
+import com.realart.interfaces.UserTokenInterface;
 import org.apache.commons.lang.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * 基础工具类
@@ -17,6 +22,19 @@ import java.util.List;
  * @datetime 14-3-30 12:09
  */
 public class BaseUtil implements BaseInterface, SymbolInterface {
+    /**
+     * 判图片验证码是否正确
+     *
+     * @param request
+     * @param securityCode
+     */
+    public static boolean checkSecurityCode(HttpServletRequest request, String securityCode) throws Exception {
+        if(!StringUtils.equals((String)request.getSession().getAttribute(BaseInterface.SESSION_SECURITY_CODE), securityCode)) {
+            return false;
+        }
+        return true;
+    }
+
     /**
      * 判登录
      *
@@ -89,24 +107,85 @@ public class BaseUtil implements BaseInterface, SymbolInterface {
     }
 
     /**
+     * 校验管理员用户姓名
+     * @param name
+     * @throws Exception
+     */
+    public static boolean isAdminName(String name) throws Exception {
+        String[] users = PropertyUtil.getInstance().getProperty(ADMIN_USER).split(SYMBOL_COMMA);
+        for(int i=0;i<users.length;i++){
+            String user = users[i];
+            if(StringUtils.equals(name, user)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * 校验管理员用户
      * @param name
      * @param password
      * @throws Exception
      */
     public static void checkAdminUser(String name, String password) throws Exception {
-        String[] users = PropertyUtil.getInstance().getProperty(ADMIN_USER).split(SYMBOL_COMMA);
-        String[] passwords = PropertyUtil.getInstance().getProperty(ADMIN_PASSWORD).split(SYMBOL_COMMA);
-        for(int i=0;i<users.length;i++){
-            String user = users[i];
-            if(StringUtils.equals(name, user)){
-                if(StringUtils.equals(password, passwords[i])){
-                    return;
-                }else{
-                    throw new RuntimeException("你的密码输入错误！");
-                }
+        String user = PropertyUtil.getInstance().getProperty(ADMIN_USER);
+        String userPassword = ParamUtil.getInstance().getValueByName(ParamInterface.ADMIN_PASSWORD);
+        if(StringUtils.equals(name, user)){
+            if(StringUtils.equals(password, userPassword)){
+                return;
+            }else{
+                throw new RuntimeException("你的密码输入错误！");
             }
         }
         throw new RuntimeException("不存在该管理员用户[" + name + "]！");
+    }
+
+    /**
+     * 创建用户TOKEN
+     * @param userId
+     * @param createDate
+     * @param createTime
+     * @param createIp
+     * @return
+     */
+    public static UserToken createUserToken(int userId, String createDate, String createTime, String createIp) throws Exception {
+        UserToken userToken = new UserToken(UUID.randomUUID().toString(), userId, UserTokenInterface.STATE_EFFECTIVE,
+                createDate, createTime, createIp, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY);
+        UserTokenDao.insertUserToken(userToken);
+        return userToken;
+    }
+
+    /**
+     * 判userToken有效
+     * @param userId
+     * @param token
+     * @return
+     * @throws Exception
+     */
+    public static boolean checkUserToken(int userId, String token) throws Exception {
+        UserToken userToken = UserTokenDao.getUserToken(token);
+        if(null == userToken || userToken.getUserId() != userId || userToken.getState() != UserTokenInterface.STATE_EFFECTIVE){
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * 置userToken失效
+     * @param userId
+     * @param token
+     * @return
+     * @throws Exception
+     */
+    public static void disableUserToken(int userId, String token, String updateDate, String updateTime, String updateIp) throws Exception {
+        UserToken userToken = UserTokenDao.getUserToken(token);
+        if(userToken.getUserId() == userId){
+            userToken.setState(UserTokenInterface.STATE_NOT_EFFECTIVE);
+            userToken.setUpdateDate(updateDate);
+            userToken.setUpdateTime(updateTime);
+            userToken.setUpdateIp(updateIp);
+            UserTokenDao.updateUserTokenState(userToken);
+        }
     }
 }

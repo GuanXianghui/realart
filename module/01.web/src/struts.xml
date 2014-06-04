@@ -11,6 +11,14 @@
     <!-- 修改struts2配置上传文件最大Size 100M -->
     <constant name="struts.multipart.maxSize" value="100000000"/>
     <package name="default" namespace="/" extends="struts-default">
+        <!-- 图片验证码 -->
+        <action name="securityCodeImage" class="com.realart.SecurityCodeImageAction">
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">imageStream</param>
+                <param name="bufferSize">2048</param>
+            </result>
+        </action>
         <action name="registReview" class="com.realart.RegistReviewAction">
             <result>
                 /registReview.jsp
@@ -230,6 +238,24 @@
             </result>
             <result name="error">
                 /qrCode.jsp
+            </result>
+        </action>
+        <action name="forgetPassword" class="com.realart.ForgetPasswordAction">
+        </action>
+        <action name="resetPassword" class="com.realart.ResetPasswordAction">
+            <result>
+                /login.jsp
+            </result>
+            <result name="error">
+                /resetPassword.jsp
+            </result>
+        </action>
+        <action name="login" class="com.realart.LoginAction">
+            <result>
+                /indexImg.jsp
+            </result>
+            <result name="error">
+                /login.jsp
             </result>
         </action>
     </package>

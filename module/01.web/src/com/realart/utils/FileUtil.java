@@ -41,6 +41,20 @@ public class FileUtil {
     }
 
     /**
+     * 写文件
+     * @param filePath
+     * @param content
+     * @throws Exception
+     */
+    public static void writeFile(String filePath, String content) throws Exception {
+        FileOutputStream outSTr = new FileOutputStream(new File(filePath));
+        BufferedOutputStream Buff=new BufferedOutputStream(outSTr);
+        Buff.write(content.getBytes());
+        Buff.flush();
+        Buff.close();
+    }
+
+    /**
      * 拷贝文件
      * @param src
      * @param dst

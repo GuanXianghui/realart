@@ -10,7 +10,7 @@
     <script type="text/javascript" src="<%=baseUrl%>scripts/simpla.jquery.configuration.js"></script>
     <script type="text/javascript" src="<%=baseUrl%>scripts/md5.js"></script>
     <script type="text/javascript" src="<%=baseUrl%>scripts/base.js"></script>
-    <script type="text/javascript" src="<%=baseUrl%>scripts/loginAdmin.js"></script>
+    <script type="text/javascript" src="<%=baseUrl%>scripts/login.js"></script>
 </head>
 <body id="login" onkeypress="keyPress(event)">
 <div id="login-wrapper" class="png_bg">
@@ -19,7 +19,7 @@
         <img id="logo" src="images/realart_logo.png" width="60" alt="真艺网" />
     </div>
     <div id="login-content">
-        <form name="loginAdminForm" action="loginAdmin.do" method="post">
+        <form name="loginForm" action="login.do" method="post">
             <input type="hidden" name="token" value="<%=token%>">
             <div id="message_id" class="notification information png_bg" style="display: none;">
                 <a href="#" class="close">
@@ -27,24 +27,14 @@
                 </a>
                 <div id="message_id_content"> 提示信息！ </div>
             </div>
-            <%
-                if(isAdminLogin){
-            %>
-            <div align="center">
-                <input style="width: 100%" class="button" type="button" value="您已登陆，点击直接进入主页"
-                        onclick="location.href=baseUrl+'indexImg.jsp';">
-            </div>
-            <%
-                } else {
-            %>
             <p>
                 <label>用户名</label>
-                <input class="text-input" name="name" type="text" id="name" value="admin"/>
+                <input class="text-input" name="name" type="text" id="name"/>
             </p>
             <div class="clear"></div>
             <p>
                 <label>密码</label>
-                <input class="text-input" name="password" type="password" id="password" value="admin"/>
+                <input class="text-input" name="password" type="password" id="password"/>
             </p>
             <div class="clear"></div>
             <p>
@@ -56,12 +46,9 @@
             <div class="clear"></div>
             <div class="clear"></div>
             <p style="text-align: center">
-                <input class="button" type="button" onclick="login();" value="登录" />
+                <input class="button" type="button" onclick="login();" value="统一登录" />
                 <a href="forgetPassword.jsp">忘记密码?</a>
             </p>
-            <%
-                }
-            %>
         </form>
     </div>
 </div>

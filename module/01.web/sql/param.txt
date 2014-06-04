@@ -17,3 +17,4 @@ INSERT INTO param(name, value, info) VALUES ('artist_user_regist_items','[]','艺
 INSERT INTO param(name, value, info) VALUES ('check_wrong_reason','','审核失败原因');
 INSERT INTO param(name, value, info) VALUES ('default_qr_code','','默认二维码配置');
 INSERT INTO param(name, value, info) VALUES ('default_qr_code_info','','默认二维码相关信息');
+INSERT INTO param(name, value, info) VALUES ('admin_password','0e4dfa74c5b8a7d27e0f19b2eb6f54f0','管理员密码密文');

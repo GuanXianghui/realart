@@ -7,6 +7,7 @@ import com.realart.utils.DateUtil;
 import com.realart.utils.FileUtil;
 import com.realart.utils.TokenUtil;
 import com.realart.utils.ZipUtil;
+import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
 
 import java.util.List;
@@ -45,12 +46,27 @@ public class DownloadQrCodeAction extends BaseAction implements QrCodeInterface{
                     TokenUtil.createToken(request) + "'}";
             write(resp);
         } else {
+            /**
+             * 备注文件内容
+             * 格式：
+             * 序列号1 二维码对应地址1
+             * 序列号2 二维码对应地址2
+             * ...
+             */
+            String fileName = fetchDir + "/" + fetchNo + ".txt";
+            String fileContent = StringUtils.EMPTY;
             //批量 拷贝文件到新建文件夹中
             for(QrCode qrCode : qrCodes){
                 //拷贝文件到新建文件夹中
                 String qrCodeFileName = qrCode.getUuid() + ".png";
                 FileUtil.copy(serverPath + "/" + qrCodeFileName, fetchDir + "/" + qrCodeFileName);
+                if(StringUtils.isNotBlank(fileContent)){
+                    fileContent += "\r\n";
+                }
+                fileContent += "序列号:[" + qrCode.getUuid() + "]对应网址[" + QR_CODE_URL_PREFIX + qrCode.getUuid() + "]";
             }
+            //生成备注文件
+            FileUtil.writeFile(fileName, fileContent);
             //压缩文件夹
             String zipFile = serverPath + "/" + fetchNo + ".zip";
             ZipUtil.compressDir(fetchDir, zipFile);

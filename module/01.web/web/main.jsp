@@ -39,6 +39,8 @@
     <div><a href="adminRegistArtist.jsp" target="right" onclick="clickA(this)">管理员注册艺术家界面</a></div>
     <div><a href="checkUpArtist.jsp" target="right" onclick="clickA(this)">管理员审核艺术家</a></div>
     <div><a href="checkUpArt.jsp" target="right" onclick="clickA(this)">管理员审核艺术品</a></div>
+    <hr>
+    <div><a href="login.jsp" target="right" onclick="clickA(this)">统一登录页面</a></div>
 </div>
 </body>
 </html>

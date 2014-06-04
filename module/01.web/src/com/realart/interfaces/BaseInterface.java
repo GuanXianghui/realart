@@ -37,15 +37,31 @@ public interface BaseInterface {
      */
     public static final String ADMIN_USER_NAME = "adminUserName";
     /**
-     * 管理员用户 逗号隔开
+     * 管理员用户
      */
     public static final String ADMIN_USER = "admin_user";
-    /**
-     * 管理员密码 逗号隔开
-     */
-    public static final String ADMIN_PASSWORD = "admin_password";
     /**
      * 二维码页面大小
      */
     public static final String QR_CODE_PAGE_SIZE = "qr_code_page_size";
+    /**
+     * 图片验证码
+     */
+    public static final String SESSION_SECURITY_CODE = "session_security_code";
+    /**
+     * 对外通讯 邮件服务地址
+     */
+    public static final String EMAIL_HOST = "email_host";
+    /**
+     * 对外通讯 邮件服务端口
+     */
+    public static final String EMAIL_PORT = "email_port";
+    /**
+     * 对外通讯 邮件名
+     */
+    public static final String EMAIL_NAME = "email_name";
+    /**
+     * 对外通讯 邮件密码
+     */
+    public static final String EMAIL_PASSWORD = "email_password";
 }

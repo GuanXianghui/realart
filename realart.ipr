@@ -21,6 +21,7 @@
             <element id="library" level="project" name="struts2_lib" />
             <element id="library" level="project" name="ueditor" />
             <element id="library" level="project" name="qr" />
+            <element id="library" level="project" name="javamail" />
           </element>
         </element>
       </root>
@@ -215,6 +216,15 @@
       </SOURCES>
       <jarDirectory url="file://$PROJECT_DIR$/lib/apache" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/apache" recursive="false" type="SOURCES" />
+    </library>
+    <library name="javamail">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/javamail" />
+        <root url="file://$PROJECT_DIR$/lib/javamail" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/javamail" recursive="false" />
     </library>
     <library name="json">
       <CLASSES>

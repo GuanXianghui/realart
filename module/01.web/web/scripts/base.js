@@ -310,3 +310,11 @@ function logOut(){
         }
     });
 }
+
+/**
+ * 看不清，换一张验证码
+ * @param t
+ */
+function changeSecurityCode(t){
+    $(t).attr("src","securityCodeImage.do?timestamp="+new Date().getTime());
+}

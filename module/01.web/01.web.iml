@@ -27,6 +27,7 @@
     <orderEntry type="library" name="struts2_lib" level="project" />
     <orderEntry type="library" name="ueditor" level="project" />
     <orderEntry type="library" name="qr" level="project" />
+    <orderEntry type="library" name="javamail" level="project" />
   </component>
 </module>
 

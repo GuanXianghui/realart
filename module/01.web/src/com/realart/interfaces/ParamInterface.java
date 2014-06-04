@@ -60,4 +60,8 @@ public interface ParamInterface extends BaseInterface {
      * 默认二维码相关信息
      */
     public static final String DEFAULT_QR_CODE_INFO = "default_qr_code_info";
+    /**
+     * 管理员密码密文
+     */
+    public static final String ADMIN_PASSWORD = "admin_password";
 }

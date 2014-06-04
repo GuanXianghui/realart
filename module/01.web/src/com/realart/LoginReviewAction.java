@@ -29,7 +29,7 @@ public class LoginReviewAction extends BaseAction implements UserInterface{
         }
 
         //根据姓名和用户类型查用户
-        User user = UserDao.getUserByNameAndUserType(name, USER_TYPE_REVIEW);
+        User user = UserDao.getUserByName(name);
         if(user == null){
             message = "不存在该用户名:[" + name + "]";
             return ERROR;

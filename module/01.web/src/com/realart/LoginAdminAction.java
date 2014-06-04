@@ -29,6 +29,12 @@ public class LoginAdminAction extends BaseAction implements UserInterface{
             return ERROR;
         }
 
+        //判图片验证码是否正确
+        if(!checkSecurityCode()){
+            message = "图片验证码输入错误";
+            return ERROR;
+        }
+
         try{
             //校验管理员用户
             BaseUtil.checkAdminUser(name, password);

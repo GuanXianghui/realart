@@ -3,6 +3,7 @@ package com.realart;
 import com.opensymphony.xwork2.ActionSupport;
 import com.realart.entities.User;
 import com.realart.interfaces.BaseInterface;
+import com.realart.utils.BaseUtil;
 import com.realart.utils.DateUtil;
 import com.realart.utils.IPAddressUtil;
 import org.apache.log4j.Logger;
@@ -28,6 +29,11 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
      * 日志处理器
      */
     Logger logger = Logger.getLogger(BaseAction.class);
+
+    /**
+     * 图片验证码
+     */
+    String securityCode;
 
     /**
      * 当前时间
@@ -130,6 +136,15 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
         writer.close();
     }
 
+    /**
+     * 判图片验证码是否正确
+     * @return
+     * @throws Exception
+     */
+    public boolean checkSecurityCode() throws Exception {
+        return BaseUtil.checkSecurityCode(request, securityCode);
+    }
+
     public String getToken() {
         return token;
     }
@@ -152,5 +167,13 @@ public class BaseAction extends ActionSupport implements ServletRequestAware, Se
 
     public void setServletResponse(HttpServletResponse response) {
         this.response = response;
+    }
+
+    public String getSecurityCode() {
+        return securityCode;
+    }
+
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
     }
 }

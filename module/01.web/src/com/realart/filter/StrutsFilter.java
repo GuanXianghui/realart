@@ -54,7 +54,7 @@ public class StrutsFilter extends StrutsPrepareAndExecuteFilter implements BaseI
             return;
         } else {
             //.do结尾才要这些判断
-            if(url.endsWith(".do")){
+            if(url.endsWith(".do") && !url.endsWith("securityCodeImage.do")){
                 String ip = IPAddressUtil.getIPAddress(request);
                 String token = request.getParameter(TOKEN_KEY);
                 logger.info("ip:[" + ip + "]，token:[" + token + "]");
@@ -78,7 +78,9 @@ public class StrutsFilter extends StrutsPrepareAndExecuteFilter implements BaseI
                         (Boolean.TRUE != request.getSession().getAttribute(IS_ADMIN_USER)) &&
                         !url.endsWith("registReview.do")  && !url.endsWith("loginReview.do") &&
                         !url.endsWith("loginAdmin.do") && !url.endsWith("adminRegistArtist.do") &&
-                        !url.endsWith("registArtist.do") && !url.endsWith("loginArtist.do")) {
+                        !url.endsWith("registArtist.do") && !url.endsWith("loginArtist.do") &&
+                        !url.endsWith("forgetPassword.do") && !url.endsWith("resetPassword.do") &&
+                        !url.endsWith("login.do")) {
                     logger.error("用户未登录");
                     ((HttpServletResponse) res).sendRedirect(request.getContextPath() + "error.jsp");
                     return;

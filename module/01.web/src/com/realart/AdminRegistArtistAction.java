@@ -3,6 +3,7 @@ package com.realart;
 import com.realart.dao.UserDao;
 import com.realart.entities.User;
 import com.realart.interfaces.UserInterface;
+import com.realart.utils.BaseUtil;
 import org.apache.commons.lang.StringUtils;
 
 /**
@@ -34,15 +35,15 @@ public class AdminRegistArtistAction extends BaseAction implements UserInterface
             return ERROR;
         }
         //判该名字和用户类型是否已存在
-        boolean isExist = UserDao.isNameExist(name, USER_TYPE_ARTIST);
-        if(isExist){
+        boolean isExist = UserDao.isNameExist(name);
+        if(isExist || BaseUtil.isAdminName(name)){
             message = "该用户名已被用，请更换用户名！";
             return ERROR;
         }
 
         //创建用户
         User user = new User(name, USER_TYPE_ARTIST, password, StringUtils.EMPTY, StringUtils.EMPTY,
-                StringUtils.EMPTY, "{}", USER_STATE_NEED_CHECK, StringUtils.EMPTY, date, time, getIp());
+                StringUtils.EMPTY, StringUtils.EMPTY, "{}", USER_STATE_NEED_CHECK, StringUtils.EMPTY, date, time, getIp());
         UserDao.insertUser(user);
 
         //刷新session缓存中的user

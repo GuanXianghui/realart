@@ -12,7 +12,7 @@
         response.sendRedirect("/index.jsp");
         return;
     }
-    User reviewUser = UserDao.getUserByNameAndUserType(name, UserInterface.USER_TYPE_REVIEW);
+    User reviewUser = UserDao.getUserByName(name);
     if(reviewUser == null){
         response.sendRedirect("/index.jsp");
         return;

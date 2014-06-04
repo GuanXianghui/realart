@@ -1,4 +1,4 @@
-package com.realart.utils;
+package com.realart.utils.qrcode;
 
 import java.awt.image.BufferedImage;
 
