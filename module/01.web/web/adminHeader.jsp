@@ -6,7 +6,7 @@
     if(!BaseUtil.isAdminLogin(request))
     {
         //域名链接
-        response.sendRedirect(baseUrl + "loginAdmin.jsp");
+        response.sendRedirect(baseUrl + "login.jsp");
         return;
     }
     //外层

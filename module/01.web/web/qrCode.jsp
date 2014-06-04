@@ -459,7 +459,7 @@
                                 <%
                                 } else {
                                 %>
-                                已绑定艺术品[id=<%=qrCodes.get(i).getArtId()%>]
+                                已绑定艺术品[id=<%=qrCodes.get(i).getArtId()%>],<a href="showArt.jsp?id=<%=qrCodes.get(i).getArtId()%>" target="_blank">查看</a>
                                 <%--<input class="button" type="button" onclick="showArt(<%=qrCodes.get(i).getArtId()%>)" value="已绑定艺术品[id=<%=qrCodes.get(i).getArtId()%>]">--%>
                                 <%
                                     }

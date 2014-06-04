@@ -30,6 +30,14 @@ public class MailSenderInfo {
         p.put("mail.smtp.host", this.mailServerHost);
         p.put("mail.smtp.port", this.mailServerPort);
         p.put("mail.smtp.auth", validate ? "true" : "false");
+        /**
+         * 加入以下几项配置，解决linux tomcat下发送没报错，但是邮件没发成功的问题
+         */
+        p.put("mail.smtp.from", this.userName);
+        p.put("mail.smtp.localhost", "localHostAdress");
+        p.put("mail.transport.protocol", "smtp");
+        p.put("mail.store.protocol", "smtp");
+        p.put("mail.pop3.host", this.mailServerHost);
         return p;
     }
     public String getMailServerHost() {

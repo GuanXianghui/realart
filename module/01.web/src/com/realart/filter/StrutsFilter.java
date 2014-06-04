@@ -52,6 +52,10 @@ public class StrutsFilter extends StrutsPrepareAndExecuteFilter implements BaseI
             String name = url.substring(url.indexOf("/a/") + "/a/".length());
             request.getRequestDispatcher("/artistUser.jsp?name=" + name).forward(request,response);
             return;
+        } else if (-1 != url.indexOf("/qr/") && -1 == url.indexOf("images")) {
+            String qr = url.substring(url.indexOf("/qr/") + "/qr/".length());
+            response.sendRedirect("/uploadArt.jsp?qr=" + qr);
+            return;
         } else {
             //.do结尾才要这些判断
             if(url.endsWith(".do") && !url.endsWith("securityCodeImage.do")){

@@ -1,11 +1,11 @@
 package com.realart;
 
 import com.realart.dao.ArtDao;
-import com.realart.dao.UserDao;
+import com.realart.dao.QrCodeDao;
 import com.realart.entities.Art;
-import com.realart.entities.User;
+import com.realart.entities.QrCode;
 import com.realart.interfaces.ArtInterface;
-import com.realart.interfaces.UserInterface;
+import com.realart.interfaces.QrCodeInterface;
 import com.realart.utils.FileUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.struts2.ServletActionContext;
@@ -21,6 +21,7 @@ import java.util.Date;
  * @datetime 14-5-10 19:20
  */
 public class UploadArtAction extends BaseAction implements ArtInterface {
+    private String qr;
     private String name;
     private File photo;
     private File photo0;
@@ -46,11 +47,11 @@ public class UploadArtAction extends BaseAction implements ArtInterface {
                 photo1 + "],photo2:[" + photo2 + "],photo3:[" + photo3 + "],photo4:[" + photo4 + "]," +
                 "gongyi:[" + gongyi + "],type:[" + type + "],length:[" + length + "],width:[" + width + "]," +
                 "height:[" + height + "],buildDate:[" + buildDate + "],title:[" + title + "],introduction:" +
-                "[" + introduction + "]");
+                "[" + introduction + "],qr:[" + qr + "]");
         //判字段为空
         if(StringUtils.isBlank(name) || StringUtils.isBlank(gongyi) || StringUtils.isBlank(type) ||
                 StringUtils.isBlank(length) || StringUtils.isBlank(width) || StringUtils.isBlank(height) ||
-                StringUtils.isBlank(buildDate) || StringUtils.isBlank(title)){
+                StringUtils.isBlank(buildDate) || StringUtils.isBlank(title) || StringUtils.isBlank(qr)){
             message = "请输入必输项";
             return ERROR;
         }
@@ -58,6 +59,12 @@ public class UploadArtAction extends BaseAction implements ArtInterface {
         if(null == photo || null == photo0)
         {
             message = "请上传必须的图片!";
+            return ERROR;
+        }
+
+        QrCode qrCode = QrCodeDao.getQrCodeByUuid(qr);
+        if(qrCode == null || qrCode.getState() != QrCodeInterface.STATE_NOT_USE){
+            message = "序列号已失效!";
             return ERROR;
         }
 
@@ -89,6 +96,11 @@ public class UploadArtAction extends BaseAction implements ArtInterface {
         art.setPhoto4(photoRoute4);
         ArtDao.updatePhotos(art);
 
+        //绑定二维码 更新二维码
+        qrCode.setArtId(art.getId());
+        qrCode.setState(QrCodeInterface.STATE_USED);
+        QrCodeDao.updateQrCode(qrCode);
+
         message = "作品备案成功！";
         return SUCCESS;
     }
@@ -114,6 +126,14 @@ public class UploadArtAction extends BaseAction implements ArtInterface {
         //拷贝文件
         FileUtil.copy(photo, imageFile);
         return photoPagePath;
+    }
+
+    public String getQr() {
+        return qr;
+    }
+
+    public void setQr(String qr) {
+        this.qr = qr;
     }
 
     public String getName() {

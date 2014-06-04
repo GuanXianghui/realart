@@ -297,15 +297,15 @@ public class TwoDimensionCode {
     /**
      * 生成二维码(QRCode)图片的定制方法
      * @param content 存储内容
-     * @param antiError 二维码排错率
-     * @param size 二维码尺寸
+     * @param antiError 二维码排错率 可选L(7%)、M(15%)、Q(25%)、H(30%)，排错率越高可存储的信息越少，但对二维码清晰度的要求越小
+     * @param size 二维码尺寸 取值范围1-40，值越大尺寸越大，可存储的信息越大
      * @param bgColor 背景颜色
      * @param frontColor 前景颜色
      * @param type 形态 1 液态 2 直角 3 圆形
      * @param qrLogoFile logo图片 null则不带logo
      * @param logoBorderType logo边缘 1 无边框 2 直角 3 圆角
      * @param logoBorderColor logo边缘颜色
-     * @param imgRoute 图片路径
+     * @param imgRoute 保存图片路径
      * @return
      */
     public void customQrCode(String content, char antiError, int size, Color bgColor, Color frontColor,
@@ -477,10 +477,10 @@ public class TwoDimensionCode {
 		handler.encoderQRCode(content, imgPath, "png");
 		System.out.println("========encoder success");
 
-//		//解析二维码
-//		String decoderContent = handler.decoderQRCode(imgPath);
-//		System.out.println("解析结果如下：");
-//		System.out.println(decoderContent);
-//		System.out.println("========decoder success!!!");
+		//解析二维码
+		String decoderContent = handler.decoderQRCode(imgPath);
+		System.out.println("解析结果如下：");
+		System.out.println(decoderContent);
+		System.out.println("========decoder success!!!");
 	}
 }

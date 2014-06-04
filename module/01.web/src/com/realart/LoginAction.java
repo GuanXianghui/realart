@@ -16,13 +16,14 @@ import org.apache.commons.lang.StringUtils;
 public class LoginAction extends BaseAction implements UserInterface{
     private String name;
     private String password;
+    private String jumpUrl;
 
     /**
      * 入口
      * @return
      */
     public String execute() throws Exception {
-        logger.info("name:[" + name + "],password:[" + password + "]");
+        logger.info("name:[" + name + "],password:[" + password + "],jumpUrl:[" + jumpUrl + "]");
         //判字段为空
         if(StringUtils.isBlank(name) || StringUtils.isBlank(password)){
             message = "请输入必输项";
@@ -56,7 +57,11 @@ public class LoginAction extends BaseAction implements UserInterface{
             //刷新session缓存中的管理员用户名
             refreshSessionAdminUser(name);
             message = "登录成功！";
-            response.sendRedirect("indexImg.jsp");
+            if(StringUtils.isNotBlank(jumpUrl)){
+                response.sendRedirect(jumpUrl);
+            } else {
+                response.sendRedirect("indexImg.jsp");
+            }
         } else {
             //根据姓名和用户类型查用户
             User user = UserDao.getUserByName(name);
@@ -71,10 +76,14 @@ public class LoginAction extends BaseAction implements UserInterface{
             //清空session缓存中的管理员用户
             clearSessionAdminUser();
             message = "登录成功！";
-            if(user.getUserType() == USER_TYPE_ARTIST){
-                response.sendRedirect("artistConsole.jsp");
-            } else if(user.getUserType() == USER_TYPE_REVIEW){
-                response.sendRedirect("createReview.jsp");
+            if(StringUtils.isNotBlank(jumpUrl)){
+                response.sendRedirect(jumpUrl);
+            } else {
+                if(user.getUserType() == USER_TYPE_ARTIST){
+                    response.sendRedirect("artistConsole.jsp");
+                } else if(user.getUserType() == USER_TYPE_REVIEW){
+                    response.sendRedirect("createReview.jsp");
+                }
             }
         }
         return null;
@@ -94,5 +103,13 @@ public class LoginAction extends BaseAction implements UserInterface{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getJumpUrl() {
+        return jumpUrl;
+    }
+
+    public void setJumpUrl(String jumpUrl) {
+        this.jumpUrl = jumpUrl;
     }
 }

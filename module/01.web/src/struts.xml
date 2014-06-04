@@ -92,7 +92,7 @@
         </action>
         <action name="uploadArt" class="com.realart.UploadArtAction">
             <result>
-                /uploadArt.jsp
+                /needCheckArts.jsp
             </result>
             <result name="error">
                 /uploadArt.jsp

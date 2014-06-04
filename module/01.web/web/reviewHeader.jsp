@@ -7,7 +7,7 @@
     if(!BaseUtil.isLogin(request) || user.getUserType() != UserInterface.USER_TYPE_REVIEW)
     {
         //域名链接
-        response.sendRedirect(baseUrl + "loginReview.jsp");
+        response.sendRedirect(baseUrl + "login.jsp");
         return;
     }
 %>

@@ -21,6 +21,7 @@
     <div id="login-content">
         <form name="loginForm" action="login.do" method="post">
             <input type="hidden" name="token" value="<%=token%>">
+            <input type="hidden" name="jumpUrl" value="<%=jumpUrl%>">
             <div id="message_id" class="notification information png_bg" style="display: none;">
                 <a href="#" class="close">
                     <img src="images/icons/cross_grey_small.png" title="关闭" alt="关闭"/>

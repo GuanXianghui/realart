@@ -28,6 +28,8 @@
     if(StringUtils.isBlank(message)){
         message = StringUtils.trimToEmpty(request.getParameter("message"));
     }
+    //跳转地址
+    String jumpUrl = StringUtils.trimToEmpty(request.getParameter("jumpUrl"));
 %>
 
 <%
@@ -58,6 +60,12 @@
     String checkWrongReason = ParamUtil.getInstance().getValueByName(ParamInterface.CHECK_WRONG_REASON);
     //艺术品绑定二维码地址前缀
     String qrCodeUrlPrefix = QrCodeInterface.QR_CODE_URL_PREFIX;
+%>
+<%
+    /**
+     * 二维码相关
+     */
+    String qr = StringUtils.trimToEmpty(request.getParameter("qr"));
 %>
 <script type="text/javascript">
     //域名链接

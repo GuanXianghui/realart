@@ -1,3 +1,5 @@
+<%@ page import="com.realart.dao.QrCodeDao" %>
+<%@ page import="com.realart.entities.QrCode" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="artistHeader.jsp" %>
 <%
@@ -5,7 +7,30 @@
 %>
 <script type="text/javascript">
     alert("您的艺术家资料未审核通过");
-    location.href="artistConsole.jsp";
+    location.href="/artistConsole.jsp";
+</script>
+<%
+        return;
+    }
+    //qr为空
+    if(StringUtils.isBlank(qr)){
+%>
+<script type="text/javascript">
+    alert("必须扫描二维码备案艺术品");
+    location.href="/artistConsole.jsp";
+</script>
+<%
+        return;
+    }
+
+    //二维码
+    QrCode qrCode = QrCodeDao.getQrCodeByUuid(qr);
+    //二维码为空 或者 状态不为未被使用
+    if(qrCode == null || qrCode.getState() != QrCodeInterface.STATE_NOT_USE){
+%>
+<script type="text/javascript">
+    alert("序列号已失效");
+    location.href="/artistConsole.jsp";
 </script>
 <%
         return;
@@ -29,9 +54,11 @@
     <img src="images/realart.png" height="100" alt="真艺网">
 </div>
 <div>
-    <form name="uploadArtForm" method="post" autocomplete="off" action="uploadArt.do?token=<%=token%>"
+    <form name="uploadArtForm" method="post" autocomplete="off" action="uploadArt.do?token=<%=token%>&qr=<%=qr%>"
           enctype="multipart/form-data">
         <div align="center">作品备案界面</div>
+        <div>序列号:<%=qr%></div>
+        <div>二维码:<img src="<%=qrCode.getImgPath()%>" width="100"></div>
         <div>作品名称<input type="text" id="name" name="name" value="<%=StringUtils.trimToEmpty((String)request.getAttribute("name"))%>"></div>
         <div>作品主图<input type="file" id="photo" name="photo"></div>
         <div>作者与作品合影<input type="file" id="photo0" name="photo0"></div>
