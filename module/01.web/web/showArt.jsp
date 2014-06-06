@@ -45,6 +45,26 @@
     <script type="text/javascript" src="scripts/jquery-min.js"></script>
     <script type="text/javascript" src="scripts/base.js"></script>
     <script type="text/javascript" src="scripts/showArt.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="scripts/simpla.jquery.configuration.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+            background: #ffffff url('images/b.png') top left repeat-y;
+            font-size: 12px;
+        }
+        .leftTd{
+            text-align : right;
+            width : 150px;
+        }
+        .rightTd{
+            width : 300px;
+        }
+    </style>
     <script type="text/javascript">
         //艺术品id
         var artId = <%=art.getId()%>;
@@ -58,78 +78,177 @@
     <img src="images/realart_logo.png" height="100" alt="真艺网">
     <img src="images/realart.png" height="100" alt="真艺网">
 </div>
-<div>
-    <div>作品名称:<%=art.getName()%>
-        <%
-            if(isAdminLogin){
-        %>
-        <input type="button" value="<%=art.isYszlTop()?"下艺术官网图":"上艺术官网图"%>" onclick="<%=art.isYszlTop()?"yszlTop(0)":"yszlTop(1)"%>">
-        <form name="updateArtLocationBitForm" action="updateArtLocationBit.do" method="post">
-            <input type="hidden" name="token" value="<%=token%>">
-            <input id="updateArtLocationBitArtId" name="artId" type="hidden">
-            <input id="updateArtLocationBitType" name="type" type="hidden">
-            <input id="updateArtLocationBitValue" name="value" type="hidden">
-        </form>
-        <%
-            }
-        %>
-    </div>
-    <div>状态:<%=art.getStateDesc()%></div>
-    <div>艺术家:<%=artistUser.getCertName()%></div>
-    <div>
-        作品主图:<img src="<%=art.getPhoto()%>" width="25%">
-        <%
-            if(user != null && art.getUserId() == user.getId() && StringUtils.isNotBlank(art.getPhoto())){
-                if(art.isSelfTop()){
-        %>
-        <input type="button" value="取消置顶" onclick="location.href='showArt.jsp?id=<%=id%>&setTop=0'">
-        <%
-                } else {
-        %>
-        <input type="button" value="置顶" onclick="location.href='showArt.jsp?id=<%=id%>&setTop=1'">
-        <%
-                }
-            }
-        %>
-    </div>
-    <div>
-        作者与作品合影:<img src="<%=art.getPhoto0()%>" width="25%">
-    </div>
-    <div>
-        作品其他方位图片1:<img src="<%=art.getPhoto1()%>" width="25%">
-    </div>
-    <div>
-        作品其他方位图片2:<img src="<%=art.getPhoto2()%>" width="25%">
-    </div>
-    <div>
-        作品其他方位图片3:<img src="<%=art.getPhoto3()%>" width="25%">
-    </div>
-    <div>
-        作品局部特征图片:<img src="<%=art.getPhoto4()%>" width="25%">
-    </div>
-    <div>
-        主要工艺:<%=art.getGongyi()%>
-    </div>
-    <div>
-        造型种类:<%=art.getType()%>
-    </div>
-    <div>
-        长:<%=art.getLength()%>
-    </div>
-    <div>
-        宽:<%=art.getWidth()%>
-    </div>
-    <div>
-        高:<%=art.getHeight()%>
-    </div>
-    <div>
-        创作时间:<%=art.getBuildDate()%>
-    </div>
-    <div>
-        题款:<%=art.getTitle()%>
-    </div>
-    <div>
-        作品介绍:<%=art.getIntroduction()%>
+<div style="background-color: rgb(212, 212, 204);" align="center">
+    <div style="width: 600px; background-color: rgb(212, 212, 204);" align="left">
+        <br>
+        <br>
+        <div align="center">
+            <table>
+                <tr>
+                    <td class="leftTd">
+                        作品名称:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getName()%>
+                        <%
+                            if(isAdminLogin){
+                        %>
+                        <input class="button" type="button" value="<%=art.isYszlTop()?"下艺术官网图":"上艺术官网图"%>"
+                               onclick="<%=art.isYszlTop()?"yszlTop(0)":"yszlTop(1)"%>">
+                        <form name="updateArtLocationBitForm" action="updateArtLocationBit.do" method="post">
+                            <input type="hidden" name="token" value="<%=token%>">
+                            <input id="updateArtLocationBitArtId" name="artId" type="hidden">
+                            <input id="updateArtLocationBitType" name="type" type="hidden">
+                            <input id="updateArtLocationBitValue" name="value" type="hidden">
+                        </form>
+                        <%
+                            }
+                        %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        状态:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getStateDesc()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        艺术家:
+                    </td>
+                    <td class="rightTd">
+                        <%=artistUser.getCertName()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作品主图:
+                    </td>
+                    <td class="rightTd">
+                        <img src="<%=art.getPhoto()%>" width="25%">
+                        <%
+                            if(user != null && art.getUserId() == user.getId() && StringUtils.isNotBlank(art.getPhoto())){
+                                if(art.isSelfTop()){
+                        %>
+                        <input class="button" type="button" value="取消置顶" onclick="location.href='showArt.jsp?id=<%=id%>&setTop=0'">
+                        <%
+                        } else {
+                        %>
+                        <input class="button" type="button" value="置顶" onclick="location.href='showArt.jsp?id=<%=id%>&setTop=1'">
+                        <%
+                                }
+                            }
+                        %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作者与作品合影:
+                    </td>
+                    <td class="rightTd">
+                        <img src="<%=art.getPhoto0()%>" width="25%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作品其他方位图片1:
+                    </td>
+                    <td class="rightTd">
+                        <img src="<%=art.getPhoto1()%>" width="25%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作品其他方位图片2:
+                    </td>
+                    <td class="rightTd">
+                        <img src="<%=art.getPhoto2()%>" width="25%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作品其他方位图片3:
+                    </td>
+                    <td class="rightTd">
+                        <img src="<%=art.getPhoto3()%>" width="25%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作品局部特征图片:
+                    </td>
+                    <td class="rightTd">
+                        <img src="<%=art.getPhoto4()%>" width="25%">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        主要工艺:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getGongyi()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        造型种类:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getType()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        长:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getLength()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        宽:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getWidth()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        高:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getHeight()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        创作时间:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getBuildDate()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        题款:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getTitle()%>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        作品介绍:
+                    </td>
+                    <td class="rightTd">
+                        <%=art.getIntroduction()%>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 <div align="center" style="background-color: gray;">

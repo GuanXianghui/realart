@@ -44,6 +44,26 @@
     <title>艺术官网</title>
     <script type="text/javascript" src="/scripts/jquery-min.js"></script>
     <script type="text/javascript" src="/scripts/base.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="scripts/simpla.jquery.configuration.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+            background: #ffffff url('images/b.png') top left repeat-y;
+            font-size: 12px;
+        }
+        .leftTd{
+            text-align : right;
+            width : 100px;
+        }
+        .rightTd{
+            width : 300px;
+        }
+    </style>
 </head>
 <body>
 <div align="center" style="background: url('/<%=artistUser.getTitlePhoto()%>');
@@ -59,7 +79,10 @@
         </tr>
     </table>
 </div>
-<div>
+<div style="background-color: rgb(212, 212, 204);" align="center">
+    <div style="width: 600px; background-color: rgb(212, 212, 204);" align="left">
+    <br>
+    <br>
     <div>最新发布</div>
     <div>
         <%
@@ -70,11 +93,13 @@
             }
         %>
     </div>
+        <br>
     <div>人物介绍</div>
     <div>
         <img src="/<%=artistUser.getHeadPhoto()%>" alt="<%=artistUser.getCertName()%>" width="100"><br>
         郭文连XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX郭文连XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX郭文连XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     </div>
+        <br>
     <div>作品备案</div>
     <div>
         <table>
@@ -104,7 +129,9 @@
         %>
         </table>
     </div>
+        <br>
     <div>作品备案</div>
+    </div>
 </div>
 <div align="center" style="background-color: gray;">
     <a href="#"><img width="40" src="/images/button/1.jpg" alt=""></a>

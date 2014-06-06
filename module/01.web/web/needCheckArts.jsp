@@ -31,6 +31,26 @@
     <script type="text/javascript" src="scripts/base.js"></script>
     <script type="text/javascript" src="scripts/pinyin.js"></script>
     <script type="text/javascript" src="scripts/needCheckArts.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="scripts/simpla.jquery.configuration.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+            background: #ffffff url('images/b.png') top left repeat-y;
+            font-size: 12px;
+        }
+        .leftTd{
+            text-align : right;
+            width : 150px;
+        }
+        .rightTd{
+            width : 300px;
+        }
+    </style>
     <script type="text/javascript">
         //艺术品集合json串
         var artJsonStr = "<%=BaseUtil.getJsonArrayFromArts(arts)%>";
@@ -46,44 +66,172 @@
     <img src="images/realart_logo.png" height="100" alt="真艺网">
     <img src="images/realart.png" height="100" alt="真艺网">
 </div>
-<div>
-    <div>待审核艺术品</div>
-    <div>
-        <%
-            for(Art art : arts){
-        %>
-            <a href="javascript: chooseArt(<%=art.getId()%>)"><%=art.getName()%></a>&nbsp;&nbsp;&nbsp;
-        <%
-            }
-        %>
+<div style="background-color: rgb(212, 212, 204);" align="center">
+    <div style="width: 600px; background-color: rgb(212, 212, 204);" align="left">
+        <br>
+        <br>
+        <div>待审核艺术品</div>
+        <div>
+            <%
+                for(Art art : arts){
+            %>
+                <a href="javascript: chooseArt(<%=art.getId()%>)"><%=art.getName()%></a>&nbsp;&nbsp;&nbsp;
+            <%
+                }
+            %>
+        </div>
     </div>
-</div>
-<hr>
-<div>
-    <div>艺术品详情</div>
-    <div>
-        <form name="updateArtForm" method="post" autocomplete="off" action="updateArt.do?token=<%=token%>"
-              enctype="multipart/form-data">
-            <input type="hidden" name="artId" id="updateArtId">
-            <div>作品名称：<span id="name"></span></div>
-            <div>状态：<span id="state"></span></div>
-            <div>作品主图：<span id="photo"></span></div>
-            <div>作者与作品合影：<span id="photo0"></span></div>
-            <div>作品其他方位图片1：<span id="photo1"></span></div>
-            <div>作品其他方位图片2：<span id="photo2"></span></div>
-            <div>作品其他方位图片3：<span id="photo3"></span></div>
-            <div>作品局部特征图片：<span id="photo4"></span></div>
-            <div>主要工艺：<span id="gongyi"></span></div>
-            <div>造型种类：<span id="type"></span></div>
-            <div>长：<span id="length"></span></div>
-            <div>宽：<span id="width"></span></div>
-            <div>高：<span id="height"></span></div>
-            <div>创作时间：<span id="build_date"></span></div>
-            <div>题款：<span id="title"></span></div>
-            <div>作品介绍：<span id="introduction"></span></div>
-            <div><input type="button" value="修改" onclick="updateArt()"></div>
-        </form>
+    <hr>
+    <div style="width: 600px; background-color: rgb(212, 212, 204);" align="left">
+        <br>
+        <br>
+        <div>艺术品详情</div>
+        <div>
+            <form name="updateArtForm" method="post" autocomplete="off" action="updateArt.do?token=<%=token%>"
+                  enctype="multipart/form-data">
+                <input type="hidden" name="artId" id="updateArtId">
+                <div align="center">
+                    <table>
+                        <tr>
+                            <td class="leftTd">
+                                作品名称:
+                            </td>
+                            <td class="rightTd">
+                                <span id="name">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                状态:
+                            </td>
+                            <td class="rightTd">
+                                <span id="state">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作品主图:
+                            </td>
+                            <td class="rightTd">
+                                <span id="photo">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作者与作品合影:
+                            </td>
+                            <td class="rightTd">
+                                <span id="photo0">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作品其他方位图片1:
+                            </td>
+                            <td class="rightTd">
+                                <span id="photo1">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作品其他方位图片2:
+                            </td>
+                            <td class="rightTd">
+                                <span id="photo2">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作品其他方位图片3:
+                            </td>
+                            <td class="rightTd">
+                                <span id="photo3">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作品局部特征图片:
+                            </td>
+                            <td class="rightTd">
+                                <span id="photo4">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                主要工艺:
+                            </td>
+                            <td class="rightTd">
+                                <span id="gongyi">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                造型种类:
+                            </td>
+                            <td class="rightTd">
+                                <span id="type">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                长:
+                            </td>
+                            <td class="rightTd">
+                                <span id="length">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                宽:
+                            </td>
+                            <td class="rightTd">
+                                <span id="width">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                高:
+                            </td>
+                            <td class="rightTd">
+                                <span id="height">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                创作时间:
+                            </td>
+                            <td class="rightTd">
+                                <span id="build_date">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                题款:
+                            </td>
+                            <td class="rightTd">
+                                <span id="title">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                作品介绍:
+                            </td>
+                            <td class="rightTd">
+                                <span id="introduction">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <input class="button" type="button" value="修改" onclick="updateArt()">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
     </div>
+    <br>
+    <br>
 </div>
 <div align="center" style="background-color: gray;">
     <a href="#"><img width="40" src="images/button/1.jpg" alt=""></a>

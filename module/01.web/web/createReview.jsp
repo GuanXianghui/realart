@@ -13,6 +13,26 @@
     <%--<script type="text/javascript" charset="utf-8" src="<%=baseUrl%>ueditor/lang/zh-cn/zh-cn.js"></script>--%>
     <script type="text/javascript" charset="utf-8" src="ueditor/ueditor.parse.min.js"></script>
     <script type="text/javascript" src="scripts/createReview.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="scripts/simpla.jquery.configuration.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+            background: #ffffff url('images/b.png') top left repeat-y;
+            font-size: 12px;
+        }
+        .leftTd{
+            text-align : right;
+            width : 100px;
+        }
+        .rightTd{
+            width : 300px;
+        }
+    </style>
 </head>
 <body>
 <div align="center" style="background: url('images/realart_bg.jpg');
@@ -22,19 +42,57 @@
     <img src="images/realart_logo.png" height="100" alt="真艺网">
     <img src="images/realart.png" height="100" alt="真艺网">
 </div>
-<div>
+<div style="background-color: rgb(212, 212, 204);">
+    <br>
+    <br>
     <form name="createReviewForm" method="post" autocomplete="off" action="createReview.do?token=<%=token%>"
           enctype="multipart/form-data">
-        <div>归类<input type="text" id="type" name="type" value="<%=StringUtils.trimToEmpty((String)request.getAttribute("type"))%>"></div>
-        <div>标题<input type="text" id="title" name="title" value="<%=StringUtils.trimToEmpty((String)request.getAttribute("title"))%>"></div>
-        <div>图片<input type="file" id="photo" name="photo"></div>
-        <textarea style="display: none;" id="content" name="content"></textarea>
-        <div><script id="editor" type="text/plain"></script></div>
-        <div>
-            <input type="button" value="OK 提交" onclick="createReview()">
-            <input type="button" value="重新填写" onclick="rewrite()">
+
+        <div align="center">
+            <table>
+                <tr>
+                    <td class="leftTd">
+                        归类:
+                    </td>
+                    <td class="rightTd">
+                        <input class="text-input between-medium-large-input" type="text" id="type" name="type"
+                               value="<%=StringUtils.trimToEmpty((String)request.getAttribute("type"))%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        标题:
+                    </td>
+                    <td class="rightTd">
+                        <input class="text-input between-medium-large-input" type="text" id="title" name="title"
+                               value="<%=StringUtils.trimToEmpty((String)request.getAttribute("title"))%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="leftTd">
+                        图片:
+                    </td>
+                    <td class="rightTd">
+                        <input class="text-input between-medium-large-input" type="file" id="photo" name="photo">
+                    </td>
+                </tr>
+                <textarea style="display: none;" id="content" name="content"></textarea>
+                <tr>
+                    <td colspan="2" width="500">
+                        <script id="editor" type="text/plain"></script>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input class="button" type="button" value="OK 提交" onclick="createReview()">
+                        <input class="button" type="button" value="重新填写" onclick="rewrite()">
+                    </td>
+                </tr>
+            </table>
         </div>
     </form>
+    <br>
+    <br>
 </div>
 <div align="center" style="background-color: gray;">
     <a href="#"><img width="40" src="images/button/1.jpg" alt=""></a>

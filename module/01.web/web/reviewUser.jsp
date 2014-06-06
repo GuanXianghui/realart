@@ -31,6 +31,26 @@
     <title>评论页面</title>
     <script type="text/javascript" src="/scripts/jquery-min.js"></script>
     <script type="text/javascript" src="/scripts/base.js"></script>
+    <!-- 页面样式 -->
+    <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/invalid.css" type="text/css" media="screen"/>
+    <script type="text/javascript" src="scripts/simpla.jquery.configuration.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #555;
+            background: #ffffff url('images/b.png') top left repeat-y;
+            font-size: 12px;
+        }
+        .leftTd{
+            text-align : right;
+            width : 100px;
+        }
+        .rightTd{
+            width : 300px;
+        }
+    </style>
 </head>
 <body>
 <div align="center" style="background: url('/<%=reviewUser.getTitlePhoto()%>');
@@ -49,29 +69,33 @@
         </tr>
     </table>
 </div>
-<div>
-    <div>陶瓷评论</div>
-    <div>
-        <%
-            for(Review review : topReviews){
-        %>
-        <a href="/showReview.jsp?id=<%=review.getId()%>"><img src="/<%=review.getPhoto()%>" alt="<%=review.getTitle()%>" width="100"></a>
-        <%
-            }
-        %>
-    </div>
-    <div>会员专栏</div>
-    <div>
-        <%
-            for(Review review : reviews){
-        %>
+<div style="background-color: rgb(212, 212, 204);" align="center">
+    <div style="width: 600px; background-color: rgb(212, 212, 204);" align="left">
+        <br>
+        <br>
+        <div>陶瓷评论</div>
         <div>
-            <div style="float: right"><%=reviewUser.getCertName()%></div>
-            <div><a href="/showReview.jsp?id=<%=review.getId()%>"><%=review.getTitle()%></a></div>
+            <%
+                for(Review review : topReviews){
+            %>
+            <a href="/showReview.jsp?id=<%=review.getId()%>"><img src="/<%=review.getPhoto()%>" alt="<%=review.getTitle()%>" width="100"></a>
+            <%
+                }
+            %>
         </div>
-        <%
-            }
-        %>
+        <div>会员专栏</div>
+        <div>
+            <%
+                for(Review review : reviews){
+            %>
+            <div>
+                <div style="float: right"><%=reviewUser.getCertName()%></div>
+                <div><a href="/showReview.jsp?id=<%=review.getId()%>"><%=review.getTitle()%></a></div>
+            </div>
+            <%
+                }
+            %>
+        </div>
     </div>
 </div>
 <div align="center" style="background-color: gray;">

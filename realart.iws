@@ -58,10 +58,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="uploadArt.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/module/01.web/web/uploadArt.jsp">
+      <file leaf-file-name="registArtist.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/01.web/web/registArtist.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="31" selection-start="851" selection-end="851" vertical-scroll-proportion="0.59143966">
+            <state line="116" column="58" selection-start="5069" selection-end="5069" vertical-scroll-proportion="0.48054475">
               <folding />
             </state>
           </provider>
@@ -77,22 +77,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/module/01.web/web/META-INF/context.xml" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/javamail/MailSenderInfo.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/EmailUtils.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/qrcode/TwoDimensionCode.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/adminHeader.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/web/reviewHeader.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/utils/BaseUtil.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/headerWithOutCheckLogin.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/web/login.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/LoginAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/artistHeader.jsp" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/UploadArtAction.java" />
-        <option value="$PROJECT_DIR$/module/01.web/src/struts.xml" />
-        <option value="$PROJECT_DIR$/module/01.web/src/com/realart/filter/StrutsFilter.java" />
-        <option value="$PROJECT_DIR$/module/01.web/web/qrCode.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/reviewUser.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/artistUser.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/showReview.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/showReview.js" />
+        <option value="$PROJECT_DIR$/module/01.web/web/zdtj.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/mwgs.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/bzyc.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/artistUsers.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/reviewUsers.jsp" />
         <option value="$PROJECT_DIR$/module/01.web/web/uploadArt.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/scripts/needCheckArts.js" />
+        <option value="$PROJECT_DIR$/module/01.web/web/needCheckArts.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/updateArtistPassword.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/updateArtistInfo.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/showArt.jsp" />
+        <option value="$PROJECT_DIR$/module/01.web/web/registArtist.jsp" />
       </list>
     </option>
   </component>
@@ -137,6 +137,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="realart" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -153,34 +163,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="01.web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01.web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="realart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="01.web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -699,14 +681,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22719449" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51979345" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -715,15 +696,16 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22230652" sideWeight="0.43201378" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22382398" sideWeight="0.5628227" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22230652" sideWeight="0.5628227" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43717727" sideWeight="0.4908953" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22719449" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -821,114 +803,114 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/utils/BaseUtil.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/zdtj.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="38" selection-start="6957" selection-end="6970" vertical-scroll-proportion="0.45225224">
+        <state line="44" column="9" selection-start="1823" selection-end="2678" vertical-scroll-proportion="-8.642858">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/reviewUsers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="65" selection-start="1275" selection-end="1275" vertical-scroll-proportion="0.28842506">
+        <state line="70" column="29" selection-start="2801" selection-end="2801" vertical-scroll-proportion="-14.071428">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/LoginAction.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/artistUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="22" selection-start="2285" selection-end="2285" vertical-scroll-proportion="0.0">
+        <state line="131" column="8" selection-start="4140" selection-end="4140" vertical-scroll-proportion="-46.964287">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/headerWithOutCheckLogin.jsp">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/reviewUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="13" selection-start="2991" selection-end="2993" vertical-scroll-proportion="-11.464286">
+        <state line="32" column="77" selection-start="1309" selection-end="2049" vertical-scroll-proportion="-1.3571428">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/entities/QrCode.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="320" selection-end="325" vertical-scroll-proportion="0.43603605">
+        <state line="2176" column="2" selection-start="63840" selection-end="63840" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/interfaces/QrCodeInterface.java">
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/artistUsers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="28" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/dao/ArtDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="23" selection-start="5650" selection-end="5650" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/dao/QrCodeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="23" selection-start="11330" selection-end="11330" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/UploadArtAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="26" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="34" selection-start="3471" selection-end="3471" vertical-scroll-proportion="-5.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/artistHeader.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/artistConsole.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="82" selection-start="451" selection-end="451" vertical-scroll-proportion="-7.464286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/src/com/realart/filter/StrutsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="36" selection-start="2151" selection-end="2151" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/showArt.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="27" selection-start="2739" selection-end="2744" vertical-scroll-proportion="-1.9918201">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/01.web/web/qrCode.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="461" column="90" selection-start="22912" selection-end="22919" vertical-scroll-proportion="0.5933852">
+        <state line="51" column="19" selection-start="2200" selection-end="2376" vertical-scroll-proportion="-5.571429">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/01.web/web/uploadArt.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="851" selection-end="851" vertical-scroll-proportion="0.59143966">
+        <state line="103" column="30" selection-start="3374" selection-end="3420" vertical-scroll-proportion="-5.464286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/artistConsole.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="74" selection-start="1616" selection-end="1640" vertical-scroll-proportion="-8.964286">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/createArt.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.43263757">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/bzyc.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="31" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.43263757">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/updateArtistPassword.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="80" selection-start="2244" selection-end="2290" vertical-scroll-proportion="0.35104364">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/updateArtistInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="46" selection-start="2209" selection-end="2537" vertical-scroll-proportion="0.7571157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/showArt.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="259" column="63" selection-start="9536" selection-end="9536" vertical-scroll-proportion="0.5079681">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/needCheckArts.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="55" selection-start="1238" selection-end="1238" vertical-scroll-proportion="-10.392858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/scripts/needCheckArts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="21" selection-start="3672" selection-end="3672" vertical-scroll-proportion="0.701107">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/01.web/web/registArtist.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="58" selection-start="5069" selection-end="5069" vertical-scroll-proportion="0.48054475">
           <folding />
         </state>
       </provider>

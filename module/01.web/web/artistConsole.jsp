@@ -8,7 +8,7 @@
     <script type="text/javascript" src="scripts/md5.js"></script>
     <style type="text/css">
         .a2{
-            background-color: white;
+            background-color: rgb(212, 212, 204);
             width: 60%;
             font-size: 20px;
             font-weight: bold;
