@@ -1,23 +1,23 @@
-//ÒÕÊõÆ·JsonÊı×é
+//è‰ºæœ¯å“Jsonæ•°ç»„
 var artArray = new Array();
 
 /**
- * ³õÊ¼»¯
+ * åˆå§‹åŒ–
  */
 $(document).ready(function() {
     if(message != EMPTY){
         alert(message);
     }
 
-    //´¦ÀíÒÕÊõÆ·json´®
+    //å¤„ç†è‰ºæœ¯å“jsonä¸²
     processArtWithJson();
 });
 
 /**
- * ´¦ÀíÓÃ»§json´®
+ * å¤„ç†ç”¨æˆ·jsonä¸²
  */
 function processArtWithJson() {
-    //json´®×ªjsonÊı×é
+    //jsonä¸²è½¬jsonæ•°ç»„
     if(artJsonStr != EMPTY) {
         var array = artJsonStr.split(SYMBOL_BIT_AND);
         for(var i=0;i<array.length;i++) {
@@ -27,16 +27,17 @@ function processArtWithJson() {
 }
 
 /**
- * Ñ¡ÔñÒÕÊõÆ·
+ * é€‰æ‹©è‰ºæœ¯å“
  * @param artId
  */
 function chooseArt(artId){
-    //Ñ¡ÔñÒÕÊõÆ·Id
+    //é€‰æ‹©è‰ºæœ¯å“Id
     chooseArtId = artId;
-    //¸ù¾İid²éÒÕÊõÆ·
+    //æ ¹æ®idæŸ¥è‰ºæœ¯å“
     var art = getArtById(artId);
     $("#name").html("<input class=\"text-input between-medium-large-input\" type=\"text\" name=\"name\" value=\"" + art["name"] + "\">");
     $("#state").html(art["stateDesc"]);
+    $("#kind").html(getKind(art["kind"]));
     var html = EMPTY;
     if(art["photo"] != EMPTY){
         html = "<img src=\"/" + art["photo"] + "\" height=\"100\">";
@@ -78,7 +79,7 @@ function chooseArt(artId){
 }
 
 /**
- * ¸ù¾İid²éÒÕÊõÆ·
+ * æ ¹æ®idæŸ¥è‰ºæœ¯å“
  * @param userId
  */
 function getArtById(artId){
@@ -91,7 +92,33 @@ function getArtById(artId){
 }
 
 /**
- * ĞŞ¸ÄÒÕÊõÆ·
+ * è¿”å›åˆ†ç±»
+ * @param kind
+ */
+function getKind(kind){
+    var html = EMPTY;
+    html += "<select type='text-input between-medium-large-input' name='kind'>" +
+        "<option value=''";
+    if(kind == EMPTY){
+        html += " SELECTED";
+    }
+    html += ">æš‚ä¸åˆ†ç±»</option>";
+    if(artKinds != EMPTY){
+        var kindArray = artKinds.split(SYMBOL_COMMA);
+        for(var i=0;i<kindArray.length;i++){
+            html +=  "<option value='" + kindArray[i] + "'";
+            if(kind == kindArray[i]){
+                html += " SELECTED";
+            }
+            html +=  ">" + kindArray[i] + "</option>";
+        }
+    }
+    html += "</select>";
+    return html;
+}
+
+/**
+ * ä¿®æ”¹è‰ºæœ¯å“
  */
 function updateArt(){
     $("#updateArtId").val(chooseArtId);

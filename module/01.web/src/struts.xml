@@ -258,6 +258,14 @@
                 /login.jsp
             </result>
         </action>
+        <action name="updateArtKinds" class="com.realart.UpdateArtKindsAction">
+            <result>
+                /updateArtKinds.jsp
+            </result>
+            <result name="error">
+                /updateArtKinds.jsp
+            </result>
+        </action>
     </package>
 
     <!--

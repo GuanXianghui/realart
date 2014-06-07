@@ -69,7 +69,7 @@ public class UploadArtAction extends BaseAction implements ArtInterface {
         }
 
         //创建作品
-        Art art = new Art(getUser().getId(), name, NEED_CHECK, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY,
+        Art art = new Art(getUser().getId(), name, NEED_CHECK, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY,
                 StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, StringUtils.EMPTY, gongyi, type,
                 Float.parseFloat(length), Float.parseFloat(width), Float.parseFloat(height), buildDate, title,
                 introduction, DEFAULT_LOCATION_BIT, date, time, getIp());

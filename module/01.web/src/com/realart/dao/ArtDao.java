@@ -26,7 +26,7 @@ public class ArtDao {
      */
     public static List<Art> queryArtsByUserIdAndState(int userId, int state) throws Exception {
         List<Art> list = new ArrayList<Art>();
-        String sql = "SELECT id,user_id,name,state,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
+        String sql = "SELECT id,user_id,name,state,kind,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
                 "length,width,height,build_date,title,introduction,location_bit,create_date,create_time," +
                 "create_ip FROM art WHERE 1=1";
         if(userId > 0){
@@ -48,6 +48,7 @@ public class ArtDao {
                 int userId2 = rs.getInt("user_id");
                 String name = rs.getString("name");
                 int state2 = rs.getInt("state");
+                String kind = rs.getString("kind");
                 String reason = rs.getString("reason");
                 String photo = rs.getString("photo");
                 String photo0 = rs.getString("photo0");
@@ -67,7 +68,7 @@ public class ArtDao {
                 String createDate = rs.getString("create_date");
                 String createTime = rs.getString("create_time");
                 String createIp = rs.getString("create_ip");
-                Art art = new Art(id, userId2, name, state2, reason, photo, photo0, photo1, photo2, photo3, photo4, gongyi,
+                Art art = new Art(id, userId2, name, state2, kind, reason, photo, photo0, photo1, photo2, photo3, photo4, gongyi,
                         type, length, width, height, buildDate, title, introduction, locationBit, createDate,
                         createTime, createIp);
                 list.add(art);
@@ -88,7 +89,7 @@ public class ArtDao {
      * @throws Exception
      */
     public static Art getArtById(int id) throws Exception {
-        String sql = "SELECT id,user_id,name,state,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
+        String sql = "SELECT id,user_id,name,state,kind,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
                 "length,width,height,build_date,title,introduction,location_bit,create_date,create_time," +
                 "create_ip FROM art WHERE id=" + id;
         Connection c = DB.getConn();
@@ -102,6 +103,7 @@ public class ArtDao {
                 int userId = rs.getInt("user_id");
                 String name = rs.getString("name");
                 int state = rs.getInt("state");
+                String kind = rs.getString("kind");
                 String reason = rs.getString("reason");
                 String photo = rs.getString("photo");
                 String photo0 = rs.getString("photo0");
@@ -121,7 +123,7 @@ public class ArtDao {
                 String createDate = rs.getString("create_date");
                 String createTime = rs.getString("create_time");
                 String createIp = rs.getString("create_ip");
-                Art art = new Art(id, userId, name, state, reason, photo, photo0, photo1, photo2, photo3, photo4, gongyi,
+                Art art = new Art(id, userId, name, state, kind, reason, photo, photo0, photo1, photo2, photo3, photo4, gongyi,
                         type, length, width, height, buildDate, title, introduction, locationBit, createDate,
                         createTime, createIp);
                 return art;
@@ -142,10 +144,10 @@ public class ArtDao {
      */
     public static void insertArt(Art art) throws Exception {
         String sql = "insert into art" +
-                "(id,user_id,name,state,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
+                "(id,user_id,name,state,kind,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
                 "length,width,height,build_date,title,introduction,location_bit,create_date,create_time," +
                 "create_ip) values" +
-                "(null," + art.getUserId() + ",'" + art.getName() + "'," + art.getState() + ",'" + art.getReason() + "','" + art.getPhoto() +
+                "(null," + art.getUserId() + ",'" + art.getName() + "'," + art.getState() + ",'" + art.getKind() + "','" + art.getReason() + "','" + art.getPhoto() +
                 "','" + art.getPhoto0() + "','" + art.getPhoto1() + "','" + art.getPhoto2() + "','" + art.getPhoto3() +
                 "','" + art.getPhoto4() + "','" + art.getGongyi() + "','" + art.getType() + "'," + art.getLength() +
                 "," + art.getWidth() + "," + art.getHeight() + ",'" + art.getBuildDate() + "','" + art.getTitle() +
@@ -222,7 +224,7 @@ public class ArtDao {
      * @throws Exception
      */
     public static void updateInfo(Art art) throws Exception{
-        String sql = "update art set name='" + art.getName() + "',gongyi='" + art.getGongyi() + "',type='" +
+        String sql = "update art set name='" + art.getName() + "',kind='" + art.getKind() + "',gongyi='" + art.getGongyi() + "',type='" +
                 art.getType() + "',length=" + art.getLength() + ",width=" + art.getWidth() + ",height=" +
                 art.getHeight() + ",build_date='" + art.getBuildDate() + "',title='" + art.getTitle() + "'," +
                 "introduction='" + art.getIntroduction() + "' where id=" + art.getId();
@@ -237,7 +239,7 @@ public class ArtDao {
      */
     public static List<Art> queryArtsByType(String type) throws Exception {
         List<Art> list = new ArrayList<Art>();
-        String sql = "SELECT id,user_id,name,state,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
+        String sql = "SELECT id,user_id,name,state,kind,reason,photo,photo0,photo1,photo2,photo3,photo4,gongyi,type," +
                 "length,width,height,build_date,title,introduction,location_bit,create_date,create_time," +
                 "create_ip FROM art WHERE 1=1";
         if(StringUtils.equals(type, "yszlTop")){
@@ -256,6 +258,7 @@ public class ArtDao {
                 int userId = rs.getInt("user_id");
                 String name = rs.getString("name");
                 int state = rs.getInt("state");
+                String kind = rs.getString("kind");
                 String reason = rs.getString("reason");
                 String photo = rs.getString("photo");
                 String photo0 = rs.getString("photo0");
@@ -275,7 +278,7 @@ public class ArtDao {
                 String createDate = rs.getString("create_date");
                 String createTime = rs.getString("create_time");
                 String createIp = rs.getString("create_ip");
-                Art art = new Art(id, userId, name, state, reason, photo, photo0, photo1, photo2, photo3, photo4, gongyi,
+                Art art = new Art(id, userId, name, state, kind, reason, photo, photo0, photo1, photo2, photo3, photo4, gongyi,
                         type2, length, width, height, buildDate, title, introduction, locationBit, createDate,
                         createTime, createIp);
                 list.add(art);

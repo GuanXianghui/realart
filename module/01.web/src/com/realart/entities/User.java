@@ -22,6 +22,7 @@ public class User implements UserInterface {
     String info;
     int state;
     String reason;
+    String artKinds;
     String registerDate;
     String registerTime;
     String registerIp;
@@ -38,12 +39,13 @@ public class User implements UserInterface {
      * @param info
      * @param state
      * @param reason
+     * @param artKinds
      * @param registerDate
      * @param registerTime
      * @param registerIp
      */
     public User(String name, int userType, String password, String certName, String titlePhoto, String headPhoto, String email,
-                String info, int state, String reason, String registerDate, String registerTime, String registerIp) {
+                String info, int state, String reason, String artKinds, String registerDate, String registerTime, String registerIp) {
         this.name = name;
         this.userType = userType;
         this.password = password;
@@ -54,6 +56,7 @@ public class User implements UserInterface {
         this.info = info;
         this.state = state;
         this.reason = reason;
+        this.artKinds = artKinds;
         this.registerDate = registerDate;
         this.registerTime = registerTime;
         this.registerIp = registerIp;
@@ -72,12 +75,13 @@ public class User implements UserInterface {
      * @param info
      * @param state
      * @param reason
+     * @param artKinds
      * @param registerDate
      * @param registerTime
      * @param registerIp
      */
     public User(int id, String name, int userType, String password, String certName, String titlePhoto,
-                String headPhoto,  String email, String info, int state, String reason, String registerDate, String registerTime,
+                String headPhoto,  String email, String info, int state, String reason, String artKinds, String registerDate, String registerTime,
                 String registerIp) {
         this.id = id;
         this.name = name;
@@ -90,6 +94,7 @@ public class User implements UserInterface {
         this.info = info;
         this.state = state;
         this.reason = reason;
+        this.artKinds = artKinds;
         this.registerDate = registerDate;
         this.registerTime = registerTime;
         this.registerIp = registerIp;
@@ -181,6 +186,14 @@ public class User implements UserInterface {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public String getArtKinds() {
+        return artKinds;
+    }
+
+    public void setArtKinds(String artKinds) {
+        this.artKinds = artKinds;
     }
 
     public String getRegisterDate() {

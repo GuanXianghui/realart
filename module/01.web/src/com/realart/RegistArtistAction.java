@@ -100,7 +100,7 @@ public class RegistArtistAction extends BaseAction implements UserInterface{
 
         //创建用户
         User user = new User(name, USER_TYPE_ARTIST, password, certName, StringUtils.EMPTY, StringUtils.EMPTY,
-                email, StringUtils.EMPTY, USER_STATE_NEED_CHECK, StringUtils.EMPTY, date, time, getIp());
+                email, StringUtils.EMPTY, USER_STATE_NEED_CHECK, StringUtils.EMPTY, StringUtils.EMPTY, date, time, getIp());
         UserDao.insertUser(user);
 
         //根据姓名和用户类型查用户

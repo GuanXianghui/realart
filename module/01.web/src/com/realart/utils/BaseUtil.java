@@ -94,7 +94,8 @@ public class BaseUtil implements BaseInterface, SymbolInterface {
                 result += SYMBOL_BIT_AND;
             }
             result += "{id:" + art.getId() + ",userId:" + art.getUserId() + ",name:'" + art.getName() +
-                    "',state:" + art.getState() + ",photo:'" + art.getPhoto() + "',photo0:'" + art.getPhoto0() +
+                    "',state:" + art.getState() + ",kind:'" + art.getKind() + "',photo:'" + art.getPhoto() +
+                    "',photo0:'" + art.getPhoto0() +
                     "',photo1:'" + art.getPhoto1() + "',photo2:'" + art.getPhoto2() + "',photo3:'" +
                     art.getPhoto3() +"',photo4:'" + art.getPhoto4() +"',gongyi:'" + art.getGongyi() + "',type:'" +
                     art.getType() + "',length:" + art.getLength() + ",width:" + art.getWidth() + ",height:" +

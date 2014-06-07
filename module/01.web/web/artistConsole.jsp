@@ -34,10 +34,11 @@
     <div><img src="images/realart.png" height="100" alt="真艺网"></div>
     <div style="height: 50px;"></div>
     <div class="a2"><span onclick="location.href='artistUser.jsp?name=<%=user.getName()%>'">我的官网</span></div>
-    <div class="a2"><span onclick="location.href='needCheckArts.jsp'">待审核作品</span></div>
-    <div class="a2"><span onclick="location.href='uploadArt.jsp'">作品备案</span></div>
     <div class="a2"><span onclick="location.href='updateArtistInfo.jsp'">资料修改</span></div>
     <div class="a2"><span onclick="location.href='updateArtistPassword.jsp'">密码修改</span></div>
+    <div class="a2"><span onclick="location.href='updateArtKinds.jsp'">分类维护</span></div>
+    <div class="a2"><span onclick="location.href='uploadArt.jsp'">作品备案</span></div>
+    <div class="a2"><span onclick="location.href='needCheckArts.jsp'">我的作品</span></div>
     <div style="height: 50px;"></div>
     <div class="a">
         <a href="#"><img width="40" src="images/button/1.jpg" alt=""></a>

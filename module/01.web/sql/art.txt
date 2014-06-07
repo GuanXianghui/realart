@@ -3,6 +3,7 @@ create table art( #艺术作品表
   	user_id int not null comment '用户id 不为空',
   	name varchar(200) not null comment '作品名称 不为空',
   	state int not null comment '状态 不为空 0 待审核 1 审核通过 2 审核失败',
+  	kind varchar(100) comment '艺术品分类 可为空',
   	reason varchar(500) comment '审核失败原因 可为空',
     photo varchar(500) not null comment '作品主图 不为空',
   	photo0 varchar(500) not null comment '作者与作品合影 不为空',

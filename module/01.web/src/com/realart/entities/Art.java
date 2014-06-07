@@ -15,6 +15,7 @@ public class Art implements ArtInterface {
     int userId;
     String name;
     int state;
+    String kind;
     String reason;
     String photo;
     String photo0;
@@ -40,6 +41,7 @@ public class Art implements ArtInterface {
      * @param userId
      * @param name
      * @param state
+     * @param kind
      * @param reason
      * @param photo
      * @param photo0
@@ -60,13 +62,14 @@ public class Art implements ArtInterface {
      * @param createTime
      * @param createIp
      */
-    public Art(int userId, String name, int state, String reason, String photo, String photo0, String photo1, String photo2,
+    public Art(int userId, String name, int state, String kind, String reason, String photo, String photo0, String photo1, String photo2,
                String photo3, String photo4, String gongyi, String type, float length, float width, float height,
                String buildDate, String title, String introduction, String locationBit, String createDate,
                String createTime, String createIp) {
         this.userId = userId;
         this.name = name;
         this.state = state;
+        this.kind = kind;
         this.reason = reason;
         this.photo = photo;
         this.photo0 = photo0;
@@ -94,6 +97,7 @@ public class Art implements ArtInterface {
      * @param userId
      * @param name
      * @param state
+     * @param kind
      * @param reason
      * @param photo
      * @param photo0
@@ -114,7 +118,7 @@ public class Art implements ArtInterface {
      * @param createTime
      * @param createIp
      */
-    public Art(int id, int userId, String name, int state, String reason, String photo, String photo0, String photo1, String photo2,
+    public Art(int id, int userId, String name, int state, String kind, String reason, String photo, String photo0, String photo1, String photo2,
                String photo3, String photo4, String gongyi, String type, float length, float width, float height,
                String buildDate, String title, String introduction, String locationBit, String createDate,
                String createTime, String createIp) {
@@ -122,6 +126,7 @@ public class Art implements ArtInterface {
         this.userId = userId;
         this.name = name;
         this.state = state;
+        this.kind = kind;
         this.reason = reason;
         this.photo = photo;
         this.photo0 = photo0;
@@ -173,6 +178,14 @@ public class Art implements ArtInterface {
 
     public void setState(int state) {
         this.state = state;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 
     public String getReason() {

@@ -43,7 +43,7 @@ public class AdminRegistArtistAction extends BaseAction implements UserInterface
 
         //创建用户
         User user = new User(name, USER_TYPE_ARTIST, password, StringUtils.EMPTY, StringUtils.EMPTY,
-                StringUtils.EMPTY, StringUtils.EMPTY, "{}", USER_STATE_NEED_CHECK, StringUtils.EMPTY, date, time, getIp());
+                StringUtils.EMPTY, StringUtils.EMPTY, "{}", USER_STATE_NEED_CHECK, StringUtils.EMPTY, StringUtils.EMPTY, date, time, getIp());
         UserDao.insertUser(user);
 
         //刷新session缓存中的user

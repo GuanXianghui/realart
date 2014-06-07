@@ -20,6 +20,7 @@ import java.util.Date;
 public class UpdateArtAction extends BaseAction implements ArtInterface {
     private String artId;
     private String name;
+    private String kind;
     private File photo;
     private File photo0;
     private File photo1;
@@ -40,7 +41,7 @@ public class UpdateArtAction extends BaseAction implements ArtInterface {
      * @return
      */
     public String execute() throws Exception {
-        logger.info("name:[" + name + "],photo:[" + photo + "],photo0:[" + photo0 + "],photo1:[" +
+        logger.info("name:[" + name + "],kind:[" + kind + "],photo:[" + photo + "],photo0:[" + photo0 + "],photo1:[" +
                 photo1 + "],photo2:[" + photo2 + "],photo3:[" + photo3 + "],photo4:[" + photo4 + "]," +
                 "gongyi:[" + gongyi + "],type:[" + type + "],length:[" + length + "],width:[" + width + "]," +
                 "height:[" + height + "],buildDate:[" + buildDate + "],title:[" + title + "],introduction:" +
@@ -60,13 +61,16 @@ public class UpdateArtAction extends BaseAction implements ArtInterface {
         }
 
         Art art = ArtDao.getArtById(Integer.parseInt(artId));
-        if(null == art || art.getState() == ArtInterface.NORMAL){
+        if(null == art){// || art.getState() == ArtInterface.NORMAL
             message = "你的操作有误!";
             return ERROR;
         }
 
         art.setName(name);
-        art.setState(NEED_CHECK);//如果是审核失败修改成待审核
+        if(art.getState() != NORMAL){
+            art.setState(NEED_CHECK);//如果是审核失败修改成待审核
+        }
+        art.setKind(kind);
         art.setGongyi(gongyi);
         art.setType(type);
         art.setLength(Float.parseFloat(length));
@@ -252,5 +256,13 @@ public class UpdateArtAction extends BaseAction implements ArtInterface {
 
     public void setArtId(String artId) {
         this.artId = artId;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
     }
 }

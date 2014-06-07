@@ -22,6 +22,13 @@
     List<Art> arts = ArtDao.queryArtsByUserIdAndState(user.getId(), ArtInterface.NEED_CHECK);
     List<Art> arts2 = ArtDao.queryArtsByUserIdAndState(user.getId(), ArtInterface.CHECK_FAILED);
     arts.addAll(arts2);
+    String artTypeDesc = "待审核艺术品";
+    String artState = StringUtils.trimToEmpty(request.getParameter("artState"));
+    if(!StringUtils.equals(artState, StringUtils.EMPTY + ArtInterface.NEED_CHECK)){
+        List<Art> arts3 = ArtDao.queryArtsByUserIdAndState(user.getId(), ArtInterface.NORMAL);
+        arts.addAll(arts3);
+        artTypeDesc = "全部艺术品";
+    }
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -56,6 +63,8 @@
         var artJsonStr = "<%=BaseUtil.getJsonArrayFromArts(arts)%>";
         //选择艺术品Id
         var chooseArtId = 0;
+        //艺术品所有分类
+        var artKinds = "<%=user.getArtKinds()%>";
     </script>
 </head>
 <body>
@@ -70,7 +79,12 @@
     <div style="width: 600px; background-color: rgb(212, 212, 204);" align="left">
         <br>
         <br>
-        <div>待审核艺术品</div>
+        <div>
+            <%=artTypeDesc%>
+            &lt;<a href="needCheckArts.jsp">全部艺术品</a>&gt;
+            &lt;<a href="needCheckArts.jsp?artState=<%=ArtInterface.NEED_CHECK%>">待审核艺术品</a>&gt;
+        </div>
+        <br>
         <div>
             <%
                 for(Art art : arts){
@@ -106,6 +120,14 @@
                             </td>
                             <td class="rightTd">
                                 <span id="state">&lt;请选择待审核艺术品&gt;</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="leftTd">
+                                分类:
+                            </td>
+                            <td class="rightTd">
+                                <span id="kind">&lt;请选择待审核艺术品&gt;</span>
                             </td>
                         </tr>
                         <tr>
