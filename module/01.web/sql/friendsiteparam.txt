@@ -1,0 +1,50 @@
+CREATE TABLE `friendsiteparam` (
+  `id` int(64) NOT NULL auto_increment,
+  `name` varchar(512) default NULL,
+  `url` varchar(512) default NULL,
+  `img` varchar(512) default NULL,
+  `type` int(16) default NULL,
+  `dis` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO `friendsiteparam` VALUES (1,'支付宝','','images/alipay.jpg',1,1);
+
+CREATE TABLE `itemlist` (
+  `id` int(64) NOT NULL auto_increment,
+  `name` varchar(2048) default NULL,
+  `url` varchar(2048) default NULL,
+  `img` varchar(2048) default NULL,
+  `type` int(16) default NULL,
+  `dis` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+INSERT INTO `itemlist` VALUES (1,'{\"title\":[\"标题1\",\"标题2\",\"标题3\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\"],\"content\":[\"内容1\",\"内容2\",\"内容3\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":1,\"url\":[\"images/nine/17.jpg\",\"images/nine/18.jpg\",\"images/nine/9.jpg\"],\"size\":3}',4,1),(2,'{\"title\":[\"标题1\",\"标题2\",\"标题3\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\"],\"content\":[\"内容1\",\"内容2\",\"内容3\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":1,\"url\":[\"images/nine/14.jpg\",\"images/nine/15.jpg\",\"images/nine/16.jpg\"],\"size\":3}',4,1),(3,'{\"title\":[\"标题1\",\"标题2\",\"标题3\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\"],\"content\":[\"内容1\",\"内容2\",\"内容3\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":1,\"url\":[\"images/nine/11.jpg\",\"images/nine/12.jpg\",\"images/nine/13.jpg\"],\"size\":3}',4,1),(4,'{\"title\":[\"标题1\",\"标题2\",\"标题3\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\"],\"content\":[\"内容1\",\"内容2\",\"内容3\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":1,\"url\":[\"images/nine/8.jpg\",\"images/nine/9.jpg\",\"images/nine/10.jpg\"],\"size\":3}',4,1),(5,'{\"title\":[\"标题1\",\"标题2\",\"标题3\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\"],\"content\":[\"内容1\",\"内容2\",\"内容3\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":1,\"url\":[\"images/nine/5.jpg\",\"images/nine/6.jpg\",\"images/nine/7.jpg\"],\"size\":3}',4,1),(6,'{\"title\":[\"标题1\",\"标题2\",\"标题3\",,\"标题4\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\",\"提示4\"],\"content\":[\"内容1\",\"内容2\",\"内容3\",\"内容4\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":3,\"url\":[\"images/nine/1.jpg\",\"images/nine/2.jpg\",\"images/nine/21.jpg\",\"images/nine/20.jpg\"],\"size\":4}',4,1),(7,'{\"title\":[\"标题1\",\"标题2\",\"标题3\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\"],\"content\":[\"内容1\",\"内容2\",\"内容3\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":2,\"url\":[\"images/nine/3.jpg\",\"images/nine/19.jpg\",\"images/nine/4.jpg\"],\"size\":3}',4,1),(8,'{\"title\":[\"标题1\",\"标题2\",\"标题3\",\"标题4\",\"标题5\"],\"alt\":[\"提示1\",\"提示2\",\"提示3\",\"提示4\",\"提示5\"],\"content\":[\"内容1\",\"内容2\",\"内容3\",\"内容4\",\"内容5\"]}','[\"test.jsp\",\"test.jsp\",\"test.jsp\",\"test.jsp\",\"test.jsp\"]','{\"type\":4,\"url\":[\"images/nine/20.jpg\",\"images/nine/22.jpg\",\"images/nine/21.jpg\",\"images/nine/20.jpg\",\"images/nine/22.jpg\"],\"size\":5,\"btntitle\":[\"按钮1\",\"按钮2\",\"按钮3\",\"按钮4\",\"按钮5\"],\"title\":\"大标题\"}',4,1);
+
+CREATE TABLE `itemparam` (
+  `id` int(64) NOT NULL auto_increment,
+  `name` varchar(512) default NULL,
+  `url` varchar(512) default NULL,
+  `img` varchar(512) default NULL,
+  `type` int(16) default NULL,
+  `dis` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+INSERT INTO `itemparam` VALUES (1,'今日头条',NULL,'images/logos/1.png',5,1),(2,'最新发布',NULL,'images/logos/2.png',5,1),(3,'最佳评论',NULL,'images/logos/3.png',5,1),(4,'最佳新作',NULL,'images/logos/4.png',5,1),(5,'视频热点',NULL,'images/logos/5.png',5,1),(6,'最新活动',NULL,'images/logos/6.png',5,1),(7,'美文共享',NULL,'images/logos/7.png',5,1),(8,'最新报道',NULL,'images/logos/8.png',5,1);
+
+CREATE TABLE `topysjparam` (
+  `id` int(64) NOT NULL auto_increment,
+  `name` varchar(512) default NULL,
+  `url` varchar(512) default NULL,
+  `img` varchar(512) default NULL,
+  `type` int(16) default NULL,
+  `dis` tinyint(1) default '0',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+INSERT INTO `topysjparam` VALUES (1,'彭禹旺',' ','images/show_1.jpg',0,1);
+
+
+

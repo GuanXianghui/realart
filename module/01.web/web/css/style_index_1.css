@@ -1,0 +1,366 @@
+body {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #555;
+                font-size: 12px;
+                border:0px;
+                text-align: center;
+                width:100%;
+                height:100%;
+                padding:0px;
+                line-height: 22px;
+                background:url(../images/index/bk.png) repeat;
+                }
+
+.slider_01{
+width:1000px;
+height:360px;
+padding:4px;
+margin:0px auto auto auto;
+background:#aaa;
+	
+}
+.slider_02{
+width:1000px;
+height:380px;
+padding:4px;
+margin:15px auto auto auto;
+background:#abb;
+	
+}
+.slider_03{
+width:1000px;
+height:140px;
+padding:4px;
+margin:0px auto auto auto;
+background:#fff;
+border-left:1px solid #00ccff;
+border-right:1px solid #00ccff;
+border-bottom:1px solid #00ccff;
+	
+}
+.slider_04{
+width:1000px;
+height:40px;
+padding:4px;
+border-left:1px solid #00ccff;
+border-right:1px solid #00ccff;
+border-bottom:1px solid #00ccff;
+margin:0px auto auto auto;
+background:#fff;
+	
+}
+.slider_title{
+width:1000px;
+height:30px;
+padding-left:4px;
+padding-right:4px;
+padding-top:1px;
+margin:15px auto auto auto;
+background:#00ccff;
+border:1px solid #00ccff;
+	
+}
+.friendsite{
+float:left;
+width:82px;
+height:30px;
+margin-left:10px;
+}
+.bottom_01{
+width:100%;
+height:30px;
+margin-top:5px;
+margin-left:auto;
+margin-right:auto;
+background:url(../images/index/header_button_bk.png) repeat-x;	
+}
+#homehead1
+{
+width:100%;
+height: 270px;
+border:0px;
+margin:0px auto auto auto;
+text-align: center;
+}
+#homehead2
+{
+width:100%;
+height: 117px;
+text-align: center;
+margin:0px auto auto auto;
+background:url(../images/index/home_head.png) no-repeat;
+}
+#logo
+{
+width:100px;
+height: 100px;
+text-align: center;
+margin:0px auto auto 10px;
+float:left;
+}
+#title
+{
+width:600px;
+height:100px;
+text-align: center;
+margin:20px auto auto 30px;
+float:left;
+}
+.rlsl{  width: 450px; height:40px; margin: 10px auto auto auto;float:right}
+#top-menu9  {
+	color: #aa9966;
+	display: list-item;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	font-family:'Î¢ÈíÑÅºÚ';
+	width: 100px;
+	height: auto;
+	float: left;
+	border-right-width: 2px;
+	border-right-style: solid;
+}
+#top-menu8  {
+	color: #aa9966;
+	display: list-item;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+	font-family:'Î¢ÈíÑÅºÚ';
+	width: 90px;
+	height: auto;
+	float: left;
+	border-left-width: 2px;
+	border-left-style: solid;
+	border-right-width: 2px;
+	border-right-style: solid;
+}
+li{
+	list-style:none;
+	font-size: 16px;
+	display: block;
+	cursor:hand;
+}
+a:link, a:visited{
+	color:#aa9966;
+	font-family:'Î¢ÈíÑÅºÚ';
+	text-decoration:none;
+}
+a:hover{
+	color:#000;
+	font-family:'Î¢ÈíÑÅºÚ';
+	text-decoration:none;
+	font-size: 18px;
+	text-align: center;
+}
+
+#header_bk
+{
+width:100%;
+height: 35px;
+text-align: center;
+margin-bottom:0px;
+margin-left:auto;
+margin-right:auto;
+font-size:16px;
+font-family:'Î¢ÈíÑÅºÚ';
+background:url(../images/index/header_button_bk.png) repeat-x;
+}
+#header_bk2
+{
+width:100%;
+height: 8px;
+text-align: center;
+margin-bottom:0px;
+margin-left:auto;
+margin-right:auto;
+border:1px;
+background:url(../images/index/header_button_bk2.png) repeat-x;
+}
+#header_btn
+{
+width:108px;
+height: 32px;
+text-align: center;
+float:right;
+}
+
+#header_btn1
+{
+width:104px;
+height: 32px;
+margin:3px auto auto 0px;
+text-align: center;
+float:right;
+}
+#header_btn2
+{
+width:16px;
+height: 35px;
+text-align: center;
+float:right;
+margin-right:30px
+}
+#header_btn3
+{
+width:230px;
+height: 35px;
+text-align: center;
+float:right;
+margin-right:15px
+}
+#body_top
+{
+width:100%;
+text-align: center;
+margin:auto;
+overflow: hidden;
+}
+#body_top-1
+{
+width:940px;
+text-align: center;
+float:left;
+overflow: hidden;
+}
+#picbox
+{
+width:900px;
+text-align: center;
+margin:0px auto auto 30px;
+}
+#picbox_left
+{
+width:1px;
+height: 200px;
+text-align: center;
+background:url(../images/index/content-4.png) repeat-y;
+float:left;
+}
+#picbox_bottom_left
+{
+width:7px;
+height: 7px;
+text-align: center;
+background:url(../images/index/content-5.png) repeat-y;
+float:left;
+}
+#picbox_bottom_right
+{
+width:7px;
+height: 7px;
+text-align: center;
+background:url(../images/index/content-6.png) repeat-y;
+float:left;
+}
+#picbox_m
+{
+width:900px;
+height: 200px;
+text-align: center;
+float:left;
+}
+#picbox_bottom_m
+{
+width:898px;
+height: 1px;
+text-align: center;
+background:url(../images/index/content-4.png) repeat-x;
+margin:6px auto auto 0px;
+float:left;
+}
+#body_top-3
+{
+width:16px;
+height: 700px;
+text-align: center;
+float:left;
+background: #e2daa6;
+margin:5px auto auto 15px;
+}
+#body_top_1_title
+{
+width:902px;
+text-align: center;
+height: 29px;
+border:0px;
+margin:12px auto auto 18px;
+}
+#body_top_1_title_1
+{
+width:8px;
+text-align: center;
+height: 29px;
+background:url(../images/index/content-0.png) no-repeat;
+float:left;
+
+}
+#body_top_1_title_2
+{
+width:870px;
+text-align: left;
+height: 29px;
+float:left;
+background:url(../images/index/content-2.png) repeat-x;
+
+}
+#body_top_1_title_3
+{
+width:24px;
+text-align: center;
+height: 29px;
+float:left;
+background:url(../images/index/content-3.png) no-repeat;
+}
+#body_top-2
+{
+width:250px;
+text-align: center;
+margin:5px auto auto 2px;
+float:left;
+
+}
+#lineblue{
+	background:url(../images/index/radio2.png) repeat-x;
+	width:220px;
+	height: 2px;
+	margin:5px auto auto 5px;
+}
+.lianxi{
+width:230px;
+height: 32px;	
+margin:2px auto auto 5px;
+border:1px;
+}
+#body_top-21
+{
+width:245px;
+height:370px;
+text-align: center;
+float:left;
+margin:auto;
+background:url(../images/index/content-22.png) no-repeat;
+margin:8px auto auto 10px;
+}
+#body_top-m
+{
+width:470px;
+height:370px;
+text-align: center;
+float:left;
+margin:auto;
+background:url(../images/index/content-23.png) no-repeat;
+margin:8px auto auto 10px;
+}
+#body_top-22
+{
+width:245px;
+height:370px;
+text-align: center;
+float:left;
+margin:auto;
+background:url(../images/index/content-22.png) no-repeat;
+margin:8px auto auto 10px;
+}

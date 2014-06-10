@@ -9,8 +9,11 @@ import com.realart.interfaces.ParamInterface;
 import com.realart.interfaces.SymbolInterface;
 import com.realart.interfaces.UserTokenInterface;
 import org.apache.commons.lang.StringUtils;
+import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -203,5 +206,28 @@ public class BaseUtil implements BaseInterface, SymbolInterface {
             url += "?" + request.getQueryString();//参数
         }
         return url;
+    }
+
+    /**
+     * 上传图片
+     * @param file
+     * @param path
+     * @return
+     */
+    public static String uploadImg(File file, String path){
+        if(file == null){
+            return StringUtils.EMPTY;
+        }
+        //新的图片名称
+        String imgName = new Date().getTime() + ".jpg";
+        //服务器上的路径
+        String imgPath = ServletActionContext.getServletContext().getRealPath(path) + "/" + imgName;
+        //页面引用位置 相对路径
+        String imgPagePath = path + "/" + imgName;
+        //服务器上的路径对应的文件
+        File imageFile = new File(imgPath);
+        //拷贝文件
+        FileUtil.copy(file, imageFile);
+        return imgPagePath;
     }
 }

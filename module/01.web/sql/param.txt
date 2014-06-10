@@ -1,6 +1,6 @@
 create table param(		#启动参数表
 	name varchar(30) primary key comment '键 主键',
-	value varchar(500) not null comment '值 不为空',
+	value varchar(1024) not null comment '值 不为空',
 	info varchar(50) not null comment '描述 不为空'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -18,3 +18,38 @@ INSERT INTO param(name, value, info) VALUES ('check_wrong_reason','','审核失败原
 INSERT INTO param(name, value, info) VALUES ('default_qr_code','','默认二维码配置');
 INSERT INTO param(name, value, info) VALUES ('default_qr_code_info','','默认二维码相关信息');
 INSERT INTO param(name, value, info) VALUES ('admin_password','0e4dfa74c5b8a7d27e0f19b2eb6f54f0','管理员密码密文');
+
+#value从500改到1024
+#param记录下面从服务器导出来
+INSERT INTO `param` VALUES ('admin_password','0e4dfa74c5b8a7d27e0f19b2eb6f54f0','管理员密码密文'),('apk_guide','{\"title\":\"扫一扫，下载安卓应用\",\"logo\":\"images/index/zywapk2.png\",\"btn\":\"images/index/downapk_btn.png\",\"alt\":\"下载安卓应用\"}','安卓应用下载模块'),('artist_user_regist_items','[{\"name\":\"身份证照片\",\"need\":\"1\",\"type\":\"2\"},{\"name\":\"手机号码\",\"need\":\"1\",\"type\":\"1\"}]','艺术家用户注册项'),('check_wrong_reason','身份证没有和脸一起拍|底图不够清晰','审核失败原因'),('contact_guide','[{\"name\":\"联系人\",\"text\":\"彭先生\",\"ico\":\"images/index/lian_min.png\"},{\"name\":\"电话\",\"text\":\"0755-29677576\",\"ico\":\"images/index/tel_min.png\"},{\"name\":\"手机\",\"text\":\"18902445129\",\"ico\":\"images/index/mobile_min.png\"},{\"name\":\"传真\",\"text\":\"075529677576\",\"ico\":\"images/index/fax_min.png\"},{\"name\":\"微信\",\"text\":\"446452662456\",\"ico\":\"images/index/wx_min.png\"},{\"name\":\"QQ\",\"text\":\"45634535635\",\"ico\":\"images/index/qq_min.png\"},{\"name\":\"Email\",\"text\":\"weqrer@jdzzyw.com\",\"ico\":\"images/index/email_min.png\"},{\"name\":\"淘宝店\",\"text\":\"jdzzyw@163.com\",\"ico\":\"images/index/tao_min.png\"},{\"name\":\"阿里旺旺\",\"text\":\"3656345@jdzzyw.com\",\"ico\":\"images/index/wang_min.png\"}]','联系方法'),('contact_title','联系我们','首面联系方法标题'),('copyright_title','版权所有：景德镇真艺网有限公司所有，仿冒必究 COPYRIGHT: 2014052544444','版权信息'),('default_qr_code','antiError=M&size=3&bgColor=#fdfdfd&frontColor=#026af6&type=1&qrLogo=1&logoBorderType=3&logoBorderColor=#09f605','默认二维码配置'),('default_qr_code_info','TTOO','默认二维码相关信息'),('friendsite_title','友情链接','友情链接标题'),('head_guide','[{\"name\":\"首页标题\",\"text\":\"景德镇真艺网\",\"url\":\"\"},{\"name\":\"关键字\",\"text\":\"陶瓷，艺术家，真艺\",\"url\":\"\"},{\"name\":\"网页描述\",\"text\":\"陶瓷，艺术家，真艺\",\"url\":\"\"},{\"name\":\"首页头部大标题\",\"text\":\"景德镇真艺网\",\"url\":\"\"}]','首页标题关键字'),('index_bg_img','images/realart_bg.jpg','首页底图'),('index_guide','[{\"name\":\"陶瓷评论\",\"url\":\"zdtj.jsp\"},{\"name\":\"艺术官网\",\"url\":\"artistUsers.jsp\"},{\"name\":\"信息速递\",\"url\":\"\"},{\"name\":\"文摘荟萃\",\"url\":\"\"},{\"name\":\"真艺展厅\",\"url\":\"\"},{\"name\":\"中国电信\",\"url\":\"\"}]','首页 导航'),('index_logo_height','100','首页 logo 高度'),('index_logo_img','images/realart_logo1.png','首页logo'),('index_logo_width','100','首页 logo 宽度'),('index_realart_height','100','首页 真艺网 高度'),('index_realart_img','images/admin/1401196074276.jpg','首页真艺网'),('index_realart_width','300','首页 真艺网 宽度'),('online_info','{\"qq\":[{\"number\":\"735080611\",\"name\":\"经理\",\"ico\":\"\",\"href\":\"\",\"alt\":\"\"},{\"number\":\"735080611\",\"name\":\"经理\",\"ico\":\"\",\"href\":\"\",\"alt\":\"\"}],\"liuyan\":{\"number\":\"735080611\",\"name\":\"经理\",\"ico\":\"\",\"href\":\"\",\"alt\":\"\"},\"email\":{\"number\":\"735080611@qq.com\",\"name\":\"经理\",\"ico\":\"\",\"href\":\"\",\"alt\":\"\"},\"company\":{\"number\":\"735080611\",\"name\":\"真艺网\",\"ico\":\"\",\"href\":\"\",\"alt\":\"\"}}','首页在线服务信息'),('review_user_regist_items','[{\"name\":\"身份证号码\",\"need\":\"1\",\"type\":\"1\"},{\"name\":\"证件照片\",\"need\":\"1\",\"type\":\"2\"},{\"name\":\"手机号码\",\"need\":\"1\",\"type\":\"1\"},{\"name\":\"通讯地址\",\"need\":\"1\",\"type\":\"1\"}]','评论用户注册项'),('slider_01','[{\"title\":\"upiypuiyp\",\"url\":\"images/slider/sf01.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiypqeterter\",\"url\":\"images/slider/sf04.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiypshg\",\"url\":\"images/slider/sf10.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiypagad\",\"url\":\"images/slider/sf14.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiypsdgadg\",\"url\":\"images/slider/sf15.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiyp\",\"url\":\"images/slider/sf19.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiyp\",\"url\":\"images/slider/sf24.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiypsdag\",\"url\":\"images/slider/sf26.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiypasdfasd\",\"url\":\"images/slider/sf26.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiyp\",\"url\":\"images/slider/sf41.jpg\",\"href\":\"\",\"type\":\"1\"},{\"title\":\"upiypuiyp\",\"url\":\"images/slider/sf50.jpg\",\"href\":\"\",\"type\":\"1\"}]','首页真艺展厅'),('ysj_more','{\"name\":\"更多...\",\"href\":\"\"}','首页艺术家更多'),('ysj_title','最热艺术家','首页艺术家展示标题');
+
+mysql> select name, info from param;
++--------------------------+--------------------+
+| name                     | info               |
++--------------------------+--------------------+
+| index_bg_img             | 首页底图           |  [之前]
+| index_guide              | 首页 导航          |  [之前]
+| index_logo_height        | 首页 logo 高度     |  [之前]
+| index_logo_img           | 首页logo           |  [之前]
+| index_logo_width         | 首页 logo 宽度     |  [之前]
+| index_realart_height     | 首页 真艺网 高度   |  [之前]
+| index_realart_img        | 首页真艺网         |  [之前]
+| index_realart_width      | 首页 真艺网 宽度   |  [之前]
+| review_user_regist_items | 评论用户注册项     |  [之前]
+| artist_user_regist_items | 艺术家用户注册项   |  [之前]
+| check_wrong_reason       | 审核失败原因       |  [之前]
+| default_qr_code          | 默认二维码配置     |  [之前]
+| default_qr_code_info     | 默认二维码相关信息 |  [之前]
+| admin_password           | 管理员密码密文     |  [之前]
+| apk_guide                | 安卓应用下载模块   |   [OK]
+| contact_guide            | 联系方法           |   [OK]
+| contact_title            | 首面联系方法标题   |   [OK]
+| copyright_title          | 版权信息           |   [OK]
+| friendsite_title         | 友情链接标题       |   [OK]
+| head_guide               | 首页标题关键字     |   [OK]
+| online_info              | 首页在线服务信息   |   [OK]
+| slider_01                | 首页真艺展厅       |   [OK]
+| ysj_more                 | 首页艺术家更多     |   [OK]
+| ysj_title                | 首页艺术家展示标题 |   [OK]
++--------------------------+--------------------+
+24 rows in set (0.00 sec)

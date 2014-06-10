@@ -1,0 +1,35 @@
+li {list-style:none}
+img {border:none;display:block}
+.slide3d-wp {
+width: 448px;
+height: 344px;
+overflow: hidden;
+position: relative;
+left: 50%;
+top: 50%;
+margin-left: -228px;
+margin-top: -178px;
+}
+.nav3d-wp {
+position: relative;
+margin-top: 165px;
+margin-left: 0px;
+border-radius: 4px;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+padding: 0 20px 6px 8px;
+_padding: 0 20px 2px 8px;
+}
+.nav3d li {
+float: left;
+margin-left: 1px;
+font-size: 16px;
+font-weight: bold;
+font-family: tahoma;
+color: #fff;
+cursor: pointer;
+height: 20px;
+width:25px;
+background:#99ffff;
+}
+.nav3d li.cur{background:#99ccff;color: #ff7a00}

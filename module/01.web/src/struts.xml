@@ -266,6 +266,94 @@
                 /updateArtKinds.jsp
             </result>
         </action>
+        <action name="updateApkGuide" class="com.realart.UpdateApkGuideAction">
+            <result>
+                /apkGuide.jsp
+            </result>
+            <result name="error">
+                /apkGuide.jsp
+            </result>
+        </action>
+        <action name="updateContactGuide" class="com.realart.UpdateContactGuideAction">
+            <result>
+                /contactGuide.jsp
+            </result>
+            <result name="error">
+                /contactGuide.jsp
+            </result>
+        </action>
+        <action name="deleteContactGuide" class="com.realart.DeleteContactGuideAction">
+            <result>
+                /contactGuide.jsp
+            </result>
+            <result name="error">
+                /contactGuide.jsp
+            </result>
+        </action>
+        <action name="updateContactTitle" class="com.realart.UpdateContactTitleAction">
+            <result>
+                /contactGuide.jsp
+            </result>
+            <result name="error">
+                /contactGuide.jsp
+            </result>
+        </action>
+        <action name="updateCopyRightTitle" class="com.realart.UpdateCopyRightTitleAction">
+            <result>
+                /copyRightTitle.jsp
+            </result>
+            <result name="error">
+                /copyRightTitle.jsp
+            </result>
+        </action>
+        <action name="updateFriendSiteTitle" class="com.realart.UpdateFriendSiteTitleAction">
+            <result>
+                /friendSiteTitle.jsp
+            </result>
+            <result name="error">
+                /friendSiteTitle.jsp
+            </result>
+        </action>
+        <action name="updateHeadGuide" class="com.realart.UpdateHeadGuideAction">
+            <result>
+                /headGuide.jsp
+            </result>
+            <result name="error">
+                /headGuide.jsp
+            </result>
+        </action>
+        <action name="updateOnlineInfo" class="com.realart.UpdateOnlineInfoAction">
+            <result>
+                /onlineInfo.jsp
+            </result>
+            <result name="error">
+                /onlineInfo.jsp
+            </result>
+        </action>
+        <action name="updateRealArtRoom" class="com.realart.UpdateRealArtRoomAction">
+            <result>
+                /realArtRoom.jsp
+            </result>
+            <result name="error">
+                /realArtRoom.jsp
+            </result>
+        </action>
+        <action name="deleteRealArtRoom" class="com.realart.DeleteRealArtRoomAction">
+            <result>
+                /realArtRoom.jsp
+            </result>
+            <result name="error">
+                /realArtRoom.jsp
+            </result>
+        </action>
+        <action name="updateYsjGuide" class="com.realart.UpdateYsjGuideAction">
+            <result>
+                /ysjGuide.jsp
+            </result>
+            <result name="error">
+                /ysjGuide.jsp
+            </result>
+        </action>
     </package>
 
     <!--
