@@ -22,22 +22,22 @@ public class HomeParamDao {
      * @throws Exception
      */
     public static List<URLTitleName> queryAllysjParams(int typeno) throws Exception {
-        List<URLTitleName> list = new ArrayList<URLTitleName>();    
+        List<URLTitleName> list = new ArrayList<URLTitleName>();
         String table="topysjparam";
         switch (typeno){
-        case 0:
-        table="topysjparam";
-        break;
-        case 1:
-        	 table="friendsiteparam";
-             break;
-        case 4:
-          	 table="itemlist";
-               break;
-        case 5:
-       	 table="itemparam";
-            break;
-        default:break;
+            case 0:
+                table="topysjparam";
+                break;
+            case 1:
+                table="friendsiteparam";
+                break;
+            case 4:
+                table="itemlist";
+                break;
+            case 5:
+                table="itemparam";
+                break;
+            default:break;
         }
         String sql= "SELECT * FROM "+table+" order by id";
         Connection c = DB.getConn();
@@ -48,7 +48,7 @@ public class HomeParamDao {
                 throw new RuntimeException("数据库操作出错，请重试！");
             }
             while (rs.next()) {
-            	int id=rs.getInt("id");
+                int id=rs.getInt("id");
                 String name = rs.getString("name");
                 String value = rs.getString("url");
                 String info = rs.getString("img");
@@ -111,7 +111,7 @@ public class HomeParamDao {
             break;
         default:break;
         }
-        String sql = "insert into "+table+" (id,name,url,img,type,dis) values(0,'" + param.getName() +
+        String sql = "insert into "+table+" (id,name,url,img,type,dis) values(null,'" + param.getName() +
         		"','" + param.getUrl() + "','"+param.getImg()+"',"+param.getType()+
         		","+(param.getDis()?1:0)+")";
         DB.executeUpdate(sql);

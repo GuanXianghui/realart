@@ -3,7 +3,7 @@ package com.realart.utils;
 import com.realart.dao.HomeParamDao;
 import com.realart.entities.URLTitleName;
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,50 +53,32 @@ public class ysjScrollParamUtil {
      * @return
      */
     public List<URLTitleName> getValueByID(int type) {
-    	
-    	switch(type)
-    	{
-    	case 0:
-        if( params.size()>0) 
-           
-                return params;         
-    	case 1:
-    		 if( params1.size()>0) 
-    	           
-                 return params1; 
-    	case 2:
-     		 if( params5.size()>0) 
-     	           
-                  return params2; 
-    	case 3:
-     		 if( params5.size()>0) 
-     	           
-                  return params3; 
-    	case 4:
-      		 if( params5.size()>0) 
-      	           
-                   return params4; 
-    	case 5:
-   		 if( params5.size()>0) 
-   	           
-                return params5; 
-    	default: break;
-    	
-    	}
-        return null;
+        switch(type)
+        {
+            case 0:
+                return params;
+            case 1:
+                return params1;
+            case 2:
+                return params2;
+            case 3:
+                return params3;
+            case 4:
+                return params4;
+            case 5:
+                return params5;
+            default: break;
+
+        }
+        return new ArrayList<URLTitleName>();
     }
-
-
 
     /**
      * 根据name修改value和info
      * @param u
      */
     public void updateParam(URLTitleName u) throws Exception {
-
-
         //更新启动参数
-
         HomeParamDao.updateysjParam(u);
 
         //配置缓存刷新

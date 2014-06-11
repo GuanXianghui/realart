@@ -354,6 +354,62 @@
                 /ysjGuide.jsp
             </result>
         </action>
+        <action name="updateFriendSite" class="com.realart.UpdateFriendSiteAction">
+            <result>
+                /friendSite.jsp
+            </result>
+            <result name="error">
+                /friendSite.jsp
+            </result>
+        </action>
+        <action name="deleteFriendSite" class="com.realart.DeleteFriendSiteAction">
+            <result>
+                /friendSite.jsp
+            </result>
+            <result name="error">
+                /friendSite.jsp
+            </result>
+        </action>
+        <action name="updateYsjParam" class="com.realart.UpdateYsjParamAction">
+            <result>
+                /ysjParam.jsp
+            </result>
+            <result name="error">
+                /ysjParam.jsp
+            </result>
+        </action>
+        <action name="deleteYsjParam" class="com.realart.DeleteYsjParamAction">
+            <result>
+                /ysjParam.jsp
+            </result>
+            <result name="error">
+                /ysjParam.jsp
+            </result>
+        </action>
+        <action name="updateItemParam" class="com.realart.UpdateItemParamAction">
+            <result>
+                /itemParam.jsp
+            </result>
+            <result name="error">
+                /itemParam.jsp
+            </result>
+        </action>
+        <action name="updateItemList" class="com.realart.UpdateItemListAction">
+            <result>
+                /itemList.jsp
+            </result>
+            <result name="error">
+                /itemList.jsp
+            </result>
+        </action>
+        <action name="deleteItemList" class="com.realart.DeleteItemListAction">
+            <result>
+                /itemList.jsp
+            </result>
+            <result name="error">
+                /itemList.jsp
+            </result>
+        </action>
     </package>
 
     <!--

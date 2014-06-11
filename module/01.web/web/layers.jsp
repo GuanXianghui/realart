@@ -8,10 +8,14 @@
             <li><a href="<%=baseUrl%>contactGuide.jsp"<%=inLayer.equals("首页联系方法管理")?" class=\"current\"":""%>>首页联系方法管理</a></li>
             <li><a href="<%=baseUrl%>copyRightTitle.jsp"<%=inLayer.equals("首页版权信息管理")?" class=\"current\"":""%>>首页版权信息管理</a></li>
             <li><a href="<%=baseUrl%>friendSiteTitle.jsp"<%=inLayer.equals("首页友情链接标题管理")?" class=\"current\"":""%>>首页友情链接标题管理</a></li>
+            <li><a href="<%=baseUrl%>friendSite.jsp"<%=inLayer.equals("首页友情链接管理")?" class=\"current\"":""%>>首页友情链接管理</a></li>
             <li><a href="<%=baseUrl%>headGuide.jsp"<%=inLayer.equals("首页标题关键字管理")?" class=\"current\"":""%>>首页标题关键字管理</a></li>
             <li><a href="<%=baseUrl%>onlineInfo.jsp"<%=inLayer.equals("首页在线服务信息管理")?" class=\"current\"":""%>>首页在线服务信息管理</a></li>
             <li><a href="<%=baseUrl%>realArtRoom.jsp"<%=inLayer.equals("首页真艺展厅管理")?" class=\"current\"":""%>>首页真艺展厅管理</a></li>
             <li><a href="<%=baseUrl%>ysjGuide.jsp"<%=inLayer.equals("首页艺术家展示管理")?" class=\"current\"":""%>>首页艺术家展示管理</a></li>
+            <li><a href="<%=baseUrl%>ysjParam.jsp"<%=inLayer.equals("首页艺术家管理")?" class=\"current\"":""%>>首页艺术家管理</a></li>
+            <li><a href="<%=baseUrl%>itemParam.jsp"<%=inLayer.equals("首页八框导航管理")?" class=\"current\"":""%>>首页八框导航管理</a></li>
+            <li><a href="<%=baseUrl%>itemList.jsp"<%=inLayer.equals("首页八框内容管理")?" class=\"current\"":""%>>首页八框内容管理</a></li>
         </ul>
     </li>
     <li><a href="#" class="nav-top-item<%=outLayer.equals("注册模块")?" current":""%>"> 注册模块 </a>

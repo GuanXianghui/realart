@@ -126,7 +126,6 @@
                         //  String name = (StringUtils.trimToEmpty((String) temp.get("name")));
                         //  String url = (StringUtils.trimToEmpty((String) temp.get("url")));
 
-
                         switch (imgtype) {
                             case 1:
 
@@ -138,9 +137,9 @@
                                 <a class="mtitle" href="<%=itemurl.getString(j)%>" target="_blank"
                                    title="<%=licontent.getString(j)%>"><%=licontent.getString(j)%>
                                 </a>
-                                <a target="_blank" href="<%=itemurl.getString(j)%>"><img alt="<%=lialt.getString(j)%>"
-                                                                                         src="<%=liimg.getString(j)%>"
-                                                                                         width="256" height="353"/></a>
+                                <a target="_blank" href="<%=itemurl.getString(j)%>">
+                                    <img alt="<%=lialt.getString(j)%>" src="<%=liimg.getString(j)%>" width="256" height="353"/>
+                                </a>
                             </li>
                             <%} %>
                         </ul>
@@ -388,8 +387,9 @@
                     %>
                     <!--end -->
                 </div>
-                <div id="List2"></div>
+                <%--<div id="List2">--%>
 
+                <%--</div>--%>
             </div>
         </div>
         <div class="rollBoxLeft">
