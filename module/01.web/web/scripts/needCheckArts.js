@@ -6,7 +6,7 @@ var artArray = new Array();
  */
 $(document).ready(function() {
     if(message != EMPTY){
-        alert(message);
+        showInformation(message);
     }
 
     //处理艺术品json串

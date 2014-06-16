@@ -18,13 +18,13 @@ import java.io.File;
 import java.util.Date;
 
 /**
- * 修改艺术家资料
+ * 修改评论会员资料
  *
  * @author Gxx
  * @module oa
  * @datetime 14-5-10 19:20
  */
-public class UpdateArtistInfoAction extends BaseAction implements UserInterface{
+public class UpdateReviewInfoAction extends BaseAction implements UserInterface{
     private String certName;
     private File titlePhoto;
     private File headPhoto;
@@ -53,10 +53,10 @@ public class UpdateArtistInfoAction extends BaseAction implements UserInterface{
             getUser().setHeadPhoto(headPhotoRoute);
         }
 
-        //艺术家用户注册项
-        String artistUserRegistItems = ParamUtil.getInstance().getValueByName(ParamInterface.ARTIST_USER_REGIST_ITEMS);
+        //评论会员用户注册项
+        String reviewUserRegistItems = ParamUtil.getInstance().getValueByName(ParamInterface.REVIEW_USER_REGIST_ITEMS);
         //评论用户注册项 json串转换成数组
-        JSONArray json = JSONArray.fromObject(artistUserRegistItems);
+        JSONArray json = JSONArray.fromObject(reviewUserRegistItems);
         for(int i=0;i<json.size();i++)
         {
             JSONObject temp = json.getJSONObject(i);
@@ -79,15 +79,16 @@ public class UpdateArtistInfoAction extends BaseAction implements UserInterface{
         }
 
         //得到用户信息
-        String info = getInfoFromRequestAndAURI(getUser(), request, artistUserRegistItems);
+        String info = getInfoFromRequestAndAURI(getUser(), request, reviewUserRegistItems);
         getUser().setInfo(info);
 
         UserDao.updateUserInfo(getUser());
 
-        if(getUser().getState() == UserInterface.USER_STATE_CHECK_FAILED){
-            getUser().setState(UserInterface.USER_STATE_NEED_CHECK);
-            UserDao.updateUserState(getUser());
-        }
+        //艺术家有审核机制，评论用户没有审核机制
+//        if(getUser().getState() == UserInterface.USER_STATE_CHECK_FAILED){
+//            getUser().setState(UserInterface.USER_STATE_NEED_CHECK);
+//            UserDao.updateUserState(getUser());
+//        }
 
         //刷新session缓存中的user
         refreshSessionUser(getUser());
@@ -138,13 +139,13 @@ public class UpdateArtistInfoAction extends BaseAction implements UserInterface{
      * 得到用户信息 json串
      * @param user
      * @param request
-     * @param artistUserRegistItems
+     * @param reviewUserRegistItems
      * @return
      */
-    private String getInfoFromRequestAndAURI(User user, HttpServletRequest request, String artistUserRegistItems) {
+    private String getInfoFromRequestAndAURI(User user, HttpServletRequest request, String reviewUserRegistItems) {
         String info = StringUtils.EMPTY;
         //评论用户注册项 json串转换成数组
-        JSONArray json = JSONArray.fromObject(artistUserRegistItems);
+        JSONArray json = JSONArray.fromObject(reviewUserRegistItems);
         for(int i=0;i<json.size();i++)
         {
             if(StringUtils.isNotBlank(info)){

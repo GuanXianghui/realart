@@ -2,6 +2,7 @@ package com.realart.utils;
 
 import com.realart.dao.UserTokenDao;
 import com.realart.entities.Art;
+import com.realart.entities.Review;
 import com.realart.entities.User;
 import com.realart.entities.UserToken;
 import com.realart.interfaces.BaseInterface;
@@ -106,6 +107,25 @@ public class BaseUtil implements BaseInterface, SymbolInterface {
                     "',introduction:'" + art.getIntroduction() + "',locationBit:'" + art.getLocationBit() +
                     "',createDate:'" + art.getCreateDate() + "',createTime:'" + art.getCreateTime() +
                     "',createIp:'" + art.getCreateIp() + "',stateDesc:'" + art.getStateDesc() + "'}";
+        }
+        return result;
+    }
+
+    /**
+     * ÆÀÂÛ¼¯ºÏjson´®
+     * @param reviews
+     * @return
+     */
+    public static String getJsonArrayFromReviews(List<Review> reviews) {
+        String result = StringUtils.EMPTY;
+        for(Review review : reviews) {
+            if(StringUtils.isNotBlank(result)) {
+                result += SYMBOL_BIT_AND;
+            }
+            result += "{id:" + review.getId() + ",userId:" + review.getUserId() + ",title:'" + review.getTitle() +
+                    "',type:'" + review.getType() + "',photo:'" + review.getPhoto() + "',content:'" + review.getContent() +
+                    "',locationBit:'" + review.getLocationBit() + "',createDate:'" + review.getCreateDate() +
+                    "',createTime:'" + review.getCreateTime() + "',createIp:'" + review.getCreateIp() + "'}";
         }
         return result;
     }

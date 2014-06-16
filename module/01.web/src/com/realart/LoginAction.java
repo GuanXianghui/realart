@@ -80,7 +80,7 @@ public class LoginAction extends BaseAction implements UserInterface{
                 response.sendRedirect(jumpUrl);
             } else {
                 if(user.getUserType() == USER_TYPE_ARTIST){
-                    response.sendRedirect("artistConsole.jsp");
+                    response.sendRedirect("updateArtistInfo.jsp");
                 } else if(user.getUserType() == USER_TYPE_REVIEW){
                     response.sendRedirect("createReview.jsp");
                 }

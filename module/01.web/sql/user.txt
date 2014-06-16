@@ -10,7 +10,7 @@ create table user( #用户表
   	info varchar(5000) comment '用户信息 可为空',
   	state int not null comment '状态 不为空 0 待审核 1 审核通过 2 审核失败 3 锁定，评论会员直接审核通过，艺术家需要管理员审核',
   	reason varchar(500) comment '审核失败原因 可为空',
-  	art_kinds varchar(1000) comment '艺术品所有分类 可为空',
+  	art_kinds varchar(1000) comment '对于艺术家为艺术品所有分类，对于评论用户为评论所有分类 可为空 逗号分隔',
   	register_date varchar(8) not null comment '注册日期 不为空',
   	register_time varchar(6) not null comment '注册时间 不为空',
   	register_ip varchar(100) not null comment '注册IP 不为空'

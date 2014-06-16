@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
     if(message != EMPTY){
-        alert(message);
+        showInformation(message);
     }
 });
 

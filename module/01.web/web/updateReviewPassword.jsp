@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="artistHeader.jsp" %>
+<%@ include file="reviewHeader.jsp" %>
 <%
     //外层
     outLayer = "用户模块";
@@ -12,7 +12,7 @@
     <script type="text/javascript" src="scripts/jquery-min.js"></script>
     <script type="text/javascript" src="scripts/base.js"></script>
     <script type="text/javascript" src="scripts/md5.js"></script>
-    <script type="text/javascript" src="scripts/updateArtistPassword.js"></script>
+    <script type="text/javascript" src="scripts/updateReviewPassword.js"></script>
     <!-- 页面样式 -->
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
@@ -33,7 +33,7 @@
                 <br/>
                 <a href="javascript: logOut()" title="Sign Out">退出</a>
             </div>
-            <%@ include file="artistLayers.jsp" %>
+            <%@ include file="reviewLayers.jsp" %>
         </div>
     </div>
     <div id="main-content">
@@ -50,7 +50,7 @@
             </div>
             <div class="content-box-content">
                 <div class="tab-content default-tab">
-                    <form name="updateArtistPasswordForm" method="post" action="updateArtistPassword.do">
+                    <form name="updateReviewPasswordForm" method="post" action="updateReviewPassword.do">
                         <input type="hidden" name="token" value="<%=token%>">
                         <table id="guide_table">
                             <tr>
@@ -81,7 +81,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <input class="button" type="button" value="OK 提交" onclick="updateArtistPassword()">
+                        <input class="button" type="button" value="OK 提交" onclick="updateReviewPassword()">
                     </form>
                 </div>
             </div>

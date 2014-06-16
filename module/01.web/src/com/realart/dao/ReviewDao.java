@@ -127,6 +127,18 @@ public class ReviewDao implements ReviewInterface {
     }
 
     /**
+     * 更新信息
+     *
+     * @param review
+     * @throws Exception
+     */
+    public static void updateReview(Review review) throws Exception {
+        String sql = "update review set title='" + review.getTitle() + "',type='" + review.getType() +
+                "',photo='" + review.getPhoto() + "',content='" + review.getContent() + "' where id=" + review.getId();
+        DB.executeUpdate(sql);
+    }
+
+    /**
      * 根据用户id查询最大的评论id
      * @param userId
      * @return

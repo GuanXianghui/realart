@@ -6,7 +6,7 @@ var editor;
  */
 $(document).ready(function() {
     if(message != EMPTY){
-        alert(message);
+        showInformation(message);
     }
 });
 
@@ -27,11 +27,4 @@ function createReview(){
     document.getElementById("content").value = content;
     //提交表格
     document.forms["createReviewForm"].submit();
-}
-
-/**
- * 重新填写
- */
-function rewrite(){
-    editor.setContent(EMPTY);
 }

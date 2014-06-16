@@ -68,7 +68,7 @@
         </action>
         <action name="loginArtist" class="com.realart.LoginArtistAction">
             <result>
-                /artistConsole.jsp
+                /updateArtistInfo.jsp
             </result>
             <result name="error">
                 /loginArtist.jsp
@@ -76,7 +76,7 @@
         </action>
         <action name="updateArtistInfo" class="com.realart.UpdateArtistInfoAction">
             <result>
-                /artistConsole.jsp
+                /updateArtistInfo.jsp
             </result>
             <result name="error">
                 /updateArtistInfo.jsp
@@ -84,7 +84,7 @@
         </action>
         <action name="updateArtistPassword" class="com.realart.UpdateArtistPasswordAction">
             <result>
-                /artistConsole.jsp
+                /updateArtistPassword.jsp
             </result>
             <result name="error">
                 /updateArtistPassword.jsp
@@ -408,6 +408,38 @@
             </result>
             <result name="error">
                 /itemList.jsp
+            </result>
+        </action>
+        <action name="updateReviewInfo" class="com.realart.UpdateReviewInfoAction">
+            <result>
+                /updateReviewInfo.jsp
+            </result>
+            <result name="error">
+                /updateReviewInfo.jsp
+            </result>
+        </action>
+        <action name="updateReviewPassword" class="com.realart.UpdateReviewPasswordAction">
+            <result>
+                /updateReviewPassword.jsp
+            </result>
+            <result name="error">
+                /updateReviewPassword.jsp
+            </result>
+        </action>
+        <action name="updateReviewKinds" class="com.realart.UpdateReviewKindsAction">
+            <result>
+                /updateReviewKinds.jsp
+            </result>
+            <result name="error">
+                /updateReviewKinds.jsp
+            </result>
+        </action>
+        <action name="updateReview" class="com.realart.UpdateReviewAction">
+            <result>
+                /myReviews.jsp
+            </result>
+            <result name="error">
+                /myReviews.jsp
             </result>
         </action>
     </package>

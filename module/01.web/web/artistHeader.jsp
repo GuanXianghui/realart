@@ -11,4 +11,8 @@
         response.sendRedirect(baseUrl + "login.jsp?jumpUrl=" + URLEncoder.encode(BaseUtil.getRequestStr(request)));
         return;
     }
+    //外层
+    String outLayer = StringUtils.EMPTY;
+    //内层
+    String inLayer = StringUtils.EMPTY;
 %>

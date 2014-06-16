@@ -3,7 +3,7 @@
  */
 $(document).ready(function() {
     if(message != EMPTY){
-        alert(message);
+        showInformation(message);
     }
 });
 
@@ -15,7 +15,7 @@ function updateArtKind(kindId){
     var newArtKinds = EMPTY;
     for(var i=0;i<kindCount;i++){
         if(EMPTY == $("#kind" + (i+1)).val()){
-            alert("请输入艺术品分类");
+            showAttention("请输入艺术品分类");
             return;
         }
         if(newArtKinds != EMPTY){
@@ -35,7 +35,7 @@ function deleteArtKind(kindId){
     var newArtKinds = EMPTY;
     for(var i=0;i<kindCount;i++){
         if(EMPTY == $("#kind" + (i+1)).val()){
-            alert("请输入艺术品分类");
+            showAttention("请输入艺术品分类");
             return;
         }
         if(kindId == "kind" + (i+1)){
@@ -56,13 +56,13 @@ function deleteArtKind(kindId){
  */
 function createArtKind(){
     if(EMPTY == $("#create_art_kind").val()){
-        alert("请输入艺术品分类");
+        showAttention("请输入艺术品分类");
         return;
     }
     var newArtKinds = EMPTY;
     for(var i=0;i<kindCount;i++){
         if(EMPTY == $("#kind" + (i+1)).val()){
-            alert("请输入艺术品分类");
+            showAttention("请输入艺术品分类");
             return;
         }
         if(newArtKinds != EMPTY){

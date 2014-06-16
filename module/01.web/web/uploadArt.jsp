@@ -7,7 +7,7 @@
 %>
 <script type="text/javascript">
     alert("您的艺术家资料未审核通过");
-    location.href="/artistConsole.jsp";
+    location.href="/updateArtistInfo.jsp";
 </script>
 <%
         return;
@@ -17,7 +17,7 @@
 %>
 <script type="text/javascript">
     alert("必须扫描二维码备案艺术品");
-    location.href="/artistConsole.jsp";
+    location.href="/updateArtistInfo.jsp";
 </script>
 <%
         return;
@@ -30,7 +30,7 @@
 %>
 <script type="text/javascript">
     alert("序列号已失效");
-    location.href="/artistConsole.jsp";
+    location.href="/updateArtistInfo.jsp";
 </script>
 <%
         return;

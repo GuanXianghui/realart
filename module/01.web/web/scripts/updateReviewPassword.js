@@ -10,7 +10,7 @@ $(document).ready(function() {
 /**
  * 修改艺术家密码
  */
-function updateArtistPassword(){
+function updateReviewPassword(){
     var oldPassword = document.getElementById("old_password").value;
     var newPassword = document.getElementById("new_password").value;
     var confirmPassword = document.getElementById("confirm_password").value;
@@ -35,5 +35,5 @@ function updateArtistPassword(){
     //md5签名
     var md5ConfirmPassword = MD5(confirmPassword + md5Key);
     document.getElementById("confirm_password").value = md5ConfirmPassword;
-    document.forms["updateArtistPasswordForm"].submit();
+    document.forms["updateReviewPasswordForm"].submit();
 }

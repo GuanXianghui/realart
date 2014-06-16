@@ -1,13 +1,13 @@
 <%@ page import="net.sf.json.JSONObject" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="artistHeader.jsp" %>
+<%@ include file="reviewHeader.jsp" %>
 <%
     //外层
     outLayer = "用户模块";
     //内层
     inLayer = "资料修改";
-    //艺术家注册项 json串转换成数组
-    JSONArray json = JSONArray.fromObject(artistUserRegistItems);
+    //评论用户注册项 json串转换成数组
+    JSONArray json = JSONArray.fromObject(reviewUserRegistItems);
     //用户信息转json对象
     JSONObject userInfo = JSONObject.fromObject(user.getInfo());
 %>
@@ -17,7 +17,7 @@
     <script type="text/javascript" src="scripts/jquery-min.js"></script>
     <script type="text/javascript" src="scripts/base.js"></script>
     <script type="text/javascript" src="scripts/md5.js"></script>
-    <script type="text/javascript" src="scripts/updateArtistInfo.js"></script>
+    <script type="text/javascript" src="scripts/updateReviewInfo.js"></script>
     <!-- 页面样式 -->
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
@@ -38,7 +38,7 @@
                 <br/>
                 <a href="javascript: logOut()" title="Sign Out">退出</a>
             </div>
-            <%@ include file="artistLayers.jsp" %>
+            <%@ include file="reviewLayers.jsp" %>
         </div>
     </div>
     <div id="main-content">
@@ -55,7 +55,7 @@
             </div>
             <div class="content-box-content">
                 <div class="tab-content default-tab">
-                    <form name="updateArtistInfoForm" method="post" autocomplete="off" action="updateArtistInfo.do?token=<%=token%>"
+                    <form name="updateReviewInfoForm" method="post" autocomplete="off" action="updateReviewInfo.do?token=<%=token%>"
                           enctype="multipart/form-data">
                         <table id="guide_table">
                             <thead>
@@ -66,7 +66,7 @@
                             </thead>
                             <tr>
                                 <td>
-                                    艺术家用户名
+                                    评论用户名
                                 </td>
                                 <td>
                                     <%=user.getName()%>
@@ -149,7 +149,7 @@
                                 }
                             %>
                         </table>
-                        <input class="button" type="button" value="OK 提交" onclick="updateArtistInfo()">
+                        <input class="button" type="button" value="OK 提交" onclick="updateReviewInfo()">
                     </form>
                 </div>
             </div>

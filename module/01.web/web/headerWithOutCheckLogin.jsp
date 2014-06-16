@@ -1,12 +1,12 @@
 <%@ page import="org.apache.commons.lang.StringUtils" %>
-<%@ page import="com.realart.interfaces.BaseInterface" %>
 <%@ page import="com.realart.entities.User" %>
-<%@ page import="com.realart.interfaces.ParamInterface" %>
 <%@ page import="net.sf.json.JSONArray" %>
 <%@ page import="com.realart.utils.PropertyUtil" %>
 <%@ page import="com.realart.utils.TokenUtil" %>
 <%@ page import="com.realart.utils.ParamUtil" %>
+<%@ page import="com.realart.interfaces.ParamInterface" %>
 <%@ page import="com.realart.interfaces.QrCodeInterface" %>
+<%@ page import="com.realart.interfaces.BaseInterface" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     //域名链接

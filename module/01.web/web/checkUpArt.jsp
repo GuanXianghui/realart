@@ -5,7 +5,6 @@
 <%@ page import="com.realart.dao.ArtDao" %>
 <%@ page import="com.realart.interfaces.ArtInterface" %>
 <%@ page import="com.realart.entities.Art" %>
-<%@ page import="net.sf.json.JSONObject" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="adminHeader.jsp" %>
 <%
