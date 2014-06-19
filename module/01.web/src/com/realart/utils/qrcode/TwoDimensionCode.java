@@ -36,7 +36,7 @@ public class TwoDimensionCode {
 	public void encoderQRCode(String content, OutputStream output) {
 		this.encoderQRCode(content, output, "png", 7);
 	}
-	
+
 	/**
 	 * 生成二维码(QRCode)图片
 	 * @param content 存储内容
@@ -234,10 +234,10 @@ public class TwoDimensionCode {
 				throw new Exception("QRCode content bytes length = " + contentBytes.length + " not in [0, 800].");
 			}
 
-            gs.setColor(Color.RED);
+            gs.setColor(Color.GREEN);
             gs.fillRoundRect((int)(imgSize*1.0/140*54), (int)(imgSize*1.0/140*54), (int)(imgSize*1.0/140*32), (int)(imgSize*1.0/140*32), 45, 45);
 
-            Image img = ImageIO.read(new File("C:\\Users\\sky\\Desktop\\realart_logo.png"));//实例化一个Image对象。
+            Image img = ImageIO.read(new File("C:\\Users\\sky\\Desktop\\1.png"));//实例化一个Image对象。
             gs.drawImage(img, (int)(imgSize*1.0/140*55), (int)(imgSize*1.0/140*55), (int)(imgSize*1.0/140*30), (int)(imgSize*1.0/140*30), null);
 
 			gs.dispose();
@@ -472,9 +472,11 @@ public class TwoDimensionCode {
 	public static void main(String[] args) {
 		String imgPath = "C:\\Users\\sky\\Desktop\\1.jpg";
 		String content = QrCodeInterface.QR_CODE_URL_PREFIX + "12asdfbed";
+        content = "http://192.168.1.182:200/";
+        content = "http://www.suncare-sys.com:11000/";
         //生成二维码
 		TwoDimensionCode handler = new TwoDimensionCode();
-		handler.encoderQRCode(content, imgPath, "png");
+		handler.encoderQRCode(content, imgPath, "png", 3);
 		System.out.println("========encoder success");
 
 		//解析二维码

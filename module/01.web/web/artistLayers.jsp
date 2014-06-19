@@ -5,10 +5,10 @@
             我的官网
         </a>
     </li>
-    <li>
-        <a class="nav-top-item no-submenu" href="uploadArt.jsp">
-            作品备案
-        </a>
+    <li><a href="#" class="nav-top-item<%=outLayer.equals("备案模块")?" current":""%>"> 备案模块 </a>
+        <ul>
+            <li><a href="<%=baseUrl%>preUploadArt.jsp"<%=inLayer.equals("作品备案")?" class=\"current\"":""%>>作品备案</a></li>
+        </ul>
     </li>
     <li><a href="#" class="nav-top-item<%=outLayer.equals("用户模块")?" current":""%>"> 用户模块 </a>
         <ul>
