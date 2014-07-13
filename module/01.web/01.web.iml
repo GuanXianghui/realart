@@ -28,6 +28,7 @@
     <orderEntry type="library" name="ueditor" level="project" />
     <orderEntry type="library" name="qr" level="project" />
     <orderEntry type="library" name="javamail" level="project" />
+    <orderEntry type="library" name="poi" level="project" />
   </component>
 </module>
 

@@ -8,6 +8,12 @@
 <%@ include file="headerWithOutCheckLogin.jsp" %>
 <%
     List<User> artistUsers = UserDao.queryUsersByUserTypeAndState(UserInterface.USER_TYPE_ARTIST, UserInterface.USER_STATE_NORMAL);
+    List<User> artistUsers1 = UserDao.queryUsersByUserTypeAndState(UserInterface.USER_TYPE_ARTIST, UserInterface.USER_STATE_NEED_CHECK);
+    List<User> artistUsers2 = UserDao.queryUsersByUserTypeAndState(UserInterface.USER_TYPE_ARTIST, UserInterface.USER_STATE_CHECK_FAILED);
+    List<User> artistUsers3 = UserDao.queryUsersByUserTypeAndState(UserInterface.USER_TYPE_ARTIST, UserInterface.USER_STATE_LOCK);
+    artistUsers.addAll(artistUsers1);
+    artistUsers.addAll(artistUsers2);
+    artistUsers.addAll(artistUsers3);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

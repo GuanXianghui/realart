@@ -442,6 +442,14 @@
                 /myReviews.jsp
             </result>
         </action>
+        <action name="adminRegistArtistFetch" class="com.realart.AdminRegistArtistFetchAction">
+            <result>
+                /adminRegistArtistFetch.jsp
+            </result>
+            <result name="error">
+                /adminRegistArtistFetch.jsp
+            </result>
+        </action>
     </package>
 
     <!--

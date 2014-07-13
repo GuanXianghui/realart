@@ -23,6 +23,7 @@
             <li><a href="<%=baseUrl%>reviewUserRegistConfig.jsp"<%=inLayer.equals("评论会员注册配置")?" class=\"current\"":""%>>评论会员注册配置</a></li>
             <li><a href="<%=baseUrl%>artistUserRegistConfig.jsp"<%=inLayer.equals("艺术家注册配置")?" class=\"current\"":""%>>艺术家注册配置</a></li>
             <li><a href="<%=baseUrl%>adminRegistArtist.jsp"<%=inLayer.equals("注册艺术家")?" class=\"current\"":""%>>注册艺术家</a></li>
+            <li><a href="<%=baseUrl%>adminRegistArtistFetch.jsp"<%=inLayer.equals("批量注册艺术家")?" class=\"current\"":""%>>批量注册艺术家</a></li>
         </ul>
     </li>
     <li><a href="#" class="nav-top-item<%=outLayer.equals("审核模块")?" current":""%>"> 审核模块 </a>

@@ -22,6 +22,7 @@
             <element id="library" level="project" name="ueditor" />
             <element id="library" level="project" name="qr" />
             <element id="library" level="project" name="javamail" />
+            <element id="library" level="project" name="poi" />
           </element>
         </element>
       </root>
@@ -252,6 +253,15 @@
       <JAVADOC />
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/mysql" recursive="false" />
+    </library>
+    <library name="poi">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/poi" />
+        <root url="file://$PROJECT_DIR$/lib/poi" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/poi" recursive="false" />
     </library>
     <library name="qr">
       <CLASSES>
